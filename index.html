@@ -1,0 +1,534 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <link href="assets/output.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+  <script src="/assets/scripts/index.js?=283423842384" defer></script>
+
+</head>
+
+<body class="font-sans ">
+
+  <header class="flex flex-col fixed w-full h-24 md:h-24 -mt-0 md:-mt-36 bg-white shadow z-10">
+    <div class="flex mt-4 justify-between md:justify-around container mx-auto items-center px-4">
+
+      <button id="menuToggle" class="md:hidden block text-[#48887A]">
+        <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+
+      <div class="flex items-center">
+        <a href="/pages/propietario/telaLogin.html">
+          <img src="/assets/imagem/BANNER.jpeg" alt="Logo" class="h-14 rounded-[10px] mt-1">
+        </a>
+      </div>
+
+
+      <nav class="hidden md:flex gap-12 items-center">
+
+        <div class="relative group">
+          <a href="#" class="relative group text-black font-medium transition hover:text-[#48887A]">
+            Cães
+            <span class="absolute left-0 -bottom-0.5 h-[2px] w-0 bg-[#48887A] transition-all duration-300 group-hover:w-full"></span>
+          </a>
+
+
+          <div class="absolute left-0 top-full mt-0 w-44 bg-white shadow-lg rounded-b-2xl p-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 ease-in-out z-20 ">
+            <ul class="space-y-2 text-sm text-gray-700">
+              <li><a href="#">Adulto</a></li>
+              <li><a href="#">Filhote</a></li>
+              <li><a href="#">Medicamentos</a></li>
+            </ul>
+          </div>
+        </div>
+
+
+        <div class="relative group">
+
+          <a href="#" class="relative group text-black font-medium transition hover:text-[#52c6ce]">
+            Gato
+            <span class="absolute left-0 -bottom-0.5 h-[2px] w-0 bg-[#52c6ce] transition-all duration-300 group-hover:w-full"></span>
+          </a>
+          <div class="absolute left-0 top-full mt-0 w-44 bg-white shadow-lg rounded-b-2xl p-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 ease-in-out z-20  ">
+            <ul class="space-y-2 text-sm text-gray-700">
+              <li><a href="#">Adulto</a></li>
+              <li><a href="#">Filhote</a></li>
+              <li><a href="#">Castrados</a></li>
+            </ul>
+          </div>
+        </div>
+
+
+        <div class="relative group">
+
+          <a href="#" class="relative group text-black font-medium transition hover:text-[#EC5C20]">
+            Medicamentos
+            <span class="absolute left-0 -bottom-0.5 h-[2px] w-0 bg-[#EC5C20] transition-all duration-300 group-hover:w-full"></span>
+          </a>
+          <div class="absolute left-0 top-full mt-0 w-44 bg-white shadow-lg rounded-b-2xl p-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 ease-in-out z-20 ">
+            <ul class="space-y-2 text-sm text-gray-700">
+              <li><a href="#">Adulto</a></li>
+              <li><a href="#">Filhote</a></li>
+              <li><a href="#">Castrados</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="relative group">
+          <a href="#" class="relative group text-black font-medium transition hover:text-[#48887A]">
+            Variáveis
+            <span class="absolute left-0 -bottom-0.5 h-[2px] w-0 bg-[#48887A] transition-all duration-300 group-hover:w-full"></span>
+          </a>
+          <div class="absolute left-0 top-full mt-0 w-44 bg-white shadow-lg rounded-b-2xl p-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 ease-in-out z-20 ">
+            <ul class="space-y-2 text-sm text-gray-700">
+              <li><a href="#">Equinos</a></li>
+              <li><a href="#">Suínos</a></li>
+              <li><a href="#">Peixes</a></li>
+              <li><a href="#">Porcos</a></li>
+            </ul>
+          </div>
+        </div>
+
+
+        <div class="relative group">
+          <a href="#" class="relative group text-black font-medium transition hover:text-[#EAC43A]">
+            Acessórios
+            <span class="absolute left-0 -bottom-0.5 h-[2px] w-0 bg-[#EAC43A] transition-all duration-300 group-hover:w-full"></span>
+          </a>
+          <div class="absolute left-0 top-full mt-0 w-44 bg-white shadow-lg rounded-b-2xl p-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 ease-in-out z-20 ">
+            <ul class="space-y-2 text-sm text-gray-700">
+              <li><a href="#">Brinquedos</a></li>
+              <li><a href="#">Coleiras</a></li>
+              <li><a href="#">Caminhas</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+
+      <a target="_blank" href="/pages/usuario/carrinho1.html" id="carrinhoButton">
+        <img src="/assets/icons/icons8-carrinho-35.png" alt="Carrinho" class=" md:h-6 md:w-6 hover:scale-110 transition">
+      </a>
+
+
+    </div>
+    <!-- Menu mobile dropdown -->
+    <div id="mobileMenu" class="absolute top-24 left-0 w-full bg-white shadow-md py-4 px-6 hidden z-30">
+      <ul class="space-y-4 text-gray-800 text-lg">
+        <li><a href="#">Cães</a></li>
+        <li><a href="#">Gatos</a></li>
+        <li><a href="#">Medicamentos</a></li>
+        <li><a href="#">Variáveis</a></li>
+        <li><a href="#">Acessórios</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <div class=" w-full flex justify-center max-w-md overflow-hidden md:h-10  md:ml-[450px] md:mt-36 z-1">
+    <div class="flex transition-transform duration-700 ease-in-out  z-1" id="carousel">
+      <!-- Slide 1 -->
+      <div class="w-full  flex-shrink-0 flex items-center gap-4 justify-center text-center ">
+        <img src="assets/icons/icons8-raio-24.png" alt="Ícone 1">
+        <p class="mt-2 text-lg font-medium">Peça em segundos</p>
+      </div>
+      <!-- Slide 2 -->
+      <div class="w-full   flex-shrink-0 flex items-center gap-4 justify-center text-center">
+        <img src="assets/icons/icons8-entrega-30.png" alt="Ícone 2">
+        <p class="mt-2 text-lg font-medium">Entrega rápida</p>
+      </div>
+      <!-- Slide 3 -->
+      <div class="w-full  flex-shrink-0 flex items-center gap-4 justify-center text-center">
+        <img src="assets/icons/icons8-garantia-30.png" alt="Ícone 3">
+        <p class="mt-2 text-lg font-medium">Qualidade garantida</p>
+      </div>
+    </div>
+  </div>
+  <!-- section do banner -->
+  <section class="w-full h-[250px] sm:h-[450px] md:hidden mt-16 bg-cover bg-center " style="background-image: url('/assets/imagem/BANNER.jpeg');">
+  </section>
+
+  <!-- produtos -->
+  <!-- <section class=" bg-[#f7f7f7] w-full h-full mt-0 md:mt-32 flex flex-col justify-center gap-28">
+
+    <div class=" flex flex-col justify-center items-center mt-10" x-data="{ openDogs: false }">
+      <div class="bg-[#317565] text-white p-10 rounded-4xl flex items-center justify-between h-32 w-sm sm:w-4xl">
+        <div class="flex items-center space-x-3">
+          <img src="/assets/imagem/imgcachorro.png" alt="Cachorro" class="flex h-44 md:h-45 md:-mt-13 -mt-12 -ml-15 ">
+          <h2 class=" font-bold -ml-8 md:-ml-0 text-emerald-950 text-3xl">Cães</h2>
+        </div>
+        <a href="/pages/usuario/produtosCachorro.html" class="text-sm underline">Ver todos</a>
+      </div>
+
+      <div class="grid grid-cols-3 gap-2 mt-0 p-5">
+        <div class="bg-white p-4 rounded-lg shadow text-center">
+          <img src="assets/imagem/cachorroadulto.png" alt="Ração Gatos" class="mx-auto">
+          <p class="mt-2 text-green-900 font-medium">Rações Adulto</p>
+        </div>
+        <div class="bg-white p-4 rounded-lg shadow text-center">
+          <img src="assets/imagem/cachorrofilhote.png" alt="Areia" class="mx-auto">
+          <p class="mt-2 text-green-900 font-medium">Rações Filhotes</p>
+        </div>
+        <div class="bg-white p-4 rounded-lg shadow text-center">
+          <img src="assets/imagem/medicamentocachorro.png" alt="Remedios" class="mx-auto">
+          <p class="mt-2 text-green-900 font-normal ">Medica-<br>mentos</p>
+        </div>
+      </div>
+    </div>
+   
+    <div class=" flex flex-col justify-center items-center" x-data="{ openCats: false }">
+      <div class="bg-[#317565] text-white p-4 rounded-4xl flex items-center justify-between h-32 w-sm sm:w-4xl">
+        <div class="flex items-center space-x-3">
+          <img class=" flex h-40 md:h-45 md:-mt-13 -mt-8 -ml-2" src="/assets/imagem/imggato (2).png" alt="Gato">
+          <h2 class="font-bold ml-2 md:-ml-0 text-emerald-950 text-3xl">Gatos</h2>
+        </div>
+        <a href="/pages/usuario/produtosGatos.html" class="text-sm underline">Ver todos</a>
+      </div>
+      <div class="grid grid-cols-3 gap-2 mt-4 p-5">
+        <div class="bg-white p-4 rounded-lg shadow text-center">
+          <img src="assets/imagem/areia - Copia.png" alt="Ração Gatos" class="mx-auto">
+          <p class="mt-2 text-green-900 font-medium">Rações</p>
+        </div>
+        <div class="bg-white p-4 rounded-lg shadow text-center">
+          <img src="assets/imagem/rações.png" alt="Areia" class="mx-auto">
+          <p class="mt-2 text-green-900 font-medium">Areia</p>
+        </div>
+        <div class="bg-white p-4 rounded-lg shadow text-center">
+          <img src="assets/imagem/medicamentogato.png" alt="Remedios" class="mx-auto">
+          <p class="mt-2 text-green-900 font-medium">Medica-<br>mentos</p>
+        </div>
+
+      </div>
+
+
+    </div>
+
+    <div class=" flex flex-col justify-center items-center" x-data="{ openDogs: false }">
+      <div class="bg-[#317565] text-white p-10 rounded-4xl flex items-center justify-between h-32 w-sm sm:w-4xl">
+        <div class="flex items-center space-x-3">
+          <img src="/assets/imagem/equinis.png" alt="Cachorro" class="flex h-40 md:h-44 -mt-10 -ml-10">
+          <h2 class="font-bold -ml-2 md:-ml-0 text-emerald-950  ">Equinos, <br> Aves, Peixe Porco</h2>
+        </div>
+        <a href="/pages/usuario/produtosEquinios.html" class="text-sm underline">Ver todos</a>
+      </div>
+
+      <div class="grid grid-cols-3 gap-2 mt-4 p-5">
+        <div class="bg-white p-4 rounded-lg shadow text-center">
+          <img src="assets/imagem/performance.png" alt="Ração Gatos" class="mx-auto h-32">
+          <p class="mt-2 text-green-900 font-medium">Rações</p>
+        </div>
+        <div class="bg-white p-4 rounded-lg shadow text-center">
+          <img src="assets/imagem/reino-das-aves.png" alt="Aves" class="mx-auto h-32">
+          <p class="mt-2 text-green-900 font-medium">Aves</p>
+        </div>
+        <div class="bg-white p-4 rounded-lg shadow text-center">
+          <img src="assets/imagem/Peixecol25-1.png" alt="Peixes" class="mx-auto h-32">
+          <p class="mt-2 text-green-900 font-medium">Peixes</p>
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <div class=" flex flex-col justify-center items-center" x-data="{ openDogs: false }">
+      <div class="bg-[#317565] text-white p-10 rounded-4xl flex items-center justify-between h-32 w-sm sm:w-4xl">
+        <div class="flex items-center space-x-3">
+          <img src="/assets/imagem/Capa-11-removebg-preview.png" alt="Cachorro" class="flex h-40 md:h-44 -mt-0 -ml-13">
+          <h2 class="font-bold -ml-2 md:-ml-0 text-emerald-950 ">Medicamentos</h2>
+        </div>
+        <a href="/pages/usuario/medicamentos.html" class="text-sm underline">Ver todos</a>
+      </div>
+
+      <div class="grid grid-cols-3 gap-2 mt-4 p-5">
+        <div class="bg-white p-4 rounded-lg shadow text-center">
+          <img src="assets/imagem/" alt="Ração Gatos" class="mx-auto h-32">
+          <p class="mt-2 text-green-900 font-medium"></p>
+        </div>
+        <div class="bg-white p-4 rounded-lg shadow text-center">
+          <img src="assets/imagem/" alt="Aves" class="mx-auto h-32">
+          <p class="mt-2 text-green-900 font-medium"></p>
+        </div>
+        <div class="bg-white p-4 rounded-lg shadow text-center">
+          <img src="assets/imagem/" alt="Peixes" class="mx-auto h-32">
+          <p class="mt-2 text-green-900 font-medium"></p>
+        </div>
+
+      </div>
+    </div>
+
+
+    <div class=" flex flex-col justify-center items-center mb-32" x-data="{ openDogs: false }">
+      <div class="bg-[#317565] text-white p-10 rounded-4xl flex items-center justify-between h-32 w-sm sm:w-4xl">
+        <div class="flex items-center space-x-3">
+          <img src="/assets/imagem/Design_sem_nome-removebg-preview.png" alt="Cachorro" class="flex h-40 -mt-2 -ml-10">
+          <h2 class="font-bold -ml-4 md:-ml-0 text-emerald-950 ">Acessórios</h2>
+        </div>
+        <a href="/pages/usuario/acessorios.html" class="text-sm underline">Ver todos</a>
+      </div>
+
+      <div class="grid grid-cols-3 gap-2 mt-4 p-5">
+        <div class="bg-white p-4 rounded-lg shadow text-center">
+          <img src="assets/imagem/cama.png" alt="Ração Gatos" class="mx-auto h-32">
+          <p class="mt-2 text-green-900 font-medium">Cama</p>
+        </div>
+        <div class="bg-white p-4 rounded-lg shadow text-center">
+          <img src="assets/imagem/mijador.avif" alt="Aves" class="mx-auto h-32">
+          <p class="mt-2 text-green-900 font-medium">Sanitário</p>
+        </div>
+        <div class="bg-white p-4 rounded-lg shadow text-center">
+          <img src="assets/imagem/Coleira.webp" alt="Peixes" class="mx-auto h-28">
+          <p class="mt-2 text-green-900 font-medium">Coleiras</p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section> -->
+
+  <div class="flex min-h-screen bg-white mt-0 md:mt-36">
+    <!-- Menu lateral -->
+    <!-- <aside class="w-64 text-black hidden md:flex flex-col p-6 space-y-6 fixed h-full">
+      <div class="flex flex-col gap-2">
+        <p class="text- font-medium border-b  border-[#D5D5D5]">Filtrar Produtos</p>
+        <a class="text-[13px]" href="">Limpar filtros 🗑</a>
+      </div>
+
+      <nav class="flex flex-col space-y-1">
+        <p class="text- font-medium border-b  border-[#D5D5D5]">Faixa de Preço</p>
+
+        <label class="relative flex items-center cursor-pointer">
+          <input checked="" class="sr-only peer" name="futuristic-radio" type="radio" />
+          <div class="w-4 h-4 bg-transparent border border-black rounded-full peer-checked:bg-[#48887a] peer-checked:border-[#48887a]peer-hover:shadow-lg  peer-checked:shadow-lg  transition duration-300 ease-in-out"></div>
+          <span class="ml-2 text-[13px] text-black">Todas</span>
+        </label>
+        <label class="relative flex items-center cursor-pointer">
+          <input class="sr-only peer" name="futuristic-radio" type="radio" />
+          <div class="w-4 h-4 bg-transparent border border-black rounded-full peer-checked:bg-[#48887a] peer-checked:border-[#48887a]peer-hover:shadow-lg  peer-checked:shadow-lg  transition duration-300 ease-in-out"></div>
+          <span class="ml-2 text-[13px] text-black">Normal</span>
+        </label>
+        <label class="relative flex items-center cursor-pointer">
+          <input class="sr-only peer" name="futuristic-radio" type="radio" />
+          <div class="w-4 h-4 bg-transparent border border-black rounded-full peer-checked:bg-[#48887a] peer-checked:border-[#48887a]peer-hover:shadow-lg  peer-checked:shadow-lg  transition duration-300 ease-in-out"></div>
+          <span class="ml-2 text-[13px] text-black">Easy</span>
+        </label>
+
+
+      </nav>
+    </aside>  -->
+    <main class="flex-1 md:ml-64 p-6 space-y-20 md:-mt-24 ">
+
+      <section id="caes" class="flex flex-col md:gap-10 md:-ml-52 md:flex-row items-center">
+        <div class="bg-[#6baf89] text-white p-6 rounded-3xl flex items-center justify-between w-full md:w-3xl max-w-1xl h-32 md:h-48">
+          <div class="flex items-center space-x-3">
+            <img src="/assets/imagem/imgcachorro.png" alt="Cachorro" class="h-44 md:h-52 md:-mt-4 -mt-12 -ml-10">
+            <h2 class="text-3xl font-bold text-emerald-950 -ml-8">Cães</h2>
+          </div>
+          <a href="/pages/usuario/produtosCachorro.html" class="underline text-sm">Ver todos</a>
+        </div>
+        <div class=" flex md:grid grid-cols-1 sm:grid-cols-3 gap-4 mt-4 w-full max-w-5xl">
+
+          <div class="bg-[#F7F7F7]  p-4 rounded-lg shadow text-center">
+            <img src="assets/imagem/cachorroadulto.png" class="mx-auto">
+            <p class="mt-2 text-green-900 font-medium">Rações Adulto</p>
+          </div>
+          <div class="bg-[#F7F7F7]  p-4 rounded-lg shadow text-center">
+            <img src="assets/imagem/cachorrofilhote.png" class="mx-auto">
+            <p class="mt-2 text-green-900 font-medium">Rações Filhotes</p>
+          </div>
+          <div class="bg-[#f7f7f7]  p-4 rounded-lg shadow text-center">
+            <img src="assets/imagem/medicamentocachorro.png" class="mx-auto">
+            <p class="mt-2 text-green-900 font-medium">Medicamentos</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="gatos" class="flex flex-col md:gap-10 md:-ml-52 md:flex-row items-center">
+        <div class="bg-[#52c6ce] text-white p-6 rounded-3xl flex items-center justify-between w-full md:w-3xl max-w-5xl h-32 md:h-48">
+          <div class="flex items-center space-x-3">
+            <img src="/assets/imagem/imggato (2).png" alt="Gato" class="h-44 md:h-52 md:-mt-4 -mt-12 md:-ml-4 -ml-10">
+            <h2 class="text-3xl font-bold text-emerald-950">Gatos</h2>
+          </div>
+          <a href="/pages/usuario/produtosGatos.html" class="underline text-sm">Ver todos</a>
+        </div>
+        <div class="flex md:grid grid-cols-1 sm:grid-cols-3 gap-4 mt-4 w-full max-w-5xl">
+
+          <div class="bg-[#f7f7f7] p-4 rounded-lg shadow text-center">
+            <img src="assets/imagem/areia - Copia.png" class="mx-auto">
+            <p class="mt-2 text-green-900 font-medium">Rações</p>
+          </div>
+          <div class="bg-[#f7f7f7]  p-4 rounded-lg shadow text-center">
+            <img src="assets/imagem/rações.png" class="mx-auto">
+            <p class="mt-2 text-green-900 font-medium">Areia</p>
+          </div>
+          <div class="bg-[#f7f7f7]  p-4 rounded-lg shadow text-center">
+            <img src="assets/imagem/medicamentogato.png" class="mx-auto">
+            <p class="mt-2 text-green-900 font-medium">Medicamentos</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="equinos" class="flex flex-col md:gap-10 md:-ml-52 md:flex-row items-center">
+        <div class="bg-[#EC5C20] text-white p-6 rounded-3xl flex items-center justify-between w-1xl md:w-3xl max-w-5xl h-32 md:h-48">
+          <div class="flex items-center space-x-3">
+            <img src="/assets/imagem/equinis.png" class="h-44 md:h-52 md:-mt-10 -mt-12 md:-ml-6 -ml-10">
+            <h2 class="text-xl font-bold text-emerald-950">Equinos, <br> Aves, Peixes e Porcos</h2>
+          </div>
+          <a href="/pages/usuario/produtosEquinios.html" class="underline text-sm">Ver todos</a>
+        </div>
+        <div class="flex md:grid grid-cols-1 sm:grid-cols-3 gap-4 mt-4 w-full max-w-5xl">
+          <div class="bg-[#f7f7f7] p-4 rounded-lg shadow text-center">
+            <img src="assets/imagem/performance.png" class="mx-auto h-32">
+            <p class="mt-2 text-green-900 font-medium">Rações</p>
+          </div>
+          <div class="bg-[#f7f7f7] p-4 rounded-lg shadow text-center">
+            <img src="assets/imagem/reino-das-aves.png" class="mx-auto h-32">
+            <p class="mt-2 text-green-900 font-medium">Aves</p>
+          </div>
+          <div class="bg-[#f7f7f7] p-4 rounded-lg shadow text-center">
+            <img src="assets/imagem/Peixecol25-1.png" class="mx-auto h-32">
+            <p class="mt-2 text-green-900 font-medium">Peixes</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="medicamentos" class="flex flex-col md:gap-10 md:-ml-52 md:flex-row items-center">
+        <div class="bg-[#317565] text-white p-6 rounded-3xl flex items-center justify-between w-1xl md:w-3xl max-w-5xl h-32 md:h-48">
+          <div class="flex items-center space-x-3">
+            <img src="/assets/imagem/Capa-11-removebg-preview.png" class="h-44 md:h-52 md:-mt-10 -mt-12 md:-ml-6 -ml-10">
+            <h2 class="text-2xl font-bold text-emerald-950">Medicamentos</h2>
+          </div>
+          <a href="/pages/usuario/medicamentos.html" class="underline text-sm">Ver todos</a>
+        </div>
+        <div class="flex md:grid grid-cols-1 sm:grid-cols-3 gap-4 mt-4 w-full max-w-5xl">
+
+          <div class="bg-[#f7f7f7] p-4 rounded-lg shadow text-center h-40 flex items-center justify-center">Produto 1</div>
+          <div class="bg-[#f7f7f7] p-4 rounded-lg shadow text-center h-40 flex items-center justify-center">Produto 2</div>
+          <div class="bg-[#f7f7f7] p-4 rounded-lg shadow text-center h-40 flex items-center justify-center">Produto 3</div>
+        </div>
+      </section>
+
+      <section id="acessorios" class="flex flex-col md:gap-10 md:-ml-52 md:flex-row items-center mb-32">
+        <div class="bg-[#eac43a] text-white p-6 rounded-3xl flex items-center justify-between w-1xl md:w-3xl max-w-5xl h-32 md:h-48">
+          <div class="flex items-center space-x-3">
+            <img src="/assets/imagem/Design_sem_nome-removebg-preview.png" class="h-44 md:h-52 md:-mt-0 -mt-12 md:-ml-6 -ml-10">
+            <h2 class="text-2xl font-bold text-emerald-950">Acessórios</h2>
+          </div>
+          <a href="/pages/usuario/acessorios.html" class="underline text-sm">Ver todos</a>
+        </div>
+        <div class="flex md:grid grid-cols-1 sm:grid-cols-3 gap-4 mt-4 w-full max-w-5xl">
+          <div class="bg-[#f7f7f7] p-4 rounded-lg shadow text-center">
+            <img src="assets/imagem/cama.png" class="mx-auto h-32">
+            <p class="mt-2 text-green-900 font-medium">Cama</p>
+          </div>
+          <div class="bg-[#f7f7f7] p-4 rounded-lg shadow text-center">
+            <img src="assets/imagem/mijador.avif" class="mx-auto h-32">
+            <p class="mt-2 text-green-900 font-medium">Sanitário</p>
+          </div>
+          <div class="bg-[#f7f7f7] p-4 rounded-lg shadow text-center">
+            <img src="assets/imagem/Coleira.webp" class="mx-auto h-28">
+            <p class="mt-2 text-green-900 font-medium">Coleiras</p>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+  <!-- faixa fixo -->
+  <section class=" bg-cover bg-center h-40 w-full md:h-96    md:ml-0 drop-shadow-xl " style="background-image: url('/assets/imagem/O\ melhor\ que\ o\ mercado\ pode\ te\ proporcionar.png');">
+
+  </section>
+
+  <!-- marcas -->
+  <section class=" bg-gray-200 flex justify-center items-center w-full p-5 h-screen">
+    <div class="flex flex-col items-center justify-center gap-20 -mt-10">
+      <h1 class=" font-bold -ml-4 md:-ml-0 text-emerald-950 text-2xl">Marcas que trabalhamos</h1>
+      <div class=" flex flex-wrap items-center justify-center gap-16">
+        <img src="/assets/imagem/marca1.png" alt="">
+        <img src="/assets/imagem/marca2.png" alt="">
+        <img src="/assets/imagem/marca3.png" alt="">
+        <img src="/assets/imagem/marca4.png" alt="">
+        <img src="/assets/imagem/marca1.png" alt="">
+
+      </div>
+    </div>
+  </section>
+  <footer class="bg-[#317565] text-white py-8">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8">
+        <!-- Seção Sobre -->
+        <div class="mb-6">
+          <img src="/assets/imagem/BANNER - Copia.png" alt="Logo" class="w-32 mt-1">
+          <br>
+          <p class="text-sm">
+            Somos uma casa de ração dedicada a oferecer os melhores produtos para o seu pet. Qualidade e confiança em cada compra.
+          </p>
+        </div>
+
+        <!-- Links Rápidos -->
+        <div class="mb-6">
+          <h3 class="text-lg font-semibold mb-4">Links Rápidos</h3>
+          <ul class="text-sm">
+            <li class="mb-2"><a href="/" class="hover:underline">Início</a></li>
+            <li class="mb-2"><a href="/produtos" class="hover:underline">Produtos</a></li>
+            <li class="mb-2"><a href="/servicos" class="hover:underline">Serviços</a></li>
+            <li class="mb-2"><a href="/blog" class="hover:underline">Blog</a></li>
+            <li class="mb-2"><a href="/contato" class="hover:underline">Contato</a></li>
+          </ul>
+        </div>
+
+        <!-- Informações Legais -->
+        <div class="mb-6">
+          <h3 class="text-lg font-semibold mb-4">Informações Legais</h3>
+          <ul class="text-sm">
+            <li class="mb-2"><a href="/politica-de-privacidade" class="hover:underline">Política de Privacidade</a></li>
+            <li class="mb-2"><a href="/termos-de-uso" class="hover:underline">Termos de Uso</a></li>
+            <li class="mb-2"><a href="/trocas-e-devolucoes" class="hover:underline">Trocas e Devoluções</a></li>
+            <li class="mb-2"><a href="/duvidas-frequentes" class="hover:underline">Dúvidas Frequentes</a></li>
+          </ul>
+        </div>
+
+        <!-- Contato -->
+        <div class="mb-6">
+          <h3 class="text-lg font-semibold mb-4">Contato</h3>
+          <ul class="text-sm">
+            <li class="mb-2">Endereço: Rua dos Pets, 123 - Centro</li>
+            <li class="mb-2">Telefone: (11) 1234-5678</li>
+            <li class="mb-2">Email: contato@casaracao.com</li>
+          </ul>
+          <div class="mt-4">
+            <h4 class="font-semibold mb-2">Siga-nos</h4>
+            <div class="flex space-x-4">
+              <a href="#" class="hover:opacity-75">
+                <img src="assets/icons/icons8-instagram-48.png" alt="Facebook" class="w-10 h-10">
+              </a>
+              <a href="#" class="hover:opacity-75">
+                <img src="assets/icons/icons8-whatsapp-48.png" alt="Instagram" class="w-10 h-10">
+              </a>
+              <a href="#" class="hover:opacity-75">
+                <img src="assets/icons/icons8-facebook-novo-48.png" alt="WhatsApp" class="w-10 h-10">
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Direitos Autorais -->
+      <div class="border-t border-white/20 pt-6 mt-8 text-center">
+        <p class="text-sm">
+          &copy; 2023 Casa de Ração. Todos os direitos reservados.
+        </p>
+      </div>
+    </div>
+  </footer>
+  <script src="/assets/scripts/cache.js" defer></script>
+</body>
+
+</html>

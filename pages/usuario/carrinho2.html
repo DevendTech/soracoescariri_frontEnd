@@ -1,0 +1,64 @@
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Finalizar Compra</title>
+  <link href="/assets/output.css" rel="stylesheet">
+  <script src="/assets/scripts/cache.js" defer></script>
+  <script src="/assets/scripts/carrinho2.js?=283423842384" defer></script>
+</head>
+
+<body class="bg-gray-100 flex justify-center items-center min-h-screen p-4">
+  <div class="w-full max-w-lg bg-white shadow-lg rounded-xl p-8">
+    <h1 class="text-2xl font-bold text-center text-[#2A7D5E] mb-6">🛒 Finalizar Compra</h1>
+
+    <h2 class="text-lg font-semibold border-b pb-3 mb-4 text-gray-700">📍 Endereço de Entrega</h2>
+
+    <form id="checkout-form" class="grid gap-5">
+      <div>
+        <label class="block font-medium text-gray-600">CEP:</label>
+        <input type="text" id="cep" class="w-full p-3 border rounded-lg shadow-sm focus:ring-2 focus:ring-[#2A7D5E] transition" required>
+      </div>
+
+      <div>
+        <label class="block font-medium text-gray-600">Rua:</label>
+        <input type="text" id="rua" class="w-full p-3 border rounded-lg shadow-sm focus:ring-2 focus:ring-[#2A7D5E] transition" required>
+      </div>
+
+      <div class="grid grid-cols-2 gap-4">
+        <div>
+          <label class="block font-medium text-gray-600">Bairro:</label>
+          <input type="text" id="bairro" class="w-full p-3 border rounded-lg shadow-sm focus:ring-2 focus:ring-[#2A7D5E] transition" required>
+        </div>
+
+        <div>
+          <label class="block font-medium text-gray-600">Número:</label>
+          <input type="text" id="numero" class="w-full p-3 border rounded-lg shadow-sm focus:ring-2 focus:ring-[#2A7D5E] transition" required>
+        </div>
+      </div>
+
+      <div>
+        <label class="block font-medium text-gray-600">Telefone:</label>
+        <input type="text" id="telefone" class="w-full p-3 border rounded-lg shadow-sm focus:ring-2 focus:ring-[#2A7D5E] transition" required>
+      </div>
+
+      <div>
+        <label class="block font-medium text-gray-600">💳 Forma de Pagamento:</label>
+        <select id="forma-pagamento" class="w-full p-3 border rounded-lg shadow-sm focus:ring-2 focus:ring-[#2A7D5E] transition" required>
+          <option value="cartao">Cartão de Crédito</option>
+          <option value="pix">Pix</option>
+          <option value="dinheiro">Dinheiro</option>
+        </select>
+      </div>
+    </form>
+
+    <button onclick="confirmarPedido()" class="mt-6 w-full bg-[#2A7D5E] text-white py-3 rounded-lg text-lg font-semibold hover:bg-[#25684D] transition">
+      ✅ Confirmar Pedido
+    </button>
+  </div>
+
+
+</body>
+
+</html>

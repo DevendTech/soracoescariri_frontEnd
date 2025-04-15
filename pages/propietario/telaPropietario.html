@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Painel do Proprietário</title>
+  <link href="/assets/output.css" rel="stylesheet">
+  <script src="/assets/scripts/cache.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+  <script src="/assets/scripts/telaPropietario.js?=1231256" defer></script>
+
+</head>
+
+<body class="bg-gray-100">
+  <!-- Header -->
+  <header class="bg-[#48887A] w-full text-white p-2 flex justify-around items-center">
+    <div class="flex items-center">
+      <img src="/assets/imagem/BANNER - Copia.png" alt="Logo" class="h-16 mt-1">
+    </div>
+
+    <a id="buttonExit" href="telaLogin.html" type="button" class="bg-white text-center w-28 rounded-2xl h-12 cursor-pointer relative text-black text-xl font-semibold border-4 border-white group focus:outline-none">
+
+      <div class="bg-[#48887A] rounded-xl h-10 w-10 grid place-items-center absolute left-0 top-0 
+    group-hover:w-full group-focus:w-full z-10 duration-500">
+        <svg width="20px" height="20px" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+          <path fill="#000000" d="M224 480h640a32 32 0 1 1 0 64H224a32 32 0 0 1 0-64z"></path>
+          <path fill="#000000" d="m237.248 512 265.408 265.344a32 32 0 0 1-45.312 45.312l-288-288a32 32 0 0 1 0-45.312l288-288a32 32 0 1 1 45.312 45.312L237.248 512z"></path>
+        </svg>
+      </div>
+
+      <p class="translate-x-4">Sair</p>
+
+    </a>
+
+  </header>
+
+
+  <main class="p-6">
+    <h2 class="text-2xl font-bold mb-6">Gestão de Produtos</h2>
+
+    <!-- Cards de Funcionalidades -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <!-- Card Criar Produto -->
+      <a href="criarProduto.html" class="bg-white p-6 rounded-lg border-2 border-[#48887A] shadow-md hover:shadow-lg transition-shadow">
+        <h3 class="text-xl font-semibold mb-2">Criar Produto</h3>
+        <p class="text-gray-600">Adicione novos produtos ao estoque.</p>
+      </a>
+
+      <!-- Card editar Variavel -->
+      <a href="produtosCadastrados.html" class="bg-white p-6 rounded-lg border-2 border-[#48887A] shadow-md hover:shadow-lg transition-shadow">
+        <h3 class="text-xl font-semibold mb-2"> Produtos cadastrados</h3>
+        <p class="text-gray-600">Edite informações dos produtos cadastrados.</p>
+      </a>
+      <!-- Card Editar Produto -->
+      <a href="criarEditarVariates.html" class="bg-white p-6 rounded-lg border-2 border-[#48887A] shadow-md hover:shadow-lg transition-shadow">
+        <h3 class="text-xl font-semibold mb-2"> Criar e editar Variantes</h3>
+        <p class="text-gray-600">Edite informações dos produtos cadastrados.</p>
+      </a>
+
+
+    </div>
+  </main>
+</body>
+
+</html>

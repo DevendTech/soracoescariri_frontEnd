@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Seu Carrinho</title>
+  <link href="/assets/output.css" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="/assets/scripts/cache.js" defer></script>
+  <script src="/assets/scripts/carrinho1.js?=283423842384" defer></script>
+  
+</head>
+
+
+<body class="bg-gray-100 flex justify-center items-center min-h-screen p-4">
+  
+  <div class="bg-white shadow-lg rounded-xl p-8 max-w-lg w-full">
+    <h2 class="text-2xl font-bold text-[#2A7D5E] mb-6 text-center">📦 Resumo do Pedido</h2>
+    
+    <div class="bg-gray-50 p-4 rounded-lg shadow-sm">
+      <p id="resumo-pedido" class="text-gray-700 font-medium leading-6 whitespace-pre-line"></p>
+    </div>
+
+    <button onclick="enviarParaWhatsApp()" class="mt-6 w-full bg-[#2A7D5E] text-white py-3 rounded-lg text-lg font-semibold flex items-center justify-center gap-2 hover:bg-[#25684D] transition">
+      📲 Enviar para WhatsApp
+    </button>
+  </div>
+
+  <script>
+    function carregarDados() {
+      const carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
+      const endereco = JSON.parse(localStorage.getItem("endereco")) || {};
+
+      let mensagem = `*✅ Pedido Confirmado!*\n\n`;
+
+      carrinho.forEach(item => {
+        mensagem += `🐶🐱 *${item.produto}* - ${item.quantidade}x - R$ ${item.preco}\n`;
+      });
+
+      mensagem += `\n📍 *Endereço de Entrega:*\n`;
+      mensagem += `🏠 CEP: ${endereco.cep}\n🏡 Rua: ${endereco.rua}, Nº ${endereco.numero}\n📌 Bairro: ${endereco.bairro}\n📞 Telefone: ${endereco.telefone}\n`;
+
+      // Adiciona a forma de pagamento
+      mensagem += `\n💰 *Forma de Pagamento:* ${endereco.pagamento === 'cartao' ? '💳 Cartão de Crédito' : endereco.pagamento === 'pix' ? '⚡ Pix' : '💵 Dinheiro'}\n`;
+
+      document.getElementById("resumo-pedido").textContent = mensagem;
+      return encodeURIComponent(mensagem);
+    }
+
+    function enviarParaWhatsApp() {
+      const numero = "5588999999979";
+      const mensagem = carregarDados();
+      const whatsappURL = `https://wa.me/${numero}?text=${mensagem}`;
+      window.open(whatsappURL, '_blank');
+    }
+
+    document.addEventListener("DOMContentLoaded", carregarDados);
+  </script>
+
+</body>
+
+</html>
