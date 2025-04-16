@@ -39,7 +39,7 @@ form.addEventListener('submit', async (event) => {
     const confirmToken = localStorage.getItem('token');
     if (confirmToken) {
       // Redireciona apenas se o token foi salvo com sucesso
-      window.location.href = 'https://soracoescariri.com.br/pages/propietario/telaPropietario.html';
+      window.location.href = 'http://127.0.0.1:5500/pages/propietario/telaPropietario.html';
     } else {
       alert('Falha ao salvar o token. Tente novamente.');
     }
