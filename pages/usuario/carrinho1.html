@@ -8,88 +8,112 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="/assets/scripts/cache.js" defer></script>
   <script src="/assets/scripts/carrinho1.js?=283423842384" defer></script>
+  <script src="/assets/scripts/carrinho2.js?=283423842384" defer></script>
+  <script src="/assets/scripts/carrinho3.js?=283423842384" defer></script>
 </head>
 
-<body class="bg-gray-100">
-  <!-- <div class="container mx-auto p-4 md:p-6">
-    <h1 class="text-2xl font-bold text-center text-[#48887A]">Seu Carrinho</h1>
+<body class="bg-gray-100 flex p-10">
+  <div class=" flex flex-col md:flex-row items-start">
+    <div class="flex flex-col">
+      <div class="container mx-auto p-6 ">
+        <h1 class="text-1xl font-bold text-gray-700">Meu Carrinho</h1>
 
-    <div id="cart-container" class="mt-6 bg-white shadow-md rounded-lg p-4 md:p-6">
-      <table class="w-full text-sm md:text-base">
-        <thead>
-          <tr class="border-b">
-            <th class="text-left py-2">Produto</th>
-            <th class="text-center py-2">Quantidade</th>
-            <th class="text-right py-2">Preço</th>
-            <th class="text-right py-2">Total</th>
-            <th class="text-center py-2">Ação</th>
-          </tr>
-        </thead>
-        <tbody id="cart-items" class="text-gray-700">
-          <tr>
-            <td colspan="5" class="text-center py-4 text-gray-500">Seu carrinho está vazio</td>
-          </tr>
-        </tbody>
-      </table>
-      
-      <div class="mt-4 text-right font-bold text-lg">
-        Total da Compra: <span id="total-compra">R$ 0,00</span>
-      </div>
+        <div class="bg-white shadow-md rounded-lg p-6 mt-6">
+          <div class="flex justify-between items-center border-b pb-4 mb-4">
+            <h2 class="text-lg font-semibold">Produtos</h2>
+            <!-- <button class="text-red-500 font-semibold" onclick="limparCarrinho()">Limpar Carrinho</button> -->
+          </div>
 
-      <div class="flex flex-col md:flex-row justify-between items-center mt-6 gap-3">
-        <button onclick="limparCarrinho()" class="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-md w-full md:w-auto">Limpar Carrinho</button>
-        <div class="flex gap-3 w-full md:w-auto">
-          <a href="/index.html" class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-md w-full text-center">Continuar comprando</a>
-          <a onclick="irParaEntrega()" class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-md w-full text-center">Finalizar Compra</a>
+          <div id="cart-items" class="space-y-4">
+            <div class="flex justify-between items-center border-b pb-4">
+              <div class="flex items-center space-x-4">
+                <img src="produto.jpg" alt="Produto" class="w-16 h-16 rounded-md">
+                <span class="text-gray-700"></span>
+              </div>
+              <div class="flex items-center space-x-4">
+                <button class="bg-gray-200 px-2 py-1 rounded-md">-</button>
+                <span class="px-4 py-2 border rounded-md">1</span>
+                <button class="bg-gray-200 px-2 py-1 rounded-md">+</button>
+              </div>
+              <div>
+                <p>Quantidade</p>
+                <span class="text-gray-700 font-semibold">
+
+                </span>
+              </div>
+
+              <button class="text-red-500 text-lg"><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0,0,256,256">
+                  <g fill="#6baf89" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal">
+                    <g transform="scale(4,4)">
+                      <path d="M28,6c-2.209,0 -4,1.791 -4,4v2h-0.40039l-13.59961,2v3h44v-3l-13.59961,-2h-0.40039v-2c0,-2.209 -1.791,-4 -4,-4zM28,10h8v2h-8zM12,19l2.70117,33.32227c0.168,2.077 1.90428,3.67773 3.98828,3.67773h26.62305c2.084,0 3.81733,-1.59878 3.98633,-3.67578l2.625,-32.32422zM20,26c1.105,0 2,0.895 2,2v23h-3l-1,-23c0,-1.105 0.895,-2 2,-2zM32,26c1.657,0 3,1.343 3,3v22h-6v-22c0,-1.657 1.343,-3 3,-3zM44,26c1.105,0 2,0.895 2,2l-1,23h-3v-23c0,-1.105 0.895,-2 2,-2z"></path>
+                    </g>
+                  </g>
+                </svg></button>
+            </div>
+          </div>
+
+          <div class="mt-6 flex justify-between items-center font-semibold text-lg">
+            <span>Total</span>
+            <span></span>
+          </div>
+          <!-- 
+          <div class="mt-6 flex space-x-4">
+            <a href="/index.html" class="bg-gray-400 hover:bg-gray-600 text-white px-4 py-2 rounded-md w-full text-center">Continuar comprando</a>
+            <a onclick="irParaEntrega()" class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-md w-full text-center">Finalizar Compra</a>
+          </div> -->
+
         </div>
       </div>
     </div>
-  </div> -->
+    <div class="mt-16">
+      <div class="bg-white shadow-lg rounded-xl p-8 max-w-lg w-full">
+        <h2 class="text-1xl font-bold text-black mb-6 text-center">Resumo do Pedido</h2>
 
-
-   <div class="container mx-auto p-6">
-    <h1 class="text-2xl font-bold text-center text-gray-700">Carrinho</h1>
-    
-    <div class="bg-white shadow-md rounded-lg p-6 mt-6">
-      <div class="flex justify-between items-center border-b pb-4 mb-4">
-        <h2 class="text-lg font-semibold">Produtos</h2>
-        <button class="text-red-500 font-semibold" onclick="limparCarrinho()">Limpar Carrinho</button>
-      </div>
-      
-      <div id="cart-items" class="space-y-4">
-        <div class="flex justify-between items-center border-b pb-4">
-          <div class="flex items-center space-x-4">
-            <img src="produto.jpg" alt="Produto" class="w-16 h-16 rounded-md">
-            <span class="text-gray-700"></span>
-          </div>
-          <div class="flex items-center space-x-4">
-            <button class="bg-gray-200 px-2 py-1 rounded-md">-</button>
-            <span class="px-4 py-2 border rounded-md">1</span>
-            <button class="bg-gray-200 px-2 py-1 rounded-md">+</button>
-          </div>
-          <div>
-            <p>Quantidade</p>
-            <span class="text-gray-700 font-semibold">
-              
-            </span>
-          </div>
-         
-          <button class="text-red-500 text-lg">🗑</button>
+        <div class="bg-gray-50 p-4 rounded-lg shadow-sm">
+          <p id="resumo-pedido" class="text-gray-700 font-normal leading-6 whitespace-pre-line"></p>
         </div>
-      </div>
-      
-      <div class="mt-6 flex justify-between items-center font-semibold text-lg">
-        <span>Total:</span>
-        <span></span>
-      </div>
-      
-      <div class="mt-6 flex space-x-4">
-        <a href="/index.html" class="bg-gray-400 hover:bg-gray-600 text-white px-4 py-2 rounded-md w-full text-center">Continuar comprando</a>
-        <a onclick="irParaEntrega()" class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-md w-full text-center">Finalizar Compra</a>
+        <div class="mt-6 flex justify-between items-center font-semibold text-lg">
+          <span>Total</span>
+          <span></span>
+        </div>
+        <button onclick="enviarParaWhatsApp()" class="mt-6 w-full bg-[#2A7D5E] py-3 rounded-3xl text-lg font-semibold flex items-center justify-center gap-2 hover:bg-[#25684D] transition">
+           Enviar para WhatsApp
+        </button>
       </div>
 
+      <script>
+        function carregarDados() {
+          const carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
+          const endereco = JSON.parse(localStorage.getItem("endereco")) || {};
+
+          let mensagem = `*✅ Pedido Confirmado!*\n\n`;
+
+          carrinho.forEach(item => {
+            mensagem += `🐶🐱 *${item.produto}* - ${item.quantidade}x - R$ ${item.preco}\n`;
+          });
+
+          mensagem += `\n📍 *Endereço de Entrega:*\n`;
+          mensagem += `🏠 CEP: ${endereco.cep}\n🏡 Rua: ${endereco.rua}, Nº ${endereco.numero}\n📌 Bairro: ${endereco.bairro}\n📞 Telefone: ${endereco.telefone}\n`;
+
+          // Adiciona a forma de pagamento
+          mensagem += `\n💰 *Forma de Pagamento:* ${endereco.pagamento === 'cartao' ? '💳 Cartão de Crédito' : endereco.pagamento === 'pix' ? '⚡ Pix' : '💵 Dinheiro'}\n`;
+
+          document.getElementById("resumo-pedido").textContent = mensagem;
+          return encodeURIComponent(mensagem);
+        }
+
+        function enviarParaWhatsApp() {
+          const numero = "5588999999979";
+          const mensagem = carregarDados();
+          const whatsappURL = `https://wa.me/${numero}?text=${mensagem}`;
+          window.open(whatsappURL, '_blank');
+        }
+
+        document.addEventListener("DOMContentLoaded", carregarDados);
+      </script>
     </div>
   </div>
+
 </body>
 
 </html>
