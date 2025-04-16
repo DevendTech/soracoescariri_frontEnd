@@ -89,11 +89,19 @@
         button.addEventListener("click", function () {
           const product = JSON.parse(button.getAttribute("data-product"));
           const variant = select ? JSON.parse(select.value) : { weight: "Padrão", price: "0" };
+          let price = 0
+
+          if(Number(variant.discount) > 0) {
+            price = variant.price * (1 - Number(variant.discount) / 100);
+          }else {
+            price = variant.price
+          }
+
 
           let cart = JSON.parse(localStorage.getItem("carrinho")) || [];
           const newItem = {
             produto: product.produto.name,
-            preco: variant.price,
+            preco: price,
             quantidade: 1,
             peso: variant.weight,
             imagem: product.produto.pathimage ? `https://back.soracoescariri.com.br${product.produto.pathimage}` : 'default.jpg',
