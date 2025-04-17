@@ -15,14 +15,87 @@
 </head>
 
 <body class="bg-gray-200">
-  <header class=" fixed w-full bg-[#48887A] shadow -mt-28 z-10">
+  <header class="flex flex-col fixed w-full h-24 md:h-24 -mt-0 md:-mt-36 bg-white shadow z-10">
     <div id="alert-container"></div>
 
-    <div class=" flex gap-32 container items-center justify-around h-15">
+    <div class="flex mt-4 justify-between md:justify-around md:gap-40 container mx-auto items-center px-4">
       <div class="flex items-center">
-
-        <a href="/pages/propietario/telaLogin.html" class="text-sm underline"><img src="/assets/imagem/BANNER - Copia.png" alt="Logo" class="h-16 mt-1"></a>
+        <a href="/pages/propietario/telaLogin.html">
+          <img src="/assets/imagem/BANNER.jpeg" alt="Logo" class="h-14 rounded-[10px] mt-1">
+        </a>
       </div>
+      <nav class="hidden md:flex gap-12 items-center">
+
+        <div class="relative group">
+          <a href="#" class="relative group text-black font-medium transition hover:text-[#48887A]">
+            Caes
+            <span class="absolute left-0 -bottom-0.5 h-[2px] w-0 bg-[#48887A] transition-all duration-300 group-hover:w-full"></span>
+          </a>
+
+
+          <div id="dropdown-menu" class="absolute left-0 mt-0 w-40 bg-white shadow-lg rounded-b-2xl p-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 ease-in-out z-20 pointer-events-auto">
+            <ul class="space-y-2 text-sm text-gray-700">
+              <li><a href="#">Adulto</a></li>
+              <li><a href="#">Filhote</a></li>
+              <li><a href="#">Medicamentos</a></li>
+            </ul>
+          </div>
+
+        </div>
+        <div class="relative group">
+          <a href="#" class="relative group text-black font-medium transition hover:text-[#52c6ce]">
+            Gato
+            <span class="absolute left-0 -bottom-0.5 h-[2px] w-0 bg-[#52c6ce] transition-all duration-300 group-hover:w-full"></span>
+          </a>
+          <div class="absolute left-0 top-full mt-0 w-40 bg-white shadow-lg rounded-b-2xl p-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 ease-in-out z-20  ">
+            <ul class="space-y-2 text-sm text-gray-700">
+              <li><a href="#">Adulto</a></li>
+              <li><a href="#">Filhote</a></li>
+              <li><a href="#">Castrados</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="relative group">
+          <a href="#" class="relative group text-black font-medium transition hover:text-[#EC5C20]">
+            Medicamentos
+            <span class="absolute left-0 -bottom-0.5 h-[2px] w-0 bg-[#EC5C20] transition-all duration-300 group-hover:w-full"></span>
+          </a>
+          <div class="absolute left-0 top-full mt-0 w-40 bg-white shadow-lg rounded-b-2xl p-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 ease-in-out z-20 ">
+            <ul class="space-y-2 text-sm text-gray-700">
+              <li><a href="#">Adulto</a></li>
+              <li><a href="#">Filhote</a></li>
+              <li><a href="#">Castrados</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="relative group">
+          <a href="#" class="relative group text-black font-medium transition hover:text-[#48887A]">
+            Variáveis
+            <span class="absolute left-0 -bottom-0.5 h-[2px] w-0 bg-[#48887A] transition-all duration-300 group-hover:w-full"></span>
+          </a>
+          <div class="absolute left-0 top-full mt-0 w-40 bg-white shadow-lg rounded-b-2xl p-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 ease-in-out z-20 ">
+            <ul class="space-y-2 text-sm text-gray-700">
+              <li><a href="#">Equinos</a></li>
+              <li><a href="#">Suínos</a></li>
+              <li><a href="#">Peixes</a></li>
+              <li><a href="#">Porcos</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="relative group">
+          <a href="#" class="relative group text-black font-medium transition hover:text-[#EAC43A]">
+            Acessórios
+            <span class="absolute left-0 -bottom-0.5 h-[2px] w-0 bg-[#EAC43A] transition-all duration-300 group-hover:w-full"></span>
+          </a>
+          <div class="absolute left-0 top-full mt-0 w-40 bg-white shadow-lg rounded-b-2xl p-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 ease-in-out z-20 ">
+            <ul class="space-y-2 text-sm text-gray-700">
+              <li><a href="#">Brinquedos</a></li>
+              <li><a href="#">Coleiras</a></li>
+              <li><a href="#">Caminhas</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
 
       <div class="flex items-center space-x-5">
 
@@ -35,61 +108,107 @@
           <input type="text" class="outline-none text-[10px] bg-transparent w-full text-white font-normal px-4" placeholder="Pesquisar..." id="search" />
         </button>
 
-        <a href="/pages/usuario/carrinho2.html" id="carrinhoButton" class="relative ml-24 md:ml-0">
-          <img src="/assets/icons/icons8-sacola-de-compras-25.png" alt="Carrinho" class="h-6 w-6 scale-95 hover:scale-120 transition duration-150 ease-in-out">
+        <a target="_blank" href="/pages/usuario/carrinho1.html" id="carrinhoButton">
+          <img src="/assets/icons/icons8-carrinho-35.png" alt="Carrinho" class=" md:h-6 md:w-6 hover:scale-110 transition">
         </a>
 
       </div>
     </div>
 
-    <div class=" flex justify-center items-center gap-3.5 bg-white h-12">
-      <div class="flex flex-col -space-y-1.5">
-        <h2 class="max-w-72 text-sm font-medium text-emerald-900">Promoções imperdiveis para você,
-        </h2>
-        <h2 class="max-w-96 text-sm font-medium text-emerald-900">
-          econozime agora.
-        </h2>
-      </div>
-
-      <button class="relative cursor-pointer py-1 px-5 z-0 text-white text-base font-bold nded-full overflow-hidden bg-[#48887A] rounded-full transition-all duration-400 ease-in-out shadow-md hover:scale-105 hover:text-white hover:shadow-lg active:scale-90 before:absolute before:top-0 before:-left-full before:w-full before:h-full before:bg-gradient-to-r before:from-emerald-700 before:to-emerald-700 before:transition-all before:duration-500 before:ease-in-out before:z-[-1] before:rounded-full hover:before:left-0">
-        Economizar
-      </button>
-
-    </div>
 
   </header>
-  <!-- section do banner -->
-  <section class="w-full h-[250px] sm:h-[450px] md:h-[500px] lg:h-[600px] mt-28 bg-cover bg-center " style="background-image: url('/assets/imagem/BANNER.jpeg');">
-  </section>
-  <!-- carrosel -->
-  <div class="  w-full  h-32 flex justify-center max-w-md overflow-hidden  md:ml-[450px] z-1">
-    <div class="flex bg-gray-200 transition-transform duration-700 ease-in-out  z-1" id="carousel">
+  <div class=" w-full flex justify-center max-w-md overflow-hidden md:h-10  md:ml-[450px] md:mt-36 z-1">
+    <div class="flex transition-transform duration-700 ease-in-out  z-1" id="carousel">
       <!-- Slide 1 -->
-      <div class="w-full bg-gray-200 flex-shrink-0 flex items-center gap-4 justify-center text-center ">
+      <div class="w-full  flex-shrink-0 flex items-center gap-4 justify-center text-center ">
         <img src="/assets/icons/icons8-raio-24.png" alt="Ícone 1">
         <p class="mt-2 text-lg font-medium">Peça em segundos</p>
       </div>
       <!-- Slide 2 -->
-      <div class="w-full  bg-gray-200 flex-shrink-0 flex items-center gap-4 justify-center text-center">
+      <div class="w-full   flex-shrink-0 flex items-center gap-4 justify-center text-center">
         <img src="/assets/icons/icons8-entrega-30.png" alt="Ícone 2">
         <p class="mt-2 text-lg font-medium">Entrega rápida</p>
       </div>
       <!-- Slide 3 -->
-      <div class="w-full  bg-gray-200 flex-shrink-0 flex items-center gap-4 justify-center text-center">
+      <div class="w-full  flex-shrink-0 flex items-center gap-4 justify-center text-center">
         <img src="/assets/icons/icons8-garantia-30.png" alt="Ícone 3">
         <p class="mt-2 text-lg font-medium">Qualidade garantida</p>
       </div>
     </div>
   </div>
+  <!-- section do banner -->
+  <section class="w-full h-[250px] sm:h-[450px] md:hidden mt-16 bg-cover bg-center " style="background-image: url('/assets/imagem/BANNER.jpeg');">
+  </section>
+  <div class="flex min-h-screen bg-gray-200">
+    <!-- Sidebar Filtros (escondido em telas menores que md) -->
+    <aside class="hidden md:block w-64 h-screen bg-white shadow-md p-6 rounded-2xl mt-9 self-start">
+      <p class="mt-4 border-b-1 border-gray-300 w-full text-black ">Filtrar Produtos</p>
+      <button type="button" id="clear-filters" class=" flex mt-4text-black text-[13px] gap-2 mt-2">Limpar filtros
+        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="15" height="15" viewBox="0 0 50 50">
+          <path d="M 21 0 C 19.355469 0 18 1.355469 18 3 L 18 5 L 10.1875 5 C 10.0625 4.976563 9.9375 4.976563 9.8125 5 L 8 5 C 7.96875 5 7.9375 5 7.90625 5 C 7.355469 5.027344 6.925781 5.496094 6.953125 6.046875 C 6.980469 6.597656 7.449219 7.027344 8 7 L 9.09375 7 L 12.6875 47.5 C 12.8125 48.898438 14.003906 50 15.40625 50 L 34.59375 50 C 35.996094 50 37.1875 48.898438 37.3125 47.5 L 40.90625 7 L 42 7 C 42.359375 7.003906 42.695313 6.816406 42.878906 6.503906 C 43.058594 6.191406 43.058594 5.808594 42.878906 5.496094 C 42.695313 5.183594 42.359375 4.996094 42 5 L 32 5 L 32 3 C 32 1.355469 30.644531 0 29 0 Z M 21 2 L 29 2 C 29.5625 2 30 2.4375 30 3 L 30 5 L 20 5 L 20 3 C 20 2.4375 20.4375 2 21 2 Z M 11.09375 7 L 38.90625 7 L 35.3125 47.34375 C 35.28125 47.691406 34.910156 48 34.59375 48 L 15.40625 48 C 15.089844 48 14.71875 47.691406 14.6875 47.34375 Z M 18.90625 9.96875 C 18.863281 9.976563 18.820313 9.988281 18.78125 10 C 18.316406 10.105469 17.988281 10.523438 18 11 L 18 44 C 17.996094 44.359375 18.183594 44.695313 18.496094 44.878906 C 18.808594 45.058594 19.191406 45.058594 19.503906 44.878906 C 19.816406 44.695313 20.003906 44.359375 20 44 L 20 11 C 20.011719 10.710938 19.894531 10.433594 19.6875 10.238281 C 19.476563 10.039063 19.191406 9.941406 18.90625 9.96875 Z M 24.90625 9.96875 C 24.863281 9.976563 24.820313 9.988281 24.78125 10 C 24.316406 10.105469 23.988281 10.523438 24 11 L 24 44 C 23.996094 44.359375 24.183594 44.695313 24.496094 44.878906 C 24.808594 45.058594 25.191406 45.058594 25.503906 44.878906 C 25.816406 44.695313 26.003906 44.359375 26 44 L 26 11 C 26.011719 10.710938 25.894531 10.433594 25.6875 10.238281 C 25.476563 10.039063 25.191406 9.941406 24.90625 9.96875 Z M 30.90625 9.96875 C 30.863281 9.976563 30.820313 9.988281 30.78125 10 C 30.316406 10.105469 29.988281 10.523438 30 11 L 30 44 C 29.996094 44.359375 30.183594 44.695313 30.496094 44.878906 C 30.808594 45.058594 31.191406 45.058594 31.503906 44.878906 C 31.816406 44.695313 32.003906 44.359375 32 44 L 32 11 C 32.011719 10.710938 31.894531 10.433594 31.6875 10.238281 C 31.476563 10.039063 31.191406 9.941406 30.90625 9.96875 Z"></path>
+        </svg>
+      </button>
 
-  <div class="flex items-center justify-center min-h-screen bg-gray-200">
-    <div id="product-container" class="grid grid-cols-2 md:grid-cols-4 gap-10 mt-4 p-5">
+      <h2 class="mt-4 border-b-1 border-gray-300 w-full text-black">Filtrar Categoria</h2>
+      <form id="category-filter-form" class="space-y-3 mt-3">
+        <div>
+          <input type="radio" id="cao" name="category" value="cao" class="mr-2">
+          <label for="cao" class="text-gray-700">Cão</label>
+        </div>
+        <div>
+          <input type="radio" id="filhote" name="category" value="filhote" class="mr-2">
+          <label for="filhote" class="text-gray-700">Filhote</label>
+        </div>
+        <div>
+          <input type="radio" id="acessorios" name="category" value="acessorios" class="mr-2">
+          <label for="acessorios" class="text-gray-700">Acessórios</label>
+        </div>
+        <div>
+          <input type="radio" id="medicamentos" name="category" value="medicamentos" class="mr-2">
+          <label for="medicamentos" class="text-gray-700">Medicamentos</label>
+        </div>
+      </form>
 
-    </div>
+
+      <h2 class="mt-4 border-b-1 border-gray-300 w-full text-black">Filtrar por Preço</h2>
+
+      <form id="price-filter-form" class="space-y-3 mt-3">
+        <div>
+          <input type="radio" id="range1" name="price" value="50-100" class="mr-2">
+          <label for="range1" class="text-gray-700">R$ 50 - R$ 100</label>
+        </div>
+        <div>
+          <input type="radio" id="range2" name="price" value="100-200" class="mr-2">
+          <label for="range2" class="text-gray-700">R$ 100 - R$ 200</label>
+        </div>
+        <div>
+          <input type="radio" id="range3" name="price" value="200-300" class="mr-2">
+          <label for="range3" class="text-gray-700">R$ 200 - R$ 300</label>
+        </div>
+        <div>
+          <input type="radio" id="range4" name="price" value="300+" class="mr-2">
+          <label for="range4" class="text-gray-700">Acima de R$ 300</label>
+        </div>
+
+      </form>
+
+    </aside>
+
+    <!-- Grid de Produtos -->
+    <main class="flex-1 p-5">
+      <div id="product-container" class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-4">
+        <!-- Produtos serão inseridos aqui -->
+      </div>
+    </main>
   </div>
-  <div id="popup-overlay" class="hidden fixed inset-0 bg-black/10 backdrop-blur-sm z-40" onclick="closePopup()"></div>
 
-  <div id="popup" class="fixed top-0 right-0 h-full w-full md:w-[450px] bg-white shadow-lg z-50 transform translate-x-full transition-transform duration-300 ease-in-out">
+
+
+  <!-- Overlay escuro do popup -->
+  <div id="popup-overlay" class="hidden fixed inset-0 bg-black/10 backdrop-blur-sm z-[90]" onclick="closePopup()"></div>
+
+  <!-- Popup lateral -->
+  <div id="popup" class="fixed top-0 right-0 h-full w-full md:w-[450px] bg-white shadow-lg z-[100] transform translate-x-full transition-transform duration-300 ease-in-out">
     <div class="flex justify-between items-center p-4 border-b">
       <h2 class="text-lg font-semibold text-gray-800">Detalhes do Produto</h2>
       <button onclick="closePopup()" class="text-gray-500 hover:text-red-500 text-xl font-bold">&times;</button>
@@ -98,10 +217,6 @@
       <!-- Conteúdo do produto será inserido via JavaScript -->
     </div>
   </div>
-
-
-
-
 
 
 </body>
