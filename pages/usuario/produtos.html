@@ -9,7 +9,7 @@
   <meta http-equiv="Expires" content="0">
   <script src="/assets/scripts/cache.js" defer></script>
   <script src="/assets/scripts/index.js" defer></script>
-  <script src="/assets/scripts/produtosCachorros.js?=283423842384" defer></script>
+  <script src="/assets/scripts/produtos.js?=283423842384" defer></script>
   <link href="/assets/output.css" rel="stylesheet">
 
 </head>
@@ -141,7 +141,7 @@
   </section>
   <div class="flex min-h-screen bg-gray-200">
     <!-- Sidebar Filtros (escondido em telas menores que md) -->
-    <aside class="hidden md:block w-64 h-screen bg-white shadow-md p-6 rounded-2xl mt-9 self-start">
+    <aside class="hidden md:block w-64 bg-white shadow-md p-6 rounded-2xl mt-9 self-start">
       <p class="mt-4 border-b-1 border-gray-300 w-full text-black ">Filtrar Produtos</p>
       <button type="button" id="clear-filters" class=" flex mt-4text-black text-[13px] gap-2 mt-2">Limpar filtros
         <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="15" height="15" viewBox="0 0 50 50">
@@ -149,44 +149,79 @@
         </svg>
       </button>
 
-      <h2 class="mt-4 border-b-1 border-gray-300 w-full text-black">Filtrar Categoria</h2>
+      <h2 class="mt-4 border-b-1 border-gray-300 w-full text-black">Filtrar Produtos</h2>
       <form id="category-filter-form" class="space-y-3 mt-3">
         <div>
-          <input type="radio" id="cao" name="category" value="cao" class="mr-2">
-          <label for="cao" class="text-gray-700">Cão</label>
+          <input type="checkbox" id="racao" name="produtos" value="racao" class="mr-2">
+          <label for="cao" class="text-gray-700">Ração</label>
         </div>
         <div>
-          <input type="radio" id="filhote" name="category" value="filhote" class="mr-2">
-          <label for="filhote" class="text-gray-700">Filhote</label>
+          <input type="checkbox" id="medicamentos" name="produtos" value="medicamentos" class="mr-2">
+          <label for="acessorios" class="text-gray-700">Medicamentos</label>
         </div>
         <div>
-          <input type="radio" id="acessorios" name="category" value="acessorios" class="mr-2">
-          <label for="acessorios" class="text-gray-700">Acessórios</label>
-        </div>
-        <div>
-          <input type="radio" id="medicamentos" name="category" value="medicamentos" class="mr-2">
-          <label for="medicamentos" class="text-gray-700">Medicamentos</label>
+          <input type="checkbox" id="petshop" name="produtos" value="petshop" class="mr-2">
+          <label for="medicamentos" class="text-gray-700">Acessórios</label>
         </div>
       </form>
 
+      <h2 class="mt-4 border-b-1 border-gray-300 w-full text-black">Filtrar Animais</h2>
+      <form id="category-filter-form" class="space-y-3 mt-3">
+        <div>
+          <input type="checkbox" id="cao" name="animal" value="Cao" class="mr-2">
+          <label for="cao" class="text-gray-700">Cão</label>
+        </div>
+        <div>
+          <input type="checkbox" id="gato" name="animal" value="Gato" class="mr-2">
+          <label for="filhote" class="text-gray-700">Gato</label>
+        </div>
+        <div>
+          <input type="checkbox" id="equinos" name="animal" value="Equinos" class="mr-2">
+          <label for="acessorios" class="text-gray-700">Equinos</label>
+        </div>
+        <div>
+          <input type="checkbox" id="aves" name="animal" value="Aves" class="mr-2">
+          <label for="medicamentos" class="text-gray-700">Aves</label>
+        </div>
+        <div>
+          <input type="checkbox" id="peixes" name="animal" value="Peixes" class="mr-2">
+          <label for="medicamentos" class="text-gray-700">Peixes</label>
+        </div>
+        <div>
+          <input type="checkbox" id="porcos" name="animal" value="porcos" class="mr-2">
+          <label for="medicamentos" class="text-gray-700">Porcos</label>
+        </div>
+      </form>
+
+      <h2 class="mt-4 border-b-1 border-gray-300 w-full text-black">Filtrar Idade</h2>
+      <form id="category-filter-form" class="space-y-3 mt-3">
+        <div>
+          <input type="checkbox" id="adulto" name="idade" value="adulto" class="mr-2">
+          <label for="cao" class="text-gray-700">Adulto</label>
+        </div>
+        <div>
+          <input type="checkbox" id="filhote" name="idade" value="filhote" class="mr-2">
+          <label for="filhote" class="text-gray-700">Filhote</label>
+        </div>
+      </form>
 
       <h2 class="mt-4 border-b-1 border-gray-300 w-full text-black">Filtrar por Preço</h2>
 
       <form id="price-filter-form" class="space-y-3 mt-3">
         <div>
-          <input type="radio" id="range1" name="price" value="50-100" class="mr-2">
+          <input type="checkbox" id="range1" name="price" value="50-100" class="mr-2">
           <label for="range1" class="text-gray-700">R$ 50 - R$ 100</label>
         </div>
         <div>
-          <input type="radio" id="range2" name="price" value="100-200" class="mr-2">
+          <input type="checkbox" id="range2" name="price" value="100-200" class="mr-2">
           <label for="range2" class="text-gray-700">R$ 100 - R$ 200</label>
         </div>
         <div>
-          <input type="radio" id="range3" name="price" value="200-300" class="mr-2">
+          <input type="checkbox" id="range3" name="price" value="200-300" class="mr-2">
           <label for="range3" class="text-gray-700">R$ 200 - R$ 300</label>
         </div>
         <div>
-          <input type="radio" id="range4" name="price" value="300+" class="mr-2">
+          <input type="checkbox" id="range4" name="price" value="300+" class="mr-2">
           <label for="range4" class="text-gray-700">Acima de R$ 300</label>
         </div>
 

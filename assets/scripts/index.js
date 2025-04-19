@@ -20,3 +20,23 @@ toggleBtn.addEventListener('click', () => {
   mobileMenu.classList.toggle('hidden');
 });
 
+document.getElementById('buttonCao').addEventListener('click', function() {
+  localStorage.setItem('checkboxCao', 'true')
+  window.location.href = '/pages/usuario/produtos.html'
+})
+document.getElementById('buttonGato').addEventListener('click', function() {
+  localStorage.setItem('checkboxGato', 'true')
+  window.location.href = '/pages/usuario/produtos.html'
+})
+document.getElementById('buttonEAPP').addEventListener('click', function() {
+  localStorage.setItem('checkboxEAPP', 'true')
+  window.location.href = '/pages/usuario/produtos.html'
+})
+document.getElementById('buttonMedicamentos').addEventListener('click', function() {
+  localStorage.setItem('checkboxMedicamentos', 'true')
+  window.location.href = '/pages/usuario/produtos.html'
+})
+document.getElementById('buttonAcessorios').addEventListener('click', function() {
+  localStorage.setItem('checkboxAcessorios', 'true')
+  window.location.href = '/pages/usuario/produtos.html'
+})
