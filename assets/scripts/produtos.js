@@ -48,8 +48,12 @@ document.addEventListener("DOMContentLoaded", function () {
     } else if(localStorage.getItem('checkboxAcessorios') === 'true'){
       document.getElementById('petshop').checked = true;
       localStorage.removeItem('checkboxAcessorios')
+    } else if(localStorage.getItem('checkboxRacaoCaoAdulto') === 'true'){
+      document.getElementById('cao').checked = true;
+      document.getElementById('racao').checked = true;
+      document.getElementById('adulto').checked = true;
+      localStorage.removeItem('checkboxRacaoCaoAdulto')
     }
-
     
     filterCheckboxes.forEach(checkbox => {
       checkbox.addEventListener('change', filterProducts);

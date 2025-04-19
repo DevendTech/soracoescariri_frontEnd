@@ -40,3 +40,7 @@ document.getElementById('buttonAcessorios').addEventListener('click', function()
   localStorage.setItem('checkboxAcessorios', 'true')
   window.location.href = '/pages/usuario/produtos.html'
 })
+document.getElementById('buttonRacaoCaoAdulto').addEventListener('click', function() {
+  localStorage.setItem('checkboxRacaoCaoAdulto', 'true')
+  window.location.href = '/pages/usuario/produtos.html'
+})
