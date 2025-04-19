@@ -140,6 +140,7 @@ document.addEventListener("DOMContentLoaded", function () {
     setTimeout(() => alertContainer.innerHTML = '', 3000);
   }
 
+<<<<<<< HEAD
   // Função do popup
   function showPopup(product, variant) {
     const popup = document.getElementById('popup');
@@ -149,6 +150,28 @@ document.addEventListener("DOMContentLoaded", function () {
     const imageUrl = product.produto.pathimage
       ? `https://back.soracoescariri.com.br${product.produto.pathimage}`
       : 'default.jpg';
+=======
+        button.addEventListener("click", function () {
+          const product = JSON.parse(button.getAttribute("data-product"));
+          const variant = select ? JSON.parse(select.value) : { weight: "Padrão", price: "0" };
+          let price = 0
+
+          if(Number(variant.discount) > 0) {
+            price = variant.price * (1 - Number(variant.discount) / 100);
+          }else {
+            price = variant.price
+          }
+
+
+          let cart = JSON.parse(localStorage.getItem("carrinho")) || [];
+          const newItem = {
+            produto: product.produto.name,
+            preco: price,
+            quantidade: 1,
+            peso: variant.weight,
+            imagem: product.produto.pathimage ? `https://back.soracoescariri.com.br${product.produto.pathimage}` : 'default.jpg',
+          };
+>>>>>>> Matheus
 
     popupContent.innerHTML = `
         <img src="${imageUrl}" alt="${product.produto.name}" class="w-full h-60 object-contain mb-4 rounded-lg">
