@@ -40,6 +40,18 @@ document.getElementById('buttonGato').addEventListener('click', function() {
   localStorage.setItem('checkboxGato', 'true')
   window.location.href = '/pages/usuario/produtos.html'
 })
+document.getElementById('buttonRacaoGato').addEventListener('click', function() {
+  localStorage.setItem('checkboxRacaoGato', 'true')
+  window.location.href = '/pages/usuario/produtos.html'
+})
+document.getElementById('buttonAreiaGato').addEventListener('click', function() {
+  localStorage.setItem('checkboxAreiaGato', 'true')
+  window.location.href = '/pages/usuario/produtos.html'
+})
+document.getElementById('buttonMedicamentoGato').addEventListener('click', function() {
+  localStorage.setItem('checkboxMedicamentoGato', 'true')
+  window.location.href = '/pages/usuario/produtos.html'
+})
 document.getElementById('buttonEAPP').addEventListener('click', function() {
   localStorage.setItem('checkboxEAPP', 'true')
   window.location.href = '/pages/usuario/produtos.html'

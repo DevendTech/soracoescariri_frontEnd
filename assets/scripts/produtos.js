@@ -50,6 +50,18 @@ document.addEventListener("DOMContentLoaded", function () {
     } else if(localStorage.getItem('checkboxGato') === 'true'){
       document.getElementById('gato').checked = true;
       localStorage.removeItem('checkboxGato')
+    }  else if(localStorage.getItem('checkboxRacaoGato') === 'true'){
+      document.getElementById('gato').checked = true;
+      document.getElementById('racao').checked = true;
+      localStorage.removeItem('checkboxRacaoGato')
+    } else if(localStorage.getItem('checkboxAreiaGato') === 'true'){
+      document.getElementById('gato').checked = true;
+      // document.getElementById('areia').checked = true;
+      localStorage.removeItem('checkboxAreiaGato')
+    } else if(localStorage.getItem('checkboxMedicamentoGato') === 'true'){
+      document.getElementById('gato').checked = true;
+      document.getElementById('medicamentos').checked = true;
+      localStorage.removeItem('checkboxMedicamentoGato')
     } else if(localStorage.getItem('checkboxEAPP') === 'true') {
       document.getElementById('equinos').checked = true;
       document.getElementById('aves').checked = true;
