@@ -33,6 +33,20 @@ document.addEventListener("DOMContentLoaded", function () {
     if(localStorage.getItem('checkboxCao') === 'true') {
       document.getElementById('cao').checked = true;
       localStorage.removeItem('checkboxCao')
+    } else if(localStorage.getItem('checkboxRacaoCaoAdulto') === 'true'){
+      document.getElementById('cao').checked = true;
+      document.getElementById('racao').checked = true;
+      document.getElementById('adulto').checked = true;
+      localStorage.removeItem('checkboxRacaoCaoAdulto')
+    } else if(localStorage.getItem('checkboxRacaoCaoFilhote') === 'true'){
+      document.getElementById('cao').checked = true;
+      document.getElementById('racao').checked = true;
+      document.getElementById('filhote').checked = true;
+      localStorage.removeItem('checkboxRacaoCaoFilhote')
+    } else if(localStorage.getItem('checkboxMedicamentoCao') === 'true'){
+      document.getElementById('cao').checked = true;
+      document.getElementById('medicamentos').checked = true;
+      localStorage.removeItem('checkboxMedicamentoCao')
     } else if(localStorage.getItem('checkboxGato') === 'true'){
       document.getElementById('gato').checked = true;
       localStorage.removeItem('checkboxGato')
@@ -48,12 +62,7 @@ document.addEventListener("DOMContentLoaded", function () {
     } else if(localStorage.getItem('checkboxAcessorios') === 'true'){
       document.getElementById('petshop').checked = true;
       localStorage.removeItem('checkboxAcessorios')
-    } else if(localStorage.getItem('checkboxRacaoCaoAdulto') === 'true'){
-      document.getElementById('cao').checked = true;
-      document.getElementById('racao').checked = true;
-      document.getElementById('adulto').checked = true;
-      localStorage.removeItem('checkboxRacaoCaoAdulto')
-    }
+    }   
     
     filterCheckboxes.forEach(checkbox => {
       checkbox.addEventListener('change', filterProducts);

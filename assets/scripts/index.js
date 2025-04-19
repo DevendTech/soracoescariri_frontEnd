@@ -24,6 +24,18 @@ document.getElementById('buttonCao').addEventListener('click', function() {
   localStorage.setItem('checkboxCao', 'true')
   window.location.href = '/pages/usuario/produtos.html'
 })
+document.getElementById('buttonRacaoCaoAdulto').addEventListener('click', function() {
+  localStorage.setItem('checkboxRacaoCaoAdulto', 'true')
+  window.location.href = '/pages/usuario/produtos.html'
+})
+document.getElementById('buttonRacaoCaoFilhote').addEventListener('click', function() {
+  localStorage.setItem('checkboxRacaoCaoFilhote', 'true')
+  window.location.href = '/pages/usuario/produtos.html'
+})
+document.getElementById('buttonMedicamentoCao').addEventListener('click', function() {
+  localStorage.setItem('checkboxMedicamentoCao', 'true')
+  window.location.href = '/pages/usuario/produtos.html'
+})
 document.getElementById('buttonGato').addEventListener('click', function() {
   localStorage.setItem('checkboxGato', 'true')
   window.location.href = '/pages/usuario/produtos.html'
@@ -38,9 +50,5 @@ document.getElementById('buttonMedicamentos').addEventListener('click', function
 })
 document.getElementById('buttonAcessorios').addEventListener('click', function() {
   localStorage.setItem('checkboxAcessorios', 'true')
-  window.location.href = '/pages/usuario/produtos.html'
-})
-document.getElementById('buttonRacaoCaoAdulto').addEventListener('click', function() {
-  localStorage.setItem('checkboxRacaoCaoAdulto', 'true')
   window.location.href = '/pages/usuario/produtos.html'
 })
