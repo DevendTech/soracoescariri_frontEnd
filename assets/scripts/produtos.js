@@ -68,6 +68,19 @@ document.addEventListener("DOMContentLoaded", function () {
       document.getElementById('peixes').checked = true;
       document.getElementById('porcos').checked = true;
       localStorage.removeItem('checkboxEAPP')
+    } else if(localStorage.getItem('checkboxRacaoEquinioEporco') === 'true') {
+      document.getElementById('equinos').checked = true;
+      document.getElementById('porcos').checked = true;
+      document.getElementById('racao').checked = true;
+      localStorage.removeItem('checkboxRacaoEquinioEporco');
+    } else if(localStorage.getItem('checkboxRacaoAves') === 'true') {
+      document.getElementById('aves').checked = true;
+      document.getElementById('racao').checked = true;
+      localStorage.removeItem('checkboxRacaoAves');
+    } else if(localStorage.getItem('checkboxRacaoPeixes') === 'true') {
+      document.getElementById('peixes').checked = true;
+      document.getElementById('racao').checked = true;
+      localStorage.removeItem('checkboxRacaoPeixes')
     } else if(localStorage.getItem('checkboxMedicamentos') === 'true'){
       document.getElementById('medicamentos').checked = true;
       localStorage.removeItem('checkboxMedicamentos')

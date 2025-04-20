@@ -56,6 +56,18 @@ document.getElementById('buttonEAPP').addEventListener('click', function() {
   localStorage.setItem('checkboxEAPP', 'true')
   window.location.href = '/pages/usuario/produtos.html'
 })
+document.getElementById('buttonRacaoEquinioEporco').addEventListener('click', function() {
+  localStorage.setItem('checkboxRacaoEquinioEporco', 'true')
+  window.location.href = '/pages/usuario/produtos.html'
+})
+document.getElementById('buttonRacaoAves').addEventListener('click', function() {
+  localStorage.setItem('checkboxRacaoAves', 'true')
+  window.location.href = '/pages/usuario/produtos.html'
+})
+document.getElementById('buttonRacaoPeixes').addEventListener('click', function() {
+  localStorage.setItem('checkboxRacaoPeixes', 'true')
+  window.location.href = '/pages/usuario/produtos.html'
+})
 document.getElementById('buttonMedicamentos').addEventListener('click', function() {
   localStorage.setItem('checkboxMedicamentos', 'true')
   window.location.href = '/pages/usuario/produtos.html'
