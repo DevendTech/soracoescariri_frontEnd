@@ -9,7 +9,6 @@
   <script src="/assets/scripts/cache.js" defer></script>
   <script src="/assets/scripts/carrinho1.js?=283423842384" defer></script>
   <script src="/assets/scripts/carrinho2.js?=283423842384" defer></script>
-  <script src="/assets/scripts/carrinho3.js?=283423842384" defer></script>
 </head>
 
 <body class="bg-gray-100 flex p-10">
@@ -18,10 +17,10 @@
       <div class="container mx-auto p-6 ">
         <h1 class="text-1xl font-bold text-gray-700">Meu Carrinho</h1>
 
-        <div class="bg-white shadow-md rounded-lg p-6 mt-6">
+        <div class="bg-white shadow-md rounded-lg w-full p-6 mt-6">
           <div class="flex justify-between items-center border-b pb-4 mb-4">
             <h2 class="text-lg font-semibold">Produtos</h2>
-            <!-- <button class="text-red-500 font-semibold" onclick="limparCarrinho()">Limpar Carrinho</button> -->
+          
           </div>
 
           <div id="cart-items" class="space-y-4">
@@ -56,11 +55,7 @@
             <span>Total</span>
             <span></span>
           </div>
-          <!-- 
-          <div class="mt-6 flex space-x-4">
-            <a href="/index.html" class="bg-gray-400 hover:bg-gray-600 text-white px-4 py-2 rounded-md w-full text-center">Continuar comprando</a>
-            <a onclick="irParaEntrega()" class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-md w-full text-center">Finalizar Compra</a>
-          </div> -->
+
 
         </div>
       </div>
@@ -80,37 +75,6 @@
            Enviar para WhatsApp
         </button>
       </div>
-
-      <script>
-        function carregarDados() {
-          const carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
-          const endereco = JSON.parse(localStorage.getItem("endereco")) || {};
-
-          let mensagem = `*✅ Pedido Confirmado!*\n\n`;
-
-          carrinho.forEach(item => {
-            mensagem += `🐶🐱 *${item.produto}* - ${item.quantidade}x - R$ ${item.preco}\n`;
-          });
-
-          mensagem += `\n📍 *Endereço de Entrega:*\n`;
-          mensagem += `🏠 CEP: ${endereco.cep}\n🏡 Rua: ${endereco.rua}, Nº ${endereco.numero}\n📌 Bairro: ${endereco.bairro}\n📞 Telefone: ${endereco.telefone}\n`;
-
-          // Adiciona a forma de pagamento
-          mensagem += `\n💰 *Forma de Pagamento:* ${endereco.pagamento === 'cartao' ? '💳 Cartão de Crédito' : endereco.pagamento === 'pix' ? '⚡ Pix' : '💵 Dinheiro'}\n`;
-
-          document.getElementById("resumo-pedido").textContent = mensagem;
-          return encodeURIComponent(mensagem);
-        }
-
-        function enviarParaWhatsApp() {
-          const numero = "5588999999979";
-          const mensagem = carregarDados();
-          const whatsappURL = `https://wa.me/${numero}?text=${mensagem}`;
-          window.open(whatsappURL, '_blank');
-        }
-
-        document.addEventListener("DOMContentLoaded", carregarDados);
-      </script>
     </div>
   </div>
 

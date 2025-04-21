@@ -10,5 +10,5 @@ function confirmarPedido() {
   };
 
   localStorage.setItem("endereco", JSON.stringify(endereco));
-  window.location.href = "carrinho3.html";
+  window.location.href = "carrinho1.html";
 }

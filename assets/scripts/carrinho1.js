@@ -2,48 +2,6 @@ function carregarCarrinho() {
   return JSON.parse(localStorage.getItem("carrinho")) || [];
 }
 
-// function renderizarCarrinho() {
-//   const carrinho = carregarCarrinho();
-//   const cartItemsContainer = document.getElementById("cart-items");
-//   const totalCompraSpan = document.getElementById("total-compra");
-
-//   cartItemsContainer.innerHTML = "";
-//   let totalCompra = 0;
-
-//   if (carrinho.length === 0) {
-//     cartItemsContainer.innerHTML = `<tr><td colspan="5" class="text-center text-gray-500">Seu carrinho está vazio</td></tr>`;
-//     totalCompraSpan.textContent = "R$ 0,00";
-//     return;
-//   }
-
-//   carrinho.forEach((item, index) => {
-//     const total = item.preco * item.quantidade;
-//     totalCompra += total;
-//     console.log(item)
-
-//     const tr = document.createElement("tr");
-//     tr.innerHTML = `
-//   <td class="py-2 flex items-center gap-2">
-//     <img src="${item.imagem}" alt="${item.produto}" class="w-12 h-12 object-cover rounded-md">
-//     ${item.produto} (${item.peso})
-//   </td>
-//   <td class="text-center">
-//     <button onclick="alterarQuantidade(${index}, -1)" class="px-2 bg-gray-300 rounded">➖</button>
-//     ${item.quantidade}
-//     <button onclick="alterarQuantidade(${index}, 1)" class="px-2 bg-gray-300 rounded">➕</button>
-//   </td>
-//   <span class="text-right">R$ ${item.preco}</span>
-//   <td class="text-right">R$ ${total.toFixed(2)}</td>
-//   <td class="text-center">
-//     <button onclick="removerItem(${index})" class="bg-red-500 text-white px-2 py-1 rounded">🗑️</button>
-//   </td>
-// `;
-//     cartItemsContainer.appendChild(tr);
-//   });
-
-//   totalCompraSpan.textContent = `R$ ${totalCompra.toFixed(2)}`;
-// }
-
 function renderizarCarrinho() {
   const carrinho = carregarCarrinho() || [];
   const cartItemsContainer = document.getElementById("cart-items");
@@ -64,7 +22,7 @@ function renderizarCarrinho() {
 
     const div = document.createElement("div");
     div.classList.add(
-      "flex", "items-center", "justify-between", "border-b", "pb-4", 
+      "flex", "items-center", "justify-between", "border-b", "pb-4",
       "gap-4", "flex-wrap", "md:flex-nowrap"
     );
 
@@ -165,3 +123,36 @@ function irParaEntrega() {
 }
 
 document.addEventListener("DOMContentLoaded", renderizarCarrinho);
+
+
+
+
+function carregarDados() {
+  const carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
+  const endereco = JSON.parse(localStorage.getItem("endereco")) || {};
+
+  let mensagem = `Confirmar pedido\n\n`;
+
+  carrinho.forEach(item => {
+    mensagem += `${item.produto}* - ${item.quantidade}x - R$ ${item.preco}\n`;
+  });
+
+  mensagem += `\n Endereço de Entrega:\n`;
+  mensagem += `CEP: ${endereco.cep}\n Rua: ${endereco.rua}, Nº ${endereco.numero}\n Bairro: ${endereco.bairro}\n Telefone: ${endereco.telefone}\n`;
+
+  // Adiciona a forma de pagamento
+  mensagem += `\n Forma de Pagamento: ${endereco.pagamento === 'cartao' ? '  💳 Cartão de Crédito' : endereco.pagamento === 'pix' ? '⚡ Pix' : '💵 Dinheiro'}\n`;
+
+  document.getElementById("resumo-pedido").textContent = mensagem;
+  return encodeURIComponent(mensagem);
+}
+
+function enviarParaWhatsApp() {
+  const numero = "5588999999979";
+  const mensagem = carregarDados();
+  const whatsappURL = `https://wa.me/${numero}?text=${mensagem}`;
+  window.open(whatsappURL, '_blank');
+}
+
+document.addEventListener("DOMContentLoaded", carregarDados);
+
