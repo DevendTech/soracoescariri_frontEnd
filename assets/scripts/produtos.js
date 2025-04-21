@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
   
   // Elementos de filtro
   const filterCheckboxes = document.querySelectorAll(
+    'input[type="checkbox"][name="categoria"], ' +
     'input[type="checkbox"][name="produtos"], ' +
     'input[type="checkbox"][name="animal"], ' +
     'input[type="checkbox"][name="idade"], ' +
@@ -21,6 +22,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // Verifica checkboxes marcados inicialmente
   function getActiveFilters() {
     return {
+      categoria: Array.from(document.querySelectorAll('input[name="categoria"]:checked')).map(c => c.value),
       produtos: Array.from(document.querySelectorAll('input[name="produtos"]:checked')).map(c => c.value),
       animal: Array.from(document.querySelectorAll('input[name="animal"]:checked')).map(c => c.value),
       idade: Array.from(document.querySelectorAll('input[name="idade"]:checked')).map(c => c.value),
@@ -124,7 +126,9 @@ document.addEventListener("DOMContentLoaded", function () {
     const fragment = document.createDocumentFragment();
     
     products.forEach(product => {
+      console.log(product)
       const category = getProductCategory(product.produto.product_category);
+      console.log(category)
       const produto = getProducts(product.produto.name);
       const animal = product.category;
       const price = product.variantes?.length > 0 
@@ -182,11 +186,13 @@ document.addEventListener("DOMContentLoaded", function () {
   
     document.querySelectorAll('.product-item').forEach(item => {
       const matches = [
+        activeFilters.categoria.length === 0 || activeFilters.categoria.includes(item.dataset.category),
         activeFilters.produtos.length === 0 || activeFilters.produtos.includes(item.dataset.produto),
         activeFilters.animal.length === 0 || activeFilters.animal.includes(item.dataset.animal),
         activeFilters.idade.length === 0 || activeFilters.idade.includes(item.dataset.age),
         activeFilters.price.length === 0 || checkPriceRange(parseFloat(item.dataset.price), activeFilters.price)
       ].every(Boolean);
+      
   
       item.style.display = (!hasActiveFilters || matches) ? 'block' : 'none';
     });
@@ -202,15 +208,20 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // Determina categoria do produto
+  // Função corrigida para determinar categoria do produto
   function getProductCategory(productCategory) {
     if (!productCategory) return 'outros';
+  
     const lowerName = productCategory.toLowerCase();
-    if (/ração|racao/i.test(lowerName)) return 'racao';
-    if (/acessório|acessorio/i.test(lowerName)) return 'acessorios';
-    if (/medicamento/i.test(lowerName)) return 'medicamentos';
+    
+    if (/ração|racao|ração/i.test(lowerName)) return 'racao';
+    if (/areia|granulado|absorbente|argila|sanitária|sanitaria/i.test(lowerName)) return 'areia';
+    if (/medicamento|medicamentos|vermífugo|vermifugo|antipulgas/i.test(lowerName)) return 'medicamentos';
+    if (/acessório|acessorios|acessorio|coleira|brinquedo|comedouro|bebedouro/i.test(lowerName)) return 'acessorios';
+    if (/petshop|pet shop|banho|tosa|higiene/i.test(lowerName)) return 'petshop';
+    
     return 'outros';
-  }
+}
 
   // Identifica tipo de produto
   function getProducts(nameProduct) {

@@ -28,11 +28,23 @@ document.getElementById('buttonRacaoCaoAdulto').addEventListener('click', functi
   localStorage.setItem('checkboxRacaoCaoAdulto', 'true')
   window.location.href = '/pages/usuario/produtos.html'
 })
+document.getElementById('buttonRacaoCaoAdultoHeader').addEventListener('click', function() {
+  localStorage.setItem('checkboxRacaoCaoAdulto', 'true')
+  window.location.href = '/pages/usuario/produtos.html'
+})
 document.getElementById('buttonRacaoCaoFilhote').addEventListener('click', function() {
   localStorage.setItem('checkboxRacaoCaoFilhote', 'true')
   window.location.href = '/pages/usuario/produtos.html'
 })
+document.getElementById('buttonRacaoCaoFilhoteHeader').addEventListener('click', function() {
+  localStorage.setItem('checkboxRacaoCaoFilhote', 'true')
+  window.location.href = '/pages/usuario/produtos.html'
+})
 document.getElementById('buttonMedicamentoCao').addEventListener('click', function() {
+  localStorage.setItem('checkboxMedicamentoCao', 'true')
+  window.location.href = '/pages/usuario/produtos.html'
+})
+document.getElementById('buttonMedicamentoCaoHeader').addEventListener('click', function() {
   localStorage.setItem('checkboxMedicamentoCao', 'true')
   window.location.href = '/pages/usuario/produtos.html'
 })
@@ -44,11 +56,23 @@ document.getElementById('buttonRacaoGato').addEventListener('click', function() 
   localStorage.setItem('checkboxRacaoGato', 'true')
   window.location.href = '/pages/usuario/produtos.html'
 })
+document.getElementById('buttonRacaoGatoHeader').addEventListener('click', function() {
+  localStorage.setItem('checkboxRacaoGato', 'true')
+  window.location.href = '/pages/usuario/produtos.html'
+})
 document.getElementById('buttonAreiaGato').addEventListener('click', function() {
   localStorage.setItem('checkboxAreiaGato', 'true')
   window.location.href = '/pages/usuario/produtos.html'
 })
+document.getElementById('buttonAreiaGatoHeader').addEventListener('click', function() {
+  localStorage.setItem('checkboxAreiaGato', 'true')
+  window.location.href = '/pages/usuario/produtos.html'
+})
 document.getElementById('buttonMedicamentoGato').addEventListener('click', function() {
+  localStorage.setItem('checkboxMedicamentoGato', 'true')
+  window.location.href = '/pages/usuario/produtos.html'
+})
+document.getElementById('buttonMedicamentoGatoHeader').addEventListener('click', function() {
   localStorage.setItem('checkboxMedicamentoGato', 'true')
   window.location.href = '/pages/usuario/produtos.html'
 })
@@ -60,8 +84,20 @@ document.getElementById('buttonRacaoEquinioEporco').addEventListener('click', fu
   localStorage.setItem('checkboxRacaoEquinioEporco', 'true')
   window.location.href = '/pages/usuario/produtos.html'
 })
+document.getElementById('buttonRacaoEquinioEporcoHeader').addEventListener('click', function() {
+  localStorage.setItem('checkboxRacaoEquinioEporco', 'true')
+  window.location.href = '/pages/usuario/produtos.html'
+})
 document.getElementById('buttonRacaoAves').addEventListener('click', function() {
   localStorage.setItem('checkboxRacaoAves', 'true')
+  window.location.href = '/pages/usuario/produtos.html'
+})
+document.getElementById('buttonRacaoAvesHeader').addEventListener('click', function() {
+  localStorage.setItem('checkboxRacaoAves', 'true')
+  window.location.href = '/pages/usuario/produtos.html'
+})
+document.getElementById('buttonRacaoPeixes').addEventListener('click', function() {
+  localStorage.setItem('checkboxRacaoPeixes', 'true')
   window.location.href = '/pages/usuario/produtos.html'
 })
 document.getElementById('buttonRacaoPeixes').addEventListener('click', function() {
@@ -76,11 +112,23 @@ document.getElementById('buttonMedicamentoAdulto').addEventListener('click', fun
   localStorage.setItem('checkboxMedicamentoAdulto', 'true')
   window.location.href = '/pages/usuario/produtos.html'
 })
+document.getElementById('buttonMedicamentoAdultoHeader').addEventListener('click', function() {
+  localStorage.setItem('checkboxMedicamentoAdulto', 'true')
+  window.location.href = '/pages/usuario/produtos.html'
+})
 document.getElementById('buttonMedicamentoFilhote').addEventListener('click', function() {
   localStorage.setItem('checkboxMedicamentoFilhote', 'true')
   window.location.href = '/pages/usuario/produtos.html'
 })
+document.getElementById('buttonMedicamentoFilhoteHeader').addEventListener('click', function() {
+  localStorage.setItem('checkboxMedicamentoFilhote', 'true')
+  window.location.href = '/pages/usuario/produtos.html'
+})
 document.getElementById('buttonMedicamentoCastrado').addEventListener('click', function() {
+  localStorage.setItem('checkboxMedicamentoCastrado', 'true')
+  window.location.href = '/pages/usuario/produtos.html'
+})
+document.getElementById('buttonMedicamentoCastradoHeader').addEventListener('click', function() {
   localStorage.setItem('checkboxMedicamentoCastrado', 'true')
   window.location.href = '/pages/usuario/produtos.html'
 })
