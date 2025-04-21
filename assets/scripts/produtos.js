@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", function () {
       localStorage.removeItem('checkboxRacaoGato')
     } else if(localStorage.getItem('checkboxAreiaGato') === 'true'){
       document.getElementById('gato').checked = true;
-      // document.getElementById('areia').checked = true;
+      document.getElementById('areia').checked = true;
       localStorage.removeItem('checkboxAreiaGato')
     } else if(localStorage.getItem('checkboxMedicamentoGato') === 'true'){
       document.getElementById('gato').checked = true;
@@ -84,10 +84,33 @@ document.addEventListener("DOMContentLoaded", function () {
     } else if(localStorage.getItem('checkboxMedicamentos') === 'true'){
       document.getElementById('medicamentos').checked = true;
       localStorage.removeItem('checkboxMedicamentos')
+    } else if(localStorage.getItem('checkboxMedicamentoAdulto') === 'true') {
+      document.getElementById('medicamentos').checked = true;
+      document.getElementById('adulto').checked = true;
+      localStorage.removeItem('checkboxMedicamentoAdulto');
+    } else if(localStorage.getItem('checkboxMedicamentoFilhote') === 'true') {
+      document.getElementById('medicamentos').checked = true;
+      document.getElementById('filhote').checked = true;
+      localStorage.removeItem('checkboxMedicamentoFilhote');
+    } else if(localStorage.getItem('checkboxMedicamentoCastrado') === 'true') {
+      document.getElementById('medicamentos').checked = true;
+      localStorage.removeItem('checkboxMedicamentoCastrado');
     } else if(localStorage.getItem('checkboxAcessorios') === 'true'){
       document.getElementById('petshop').checked = true;
       localStorage.removeItem('checkboxAcessorios')
-    }   
+    } else if(localStorage.getItem('checkboxCama') === 'true'){
+      document.getElementById('acessorios').checked = true;
+      document.getElementById('cama').checked = true;
+      localStorage.removeItem('checkboxCama')
+    } else if(localStorage.getItem('checkboxSanitario') === 'true'){
+      document.getElementById('acessorios').checked = true;
+      document.getElementById('sanitario').checked = true;
+      localStorage.removeItem('checkboxSanitario')
+    } else if(localStorage.getItem('checkboxColeira') === 'true'){
+      document.getElementById('acessorios').checked = true;
+      document.getElementById('coleira').checked = true;
+      localStorage.removeItem('checkboxColeira')
+    } 
     
     filterCheckboxes.forEach(checkbox => {
       checkbox.addEventListener('change', filterProducts);
@@ -98,51 +121,58 @@ document.addEventListener("DOMContentLoaded", function () {
   function renderProducts(products) {
     container.innerHTML = '';
 
+    const fragment = document.createDocumentFragment();
+    
     products.forEach(product => {
-      const category = getProductCategory(product.produto.name);
-      const animal = product.category || 'Cao';
+      const category = getProductCategory(product.produto.product_category);
+      const produto = getProducts(product.produto.name);
+      const animal = product.category;
       const price = product.variantes?.length > 0 
         ? Math.min(...product.variantes.map(v => parseFloat(v.price))) 
         : 0;
       const age = product.produto.name.toLowerCase().includes('filhote') ? 'filhote' : 'adulto';
-      
       const imageUrl = product.produto.pathimage
         ? `https://back.soracoescariri.com.br${product.produto.pathimage}`
         : 'default.jpg';
       const variantes = product.variantes || [];
 
-      const productHTML = `
-        <div class="product-item w-44 md:w-60 bg-white rounded-xl shadow-lg p-3"
-          data-category="${category}"
-          data-animal="${animal}"
-          data-age="${age}"
-          data-price="${price}">
-          <div class="relative">
-            <img class="flex w-48 h-48 md:w-32 md:h-32 rounded-lg" src="${imageUrl}" alt="${product.produto.name || 'Produto'}">
+      const productElement = document.createElement('div');
+      productElement.className = 'product-item w-44 md:w-60 bg-white rounded-xl shadow-lg p-3';
+      productElement.dataset.category = category;
+      productElement.dataset.produto = produto;
+      productElement.dataset.animal = animal;
+      productElement.dataset.age = age;
+      productElement.dataset.price = price;
+      
+      productElement.innerHTML = `
+        <div class="relative">
+          <img class="flex w-48 h-48 md:w-32 md:h-32 rounded-lg" src="${imageUrl}" alt="${product.produto.name || 'Produto'}">
+        </div>
+        <div class="mt-3">
+          <h2 class="text-gray-700 font-medium text-xs">${product.produto.name || 'Nome do Produto'}</h2>
+          <p class="text-red-500 text-xs line-through price-old-display">R$ 0,00</p>
+          <div class="flex"> 
+            <p class="text-xl font-bold text-gray-900 price-display">R$ ${price.toFixed(2)}</p>
           </div>
-          <div class="mt-3">
-            <h2 class="text-gray-700 font-medium text-xs">${product.produto.name || 'Nome do Produto'}</h2>
-            <p class="text-red-500 text-xs line-through price-old-display">R$ 0,00</p>
-            <div class="flex"> 
-              <p class="text-xl font-bold text-gray-900 price-display">R$ ${price.toFixed(2)}</p>
-            </div>
-            <div class="flex gap-2 mt-2">
-              <select class="variant-select px-2 py-1 bg-gray-200 text-gray-700 text-xs rounded">
-                ${variantes.length > 0
-                  ? variantes.map(v => `<option value='${JSON.stringify(v)}'>${v.weight}</option>`).join('')
-                  : '<option value=\'{"weight": "Padrão", "price": "0"}\'>Padrão</option>'}
-              </select>
-            </div>
-            <button class="add-to-cart w-full mt-3 py-1.5 bg-[#48887A] text-white text-sm font-bold rounded-md" data-product='${JSON.stringify(product)}'>COMPRAR</button>
+          <div class="flex gap-2 mt-2">
+            <select class="variant-select px-2 py-1 bg-gray-200 text-gray-700 text-xs rounded">
+              ${variantes.length > 0
+                ? variantes.map(v => `<option value='${JSON.stringify(v)}'>${v.weight}</option>`).join('')
+                : '<option value=\'{"weight": "Padrão", "price": "0"}\'>Padrão</option>'}
+            </select>
           </div>
+          <button class="add-to-cart w-full mt-3 py-1.5 bg-[#48887A] text-white text-sm font-bold rounded-md" data-product='${JSON.stringify(product)}'>COMPRAR</button>
         </div>
       `;
-      container.innerHTML += productHTML;
+      
+      fragment.appendChild(productElement);
     });
+    
+    container.appendChild(fragment);
 
     updateVariantSelectors();
     setupAddToCartButtons();
-    filterProducts(); // Aplica filtros após renderizar
+    filterProducts();
   }
 
   // Filtra produtos baseado nos checkboxes
@@ -152,19 +182,19 @@ document.addEventListener("DOMContentLoaded", function () {
   
     document.querySelectorAll('.product-item').forEach(item => {
       const matches = [
-        activeFilters.produtos.length === 0 || activeFilters.produtos.includes(item.dataset.category),
+        activeFilters.produtos.length === 0 || activeFilters.produtos.includes(item.dataset.produto),
         activeFilters.animal.length === 0 || activeFilters.animal.includes(item.dataset.animal),
         activeFilters.idade.length === 0 || activeFilters.idade.includes(item.dataset.age),
         activeFilters.price.length === 0 || checkPriceRange(parseFloat(item.dataset.price), activeFilters.price)
       ].every(Boolean);
   
-      // Mostra o produto se: não houver filtros ativos OU se corresponder aos filtros
       item.style.display = (!hasActiveFilters || matches) ? 'block' : 'none';
     });
   }
 
   // Verifica faixa de preço
   function checkPriceRange(price, ranges) {
+    if (!price) return false;
     return ranges.some(range => {
       if (range === '300+') return price >= 300;
       const [min, max] = range.split('-').map(Number);
@@ -173,12 +203,25 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // Determina categoria do produto
-  function getProductCategory(productName) {
-    const lowerName = productName.toLowerCase();
-    if (/ração|ração|racao/i.test(lowerName)) return 'racao';
-    if (/coleira|brinquedo|caminha|brinquedo/i.test(lowerName)) return 'acessorios';
-    if (/remédio|medicamento|vermífugo|vermifugo/i.test(lowerName)) return 'medicamentos';
-    return 'petshop';
+  function getProductCategory(productCategory) {
+    if (!productCategory) return 'outros';
+    const lowerName = productCategory.toLowerCase();
+    if (/ração|racao/i.test(lowerName)) return 'racao';
+    if (/acessório|acessorio/i.test(lowerName)) return 'acessorios';
+    if (/medicamento/i.test(lowerName)) return 'medicamentos';
+    return 'outros';
+  }
+
+  // Identifica tipo de produto
+  function getProducts(nameProduct) {
+    if (!nameProduct) return 'outros';
+    
+    const lowerName = nameProduct.toLowerCase();
+    if (/areia|granulado|absorbente|argila|sanitária|sanitaria/i.test(lowerName)) return 'areia';
+    if (/cama|forração|forracao|forro|colchão|colchao/i.test(lowerName)) return 'cama';
+    if (/Coleira/i.test(lowerName)) return 'coleira';
+
+    return 'outros';
   }
 
   // Atualiza preços quando variante muda
@@ -310,7 +353,7 @@ document.addEventListener("DOMContentLoaded", function () {
   Promise.all(categories.map(category => 
     fetch(`https://back.soracoescariri.com.br/api/user/products/${category}`)
       .then(response => response.json())
-      .then(products => products.map(p => ({ ...p, category }))) // Adiciona categoria ao produto
+      .then(products => products.map(p => ({ ...p, category })))
       .catch(error => console.error(`Erro ao buscar dados da categoria ${category}:`, error))
   ))
   .then(results => {

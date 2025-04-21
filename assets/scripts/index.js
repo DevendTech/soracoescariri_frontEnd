@@ -72,7 +72,31 @@ document.getElementById('buttonMedicamentos').addEventListener('click', function
   localStorage.setItem('checkboxMedicamentos', 'true')
   window.location.href = '/pages/usuario/produtos.html'
 })
+document.getElementById('buttonMedicamentoAdulto').addEventListener('click', function() {
+  localStorage.setItem('checkboxMedicamentoAdulto', 'true')
+  window.location.href = '/pages/usuario/produtos.html'
+})
+document.getElementById('buttonMedicamentoFilhote').addEventListener('click', function() {
+  localStorage.setItem('checkboxMedicamentoFilhote', 'true')
+  window.location.href = '/pages/usuario/produtos.html'
+})
+document.getElementById('buttonMedicamentoCastrado').addEventListener('click', function() {
+  localStorage.setItem('checkboxMedicamentoCastrado', 'true')
+  window.location.href = '/pages/usuario/produtos.html'
+})
 document.getElementById('buttonAcessorios').addEventListener('click', function() {
   localStorage.setItem('checkboxAcessorios', 'true')
+  window.location.href = '/pages/usuario/produtos.html'
+})
+document.getElementById('buttonCama').addEventListener('click', function() {
+  localStorage.setItem('checkboxCama', 'true')
+  window.location.href = '/pages/usuario/produtos.html'
+})
+document.getElementById('buttonSanitario').addEventListener('click', function() {
+  localStorage.setItem('checkboxSanitario', 'true')
+  window.location.href = '/pages/usuario/produtos.html'
+})
+document.getElementById('buttonColeira').addEventListener('click', function() {
+  localStorage.setItem('checkboxColeira', 'true')
   window.location.href = '/pages/usuario/produtos.html'
 })
