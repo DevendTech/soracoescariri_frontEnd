@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="pt-BR">
+<html lang="pt-br" class="scroll-smooth">
 
 <head>
   <meta charset="UTF-8">
@@ -10,24 +10,39 @@
   <link href="assets/output.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
   <script src="/assets/scripts/index.js?=283423842384" defer></script>
-
 </head>
 
 <body class="font-sans ">
+  <!-- Cookie Banner -->
+  <div id="cookieBanner" class="fixed bottom-5 right-5 left-5 md:left-auto md:max-w-sm bg-white p-4 rounded-lg shadow-lg z-50 transition-all">
+    <span class="font-semibold text-gray-800 text-lg">🍪 Aviso de Cookies</span>
+    <p class="mt-2 text-sm text-gray-600">
+      Utilizamos cookies para garantir a melhor experiência em nosso site.
+      <a href="https://www.transunion.com.br/legal/cookies?utm_source=google&utm_medium=cpc&utm_term=&gad_source=1&gbraid=0AAAAADg4vdrgnp_X3mBsVtTJwpkExzYsb&gclid=Cj0KCQjwtpLABhC7ARIsALBOCVq3Su2iCtgncQ8BmmSOE9c73kJhTYewjIUYKD00jERIoq8lajfgs7UaArSrEALw_wcB" class="text-blue-500 hover:underline">Saiba mais</a>.
+    </p>
+    <div class="mt-4 flex justify-between items-center gap-4">
+      <a href="https://support.google.com/chrome/answer/95647" class="text-xs text-gray-700 underline hover:text-gray-400">
+        Gerenciar preferências
+      </a>
+      <button onclick="acceptCookies()" class="text-xs font-medium bg-[#317565] text-white px-4 py-2 rounded hover:bg-gray-700">
+        Aceitar
+      </button>
+    </div>
+  </div>
 
   <header class="flex flex-col fixed w-full h-24 md:h-24 -mt-0 md:-mt-36 bg-white shadow z-10">
     <div class="flex mt-4 justify-between md:justify-around container mx-auto items-center px-4">
 
-      <button id="menuToggle" class="md:hidden block text-[#48887A]">
+      <button id="menuToggle" class="md:hidden block text-[#48887A] cursor-pointer">
         <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
         </svg>
       </button>
 
       <div class="flex items-center">
-        <a href="/pages/propietario/telaLogin.html">
-          <img src="/assets/imagem/BANNER.jpeg" alt="Logo" class="h-14 rounded-[10px] mt-1">
-        </a>
+
+        <img src="/assets/imagem/BANNER.jpeg" alt="Logo" class="h-14 rounded-[10px] mt-1">
+
       </div>
 
 
@@ -114,7 +129,7 @@
 
 
       <a target="_blank" href="/pages/usuario/carrinho1.html" id="carrinhoButton">
-        <img src="/assets/icons/icons8-carrinho-35.png" alt="Carrinho" class=" md:h-6 md:w-6 hover:scale-110 transition">
+        <img src="/assets/icons/icons8-carrinho-35.png" alt="Carrinho" class=" md:h-6 md:w-6 hover:scale-110 transition cursor-pointer">
       </a>
 
 
@@ -131,7 +146,7 @@
     </div>
   </header>
 
-  <div class=" w-full flex justify-center max-w-md overflow-hidden md:h-10  md:ml-[450px] md:mt-36 z-1">
+  <div id="produtos" class=" w-full flex justify-center max-w-md overflow-hidden md:h-10  md:ml-[450px] md:mt-36 z-1">
     <div class="flex transition-transform duration-700 ease-in-out  z-1" id="carousel">
       <!-- Slide 1 -->
       <div class="w-full  flex-shrink-0 flex items-center gap-4 justify-center text-center ">
@@ -155,9 +170,7 @@
   </section>
 
   <div class="flex min-h-screen bg-white mt-0 md:mt-36">
-
     <main class=" w-full flex-1 md:ml-64 p-6 space-y-20 md:-mt-24 ">
-
       <section id="caes" class="flex flex-col md:gap-10 md:-ml-52 md:flex-row items-center">
         <div class="bg-[#6baf89] text-white p-6 rounded-3xl flex items-center justify-between w-full md:w-3xl max-w-1xl h-32 md:h-48">
           <div class="flex items-center space-x-3">
@@ -278,8 +291,9 @@
   <section class=" bg-cover bg-center h-40 w-full md:h-96    md:ml-0 drop-shadow-xl " style="background-image: url('/assets/imagem/O\ melhor\ que\ o\ mercado\ pode\ te\ proporcionar.png');">
   </section>
   <!-- marcas -->
+
   <section class="bg-gray-200 w-full py-10 flex justify-center">
-    <div class="w-full max-w-5xl px-4 flex flex-col items-center gap-10">
+    <div id="marcas" class="w-full max-w-5xl px-4 flex flex-col items-center gap-10">
       <h1 class="text-emerald-950 text-xl sm:text-2xl font-bold text-center">
         Marcas que trabalhamos
       </h1>
@@ -312,25 +326,21 @@
         </div>
 
         <!-- Links Rápidos -->
-        <div>
+        <div class="mt-10">
           <h3 class="text-lg font-semibold mb-4">Links Rápidos</h3>
           <ul class="space-y-2 text-sm text-gray-300">
-            <li><a href="/" class="hover:underline">Início</a></li>
-            <li><a href="/produtos" class="hover:underline">Produtos</a></li>
-            <li><a href="/servicos" class="hover:underline">Serviços</a></li>
-            <li><a href="/blog" class="hover:underline">Blog</a></li>
-            <li><a href="/contato" class="hover:underline">Contato</a></li>
+            <li><a href="#" class="hover:underline">Home</a></li>
+            <li><a href="#produtos" class="hover:underline">Produtos</a></li>
           </ul>
         </div>
 
         <!-- Informações Legais -->
-        <div>
+        <div class="mt-10">
           <h3 class="text-lg font-semibold mb-4">Informações Legais</h3>
           <ul class="space-y-2 text-sm text-gray-300">
-            <li><a href="/politica-de-privacidade" class="hover:underline">Política de Privacidade</a></li>
-            <li><a href="/termos-de-uso" class="hover:underline">Termos de Uso</a></li>
-            <li><a href="/trocas-e-devolucoes" class="hover:underline">Trocas e Devoluções</a></li>
-            <li><a href="/duvidas-frequentes" class="hover:underline">Dúvidas Frequentes</a></li>
+            <li><a href="https://policies.google.com/privacy?hl=pt-BR" class="hover:underline">Política de Privacidade</a></li>
+            <li><a href="https://policies.google.com/terms?hl=pt-BR" class="hover:underline">Termos de Uso</a></li>
+            <li><a href="https://policies.google.com/faq?hl=pt-BR" class="hover:underline">Dúvidas Frequentes</a></li>
           </ul>
         </div>
 
@@ -338,23 +348,21 @@
         <div>
           <h3 class="text-lg font-semibold mb-4">Contato</h3>
           <ul class="space-y-2 text-sm text-gray-300">
-            <li>Endereço: Rua dos Pets, 123 - Centro</li>
-            <li>Telefone: (11) 1234-5678</li>
-            <li>Email: contato@casaracao.com</li>
+            <li>Endereço: Avenida José Alves de Figueiredo, 23., Crato, Ceara 63100000</li>
+            <li>Telefone: (88)99999-9977</li>
           </ul>
 
           <div class="mt-4">
             <h4 class="font-semibold mb-2">Siga-nos</h4>
             <div class="flex space-x-3">
-              <a href="#" target="_blank" rel="noopener noreferrer" class="hover:opacity-80">
+              <a href="https://www.instagram.com/soracoescariri/" target="_blank" rel="noopener noreferrer" class="hover:opacity-80">
                 <img src="assets/icons/icons8-instagram-48.png" alt="Instagram" class="w-8 h-8">
               </a>
-              <a href="#" target="_blank" rel="noopener noreferrer" class="hover:opacity-80">
+              <a href="https://wa.me/558899999-9977?text=Olá%20Só%20Rações%20Cariri
+              " target="_blank" rel="noopener noreferrer" class="hover:opacity-80">
                 <img src="assets/icons/icons8-whatsapp-48.png" alt="WhatsApp" class="w-8 h-8">
               </a>
-              <a href="#" target="_blank" rel="noopener noreferrer" class="hover:opacity-80">
-                <img src="assets/icons/icons8-facebook-novo-48.png" alt="Facebook" class="w-8 h-8">
-              </a>
+
             </div>
           </div>
         </div>

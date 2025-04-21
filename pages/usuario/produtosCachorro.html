@@ -14,14 +14,16 @@
 </head>
 
 <body class="bg-gray-200">
+
+  <!-- header -->
   <header class="flex flex-col fixed w-full h-24 md:h-24 -mt-0 md:-mt-36 bg-white shadow z-10">
     <div id="alert-container"></div>
 
     <div class="flex mt-4 justify-between md:justify-around md:gap-40 container mx-auto items-center px-4">
       <div class="flex items-center">
-        <a href="/pages/propietario/telaLogin.html">
-          <img src="/assets/imagem/BANNER.jpeg" alt="Logo" class="h-14 rounded-[10px] mt-1">
-        </a>
+
+        <img src="/assets/imagem/BANNER.jpeg" alt="Logo" class="h-14 rounded-[10px] mt-1">
+
       </div>
       <nav class="hidden md:flex gap-12 items-center">
 
@@ -108,13 +110,13 @@
           <input type="text" class="outline-none text-[10px] bg-transparent w-full text-white font-normal px-4" placeholder="Pesquisar..." id="search" />
         </button>
 
-        <button target="_blank" class="add-to-cart" id="carrinhoButton">
+        <button target="_blank" class="add-to-cart cursor-pointer" id="carrinhoButton">
           <img src="/assets/icons/icons8-carrinho-35.png" alt="Carrinho" class="md:h-6 md:w-6 hover:scale-110 transition">
         </button>
       </div>
     </div>
   </header>
-
+  <!-- carrosel -->
   <div class="w-full flex justify-center max-w-md overflow-hidden md:h-10 md:ml-[450px] md:mt-36 z-1">
     <div class="flex transition-transform duration-700 ease-in-out z-1" id="carousel">
       <div class="w-full flex-shrink-0 flex items-center gap-4 justify-center text-center">
@@ -132,14 +134,12 @@
     </div>
   </div>
 
-
   <!-- Overlay para mobile -->
-  <div id="filter-overlay" class="fixed inset-0 z-40 hidden bg-black/50 md:hidden"></div>
-
+  <div id="filter-overlay" class="fixed inset-0 z-40 hidden bg-black/50 md:hidden">
+  </div>
   <!-- Banner mobile -->
-  <section class="w-full h-[250px] sm:h-[450px] md:hidden mt-16 bg-cover bg-center" style="background-image: url('/assets/imagem/BANNER.jpeg');"></section>
-
-
+  <section class="w-full h-[250px] sm:h-[450px] md:hidden mt-16 bg-cover bg-center" style="background-image: url('/assets/imagem/BANNER.jpeg');">
+  </section>
   <!-- Botão de filtrar para mobile -->
   <button id="filter-toggle" class=" z-30 flex mt-5 ml-40 mb-0 justify-center items-center  rounded-lg bg-[#2A7D5E] px-6 py-3 font-bold text-white shadow-md transition-all duration-300 hover:bg-[#25684D] hover:-translate-y-0.5 hover:shadow-lg md:hidden">
     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -156,7 +156,6 @@
     Filtrar
   </button>
   <div class="flex min-h-screen bg-gray-200 pt-16 md:pt-0">
-
 
     <aside id="filter-sidebar" class="fixed top-0 left-0 z-50 h-screen w-72 overflow-y-auto bg-white p-6 shadow-md transition-transform duration-300 -translate-x-full md:relative md:left-auto md:top-auto md:z-auto md:block md:h-auto md:w-64 md:translate-x-0">
       <div class="flex items-center justify-between">
@@ -216,17 +215,17 @@
         </div>
       </form>
     </aside>
-
     <!-- Grid de Produtos -->
-    <main class="flex-1 p-5">
-      <div id="product-container" class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-0">
+    <main class="flex-1">
+      <div id="product-container" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-2 lg:grid-cols-4 gap-4 mt-4  p-5">
         <!-- Produtos serão inseridos aqui -->
       </div>
     </main>
   </div>
 
   <!-- Popup -->
-  <div id="popup-overlay" class="fixed inset-0 z-[90] hidden bg-black/10 backdrop-blur-sm" onclick="closePopup()"></div>
+  <div id="popup-overlay" class="fixed inset-0 z-[90] hidden bg-black/10 backdrop-blur-sm" onclick="closePopup()">
+  </div>
   <div id="popup" class="fixed top-0 right-0 z-[100] flex h-full w-full flex-col items-center bg-white shadow-lg transition-transform duration-300 md:w-[450px] translate-x-full">
     <div class="flex w-full items-center justify-between border-b p-4">
       <h2 class="text-lg font-semibold text-gray-800">Detalhes do Produto</h2>

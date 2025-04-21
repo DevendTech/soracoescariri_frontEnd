@@ -20,3 +20,20 @@ toggleBtn.addEventListener('click', () => {
   mobileMenu.classList.toggle('hidden');
 });
 
+
+// Esconde o banner se o usuário já aceitou os cookies
+document.addEventListener('DOMContentLoaded', () => {
+  const banner = document.getElementById('cookieBanner');
+  const accepted = localStorage.getItem('cookieAccepted');
+  if (accepted === 'true') {
+    banner.style.display = 'none';
+  }
+});
+
+// Aceita os cookies e esconde o banner
+function acceptCookies() {
+  localStorage.setItem('cookieAccepted', 'true');
+  document.getElementById('cookieBanner').style.display = 'none';
+}
+
+

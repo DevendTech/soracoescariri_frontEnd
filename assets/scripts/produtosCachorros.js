@@ -19,9 +19,9 @@ document.addEventListener("DOMContentLoaded", function () {
         : 0;
 
       const productHTML = `
-          <div class="w-44 md:w-60 bg-white rounded-xl shadow-lg p-3">
-            <div class="relative">
-              <img class="flex w-48 h-48 md:w-32 md:h-32 rounded-lg" src="${imageUrl}" alt="${product.produto.name || 'Produto'}" >
+          <div class=" w-44 md:w-64 bg-white rounded-xl shadow-lg p-5  ">
+            <div class="flex justify-center items-center">
+              <img class="flex w-40 h-44 md:w-48 md:h-48 rounded-lg" src="${imageUrl}" alt="${product.produto.name || 'Produto'}" >
             </div>
             <div class="mt-3">
               <h2 class="text-gray-700 font-medium text-xs">${product.produto.name || 'Nome do Produto'}</h2>
@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", function () {
           : '<option value=\'{"weight": "Padrão", "price": "0"}\'>Padrão</option>'}
                 </select>
               </div>
-              <button class="add-to-cart w-full mt-3 py-1.5 bg-[#48887A] text-white text-sm font-bold rounded-md" data-product='${JSON.stringify(product)}'>COMPRAR</button>
+              <button class="add-to-cart w-full cursor-pointer mt-3 py-1.5 bg-[#48887A] text-white text-sm font-bold rounded-md" data-product='${JSON.stringify(product)}'>COMPRAR</button>
             </div>
           </div>
         `;
@@ -87,35 +87,30 @@ document.addEventListener("DOMContentLoaded", function () {
       const select = card.querySelector(".variant-select");
 
       button.addEventListener("click", function () {
-        const product = JSON.parse(button.getAttribute("data-product"));
-        const variant = select ? JSON.parse(select.value) : { weight: "Padrão", price: "0" };
-
-        // Mostrar no popup
-        showPopup(product, variant);
-
-        // Adicionar ao carrinho (mantido o mesmo código)
+        // atualiza o carrinho
         let cart = JSON.parse(localStorage.getItem("carrinho")) || [];
+        const product = JSON.parse(button.dataset.product);
+        const variant = select ? JSON.parse(select.value) : { weight: "Padrão", price: "0" };
         const newItem = {
           produto: product.produto.name,
           preco: variant.price,
           quantidade: 1,
           peso: variant.weight,
-          imagem: product.produto.pathimage ? `https://back.soracoescariri.com.br${product.produto.pathimage}` : 'default.jpg',
+          imagem: product.produto.pathimage
+            ? `https://back.soracoescariri.com.br${product.produto.pathimage}`
+            : 'default.jpg',
         };
-
-        const existingItem = cart.find(p => p.produto === newItem.produto && p.peso === newItem.peso);
-        if (existingItem) {
-          existingItem.quantidade += 1;
-        } else {
-          cart.push(newItem);
-        }
-
+        const existing = cart.find((p, i) => p.produto === newItem.produto && p.peso === newItem.peso);
+        if (existing) existing.quantidade += 1;
+        else cart.push(newItem);
         localStorage.setItem("carrinho", JSON.stringify(cart));
+
+        // exibe todo o carrinho
+        showPopup();
         showSuccessAlert();
       });
     });
   }
-
   // Função para exibir alerta
   function showSuccessAlert() {
     if (!alertContainer) return;
@@ -139,79 +134,90 @@ document.addEventListener("DOMContentLoaded", function () {
     alertContainer.querySelector('.close-alert').addEventListener('click', () => alertContainer.innerHTML = '');
     setTimeout(() => alertContainer.innerHTML = '', 3000);
   }
-
-  // Função do popup
-  function showPopup(product, variant) {
+  function showPopup() {
     const popup = document.getElementById('popup');
-    const popupContent = document.getElementById('popup-content');
     const overlay = document.getElementById('popup-overlay');
+    const popupContent = document.getElementById('popup-content');
+    let cart = JSON.parse(localStorage.getItem('carrinho')) || [];
 
-    const imageUrl = product.produto.pathimage
-      ? `https://back.soracoescariri.com.br${product.produto.pathimage}`
-      : 'default.jpg';
+    // Calcular o total
+    const total = cart.reduce((sum, item) => {
+      return sum + (parseFloat(item.preco) * item.quantidade);
+    }, 0);
 
-    const hasDiscount = variant.discount && Number(variant.discount) > 0;
-    const originalPrice = parseFloat(variant.price).toFixed(2);
-    const finalPrice = hasDiscount
-      ? (variant.price * (1 - Number(variant.discount) / 100)).toFixed(2)
-      : originalPrice;
+    if (cart.length === 0) {
+      popupContent.innerHTML = '<p>Seu carrinho está vazio.</p>';
+    } else {
+      const itemsHtml = cart.map((item, index) => {
+        return `
+                <div class="cart-item flex items-center gap-4 mb-4" data-index="${index}">
+                    <img src="${item.imagem}" class="w-16 h-16 object-cover rounded" alt="${item.produto}">
+                    <div class="flex-1">
+                        <p class="font-semibold">${item.produto}</p>
+                        <p class="text-sm text-gray-600">Peso: ${item.peso}</p>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <button class="decrement px-2 py-1 bg-gray-200 rounded">–</button>
+                        <span class="quantity px-2">${item.quantidade}</span>
+                        <button class="increment px-2 py-1 bg-gray-200 rounded">+</button>
+                    </div>
+                    <p class="w-20 text-right font-bold">R$ ${(item.preco * item.quantidade).toFixed(2)}</p>
+                </div>
+            `;
+      }).join('');
 
-    popupContent.innerHTML = `
-      <div class="w-full max-w-md bg-white rounded-xl p-4 shadow-lg">
-        <div class="flex justify-between items-center mb-4">
-          <h2 class="text-sm font-bold text-center w-full text-[#48887A]">MEU CARRINHO</h2>
-          <button id="closePopup" class="text-gray-500 hover:text-gray-700 text-xl absolute right-4 top-4">&times;</button>
-        </div>
+      popupContent.innerHTML = `
+            <div class="w-full max-w-md bg-white rounded-xl p-4 shadow-lg">
+                <div class="flex justify-between items-center mb-4">
+                    <h2 class="text-lg font-bold text-[#48887A]">MEU CARRINHO</h2>
+                    <button id="closePopup" class="text-gray-500 text-xl">&times;</button>
+                </div>
+                ${itemsHtml}
+                <div class="mt-4 pt-4 border-t border-gray-200 flex justify-between items-center">
+                    <h2 class="text-lg font-bold text-[#48887A]">Total:</h2>
+                    <p class="text-xl font-bold">R$ ${total.toFixed(2)}</p>
+                </div>
   
-        <div class="flex items-start gap-4">
-          <img src="${imageUrl}" alt="${product.produto.name}" class="w-20 h-24 object-contain rounded-md">
-  
-          <div class="flex-1">
-            <p class="text-sm font-semibold text-gray-800 leading-tight mb-1">${product.produto.name}</p>
-            <p class="text-sm text-[#48887A] mb-2">Peso: ${variant.weight}</p>
-  
-            <div class="flex items-center gap-2 mb-2">
-              <button class="bg-gray-200 w-7 h-7 md:w-9 md:h-9 rounded-l-2xl hover:bg-gray-300 transition">–</button>
-              <span class="w-7 h-7 md:w-9 md:h-9 text-center py-1 bg-gray-300 text-sm md:text-base">1</span>
-              <button class="bg-gray-200 w-7 h-7 md:w-9 md:h-9 rounded-e-2xl hover:bg-gray-300 transition">+</button>
-
-
-
-
             </div>
-  
-            <div class="text-right">
-              ${hasDiscount ? `
-                <p class="text-xs text-gray-400 line-through">R$ ${originalPrice}</p>
-                <p class="text-lg font-bold text-[#48887A]">R$ ${finalPrice}</p>
-              ` : `
-                <p class="text-lg font-bold text-[#48887A]">R$ ${originalPrice}</p>
-              `}
-            </div>
-          </div>
-        </div>
-      </div>
-    `;
+        `;
 
-    // Abre o popup
-    popup.classList.remove("translate-x-full");
-    overlay.classList.remove("hidden");
+      // Eventos de fechar
+      document.getElementById('closePopup').onclick = closePopup;
+      overlay.onclick = closePopup;
 
-    // Evento para fechar
-    const closeBtn = document.getElementById('closePopup');
-    if (closeBtn) {
-      closeBtn.addEventListener('click', () => {
-        popup.classList.add("translate-x-full");
-        overlay.classList.add("hidden");
+      // Eventos de incremento/decremento
+      popupContent.querySelectorAll('.increment').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const idx = +btn.closest('.cart-item').dataset.index;
+          cart[idx].quantidade++;
+          localStorage.setItem('carrinho', JSON.stringify(cart));
+          showPopup();
+        });
+      });
+
+      popupContent.querySelectorAll('.decrement').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const idx = +btn.closest('.cart-item').dataset.index;
+          if (cart[idx].quantidade > 1) {
+            cart[idx].quantidade--;
+          } else {
+            cart.splice(idx, 1);
+          }
+          localStorage.setItem('carrinho', JSON.stringify(cart));
+          showPopup();
+        });
+      });
+
+      // Evento para o botão de finalizar compra (opcional)
+      document.getElementById('checkoutBtn')?.addEventListener('click', () => {
+        alert('Redirecionando para o checkout...');
+        // Aqui você pode adicionar a lógica de redirecionamento
       });
     }
 
-    overlay.addEventListener('click', () => {
-      popup.classList.add("translate-x-full");
-      overlay.classList.add("hidden");
-    });
+    popup.classList.remove('translate-x-full');
+    overlay.classList.remove('hidden');
   }
-
 
   function searchProducts() {
     const query = inputSearch.value.trim().toLowerCase();
@@ -249,17 +255,15 @@ function closePopup() {
   document.getElementById("popup").classList.add("translate-x-full");
   document.getElementById("popup-overlay").classList.add("hidden");
 }
-
-
 // Função para alternar a visibilidade do filtro
 function toggleFilterSidebar() {
   const sidebar = document.getElementById('filter-sidebar');
   const overlay = document.getElementById('filter-overlay');
   const button = document.getElementById('filter-toggle');
-  
+
   sidebar.classList.toggle('-translate-x-full');
   overlay.classList.toggle('hidden');
-  
+
   if (sidebar.classList.contains('-translate-x-full')) {
     button.innerHTML = `
       <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -285,7 +289,6 @@ function toggleFilterSidebar() {
     `;
   }
 }
-
 // Fechar filtro ao selecionar opção (mobile)
 document.querySelectorAll('#category-filter-form input, #price-filter-form input').forEach(item => {
   item.addEventListener('change', () => {
