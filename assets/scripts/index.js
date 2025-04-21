@@ -140,11 +140,23 @@ document.getElementById('buttonCama').addEventListener('click', function() {
   localStorage.setItem('checkboxCama', 'true')
   window.location.href = '/pages/usuario/produtos.html'
 })
+document.getElementById('buttonCamaHeader').addEventListener('click', function() {
+  localStorage.setItem('checkboxCama', 'true')
+  window.location.href = '/pages/usuario/produtos.html'
+})
 document.getElementById('buttonSanitario').addEventListener('click', function() {
   localStorage.setItem('checkboxSanitario', 'true')
   window.location.href = '/pages/usuario/produtos.html'
 })
+document.getElementById('buttonSanitarioHeader').addEventListener('click', function() {
+  localStorage.setItem('checkboxSanitario', 'true')
+  window.location.href = '/pages/usuario/produtos.html'
+})
 document.getElementById('buttonColeira').addEventListener('click', function() {
+  localStorage.setItem('checkboxColeira', 'true')
+  window.location.href = '/pages/usuario/produtos.html'
+})
+document.getElementById('buttonColeiraHeader').addEventListener('click', function() {
   localStorage.setItem('checkboxColeira', 'true')
   window.location.href = '/pages/usuario/produtos.html'
 })
