@@ -150,30 +150,68 @@ document.addEventListener("DOMContentLoaded", function () {
       ? `https://back.soracoescariri.com.br${product.produto.pathimage}`
       : 'default.jpg';
 
-    popupContent.innerHTML = `
-        <img src="${imageUrl}" alt="${product.produto.name}" class="w-full h-60 object-contain mb-4 rounded-lg">
-        <h3 class="text-xl font-bold mb-2">${product.produto.name}</h3>
-        <p class="text-gray-700 text-sm mb-1">Peso: ${variant.weight}</p>
-        <p class="text-gray-800 text-lg font-semibold">Preço: R$ ${variant.price}</p>
-        ${variant.discount && Number(variant.discount) > 0 ? `
-          <p class="text-red-500 line-through text-sm">De: R$ ${parseFloat(variant.price).toFixed(2)}</p>
-          <p class="text-green-600 text-md font-bold">Com desconto: R$ ${(variant.price * (1 - Number(variant.discount) / 100)).toFixed(2)}</p>
-        ` : ''}
-      `;
+    const hasDiscount = variant.discount && Number(variant.discount) > 0;
+    const originalPrice = parseFloat(variant.price).toFixed(2);
+    const finalPrice = hasDiscount
+      ? (variant.price * (1 - Number(variant.discount) / 100)).toFixed(2)
+      : originalPrice;
 
+    popupContent.innerHTML = `
+      <div class="w-full max-w-md bg-white rounded-xl p-4 shadow-lg">
+        <div class="flex justify-between items-center mb-4">
+          <h2 class="text-sm font-bold text-center w-full text-[#48887A]">MEU CARRINHO</h2>
+          <button id="closePopup" class="text-gray-500 hover:text-gray-700 text-xl absolute right-4 top-4">&times;</button>
+        </div>
+  
+        <div class="flex items-start gap-4">
+          <img src="${imageUrl}" alt="${product.produto.name}" class="w-20 h-24 object-contain rounded-md">
+  
+          <div class="flex-1">
+            <p class="text-sm font-semibold text-gray-800 leading-tight mb-1">${product.produto.name}</p>
+            <p class="text-sm text-[#48887A] mb-2">Peso: ${variant.weight}</p>
+  
+            <div class="flex items-center gap-2 mb-2">
+              <button class="bg-gray-200 w-7 h-7 md:w-9 md:h-9 rounded-l-2xl hover:bg-gray-300 transition">–</button>
+              <span class="w-7 h-7 md:w-9 md:h-9 text-center py-1 bg-gray-300 text-sm md:text-base">1</span>
+              <button class="bg-gray-200 w-7 h-7 md:w-9 md:h-9 rounded-e-2xl hover:bg-gray-300 transition">+</button>
+
+
+
+
+            </div>
+  
+            <div class="text-right">
+              ${hasDiscount ? `
+                <p class="text-xs text-gray-400 line-through">R$ ${originalPrice}</p>
+                <p class="text-lg font-bold text-[#48887A]">R$ ${finalPrice}</p>
+              ` : `
+                <p class="text-lg font-bold text-[#48887A]">R$ ${originalPrice}</p>
+              `}
+            </div>
+          </div>
+        </div>
+      </div>
+    `;
+
+    // Abre o popup
     popup.classList.remove("translate-x-full");
     overlay.classList.remove("hidden");
 
-    document.getElementById('closePopup').addEventListener('click', () => {
-      popup.classList.add("translate-x-full");
-      overlay.classList.add("hidden");
-    });
+    // Evento para fechar
+    const closeBtn = document.getElementById('closePopup');
+    if (closeBtn) {
+      closeBtn.addEventListener('click', () => {
+        popup.classList.add("translate-x-full");
+        overlay.classList.add("hidden");
+      });
+    }
 
     overlay.addEventListener('click', () => {
       popup.classList.add("translate-x-full");
       overlay.classList.add("hidden");
     });
-}
+  }
+
 
   function searchProducts() {
     const query = inputSearch.value.trim().toLowerCase();
@@ -211,3 +249,60 @@ function closePopup() {
   document.getElementById("popup").classList.add("translate-x-full");
   document.getElementById("popup-overlay").classList.add("hidden");
 }
+
+
+// Função para alternar a visibilidade do filtro
+function toggleFilterSidebar() {
+  const sidebar = document.getElementById('filter-sidebar');
+  const overlay = document.getElementById('filter-overlay');
+  const button = document.getElementById('filter-toggle');
+  
+  sidebar.classList.toggle('-translate-x-full');
+  overlay.classList.toggle('hidden');
+  
+  if (sidebar.classList.contains('-translate-x-full')) {
+    button.innerHTML = `
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="4" y1="21" x2="4" y2="14"></line>
+        <line x1="4" y1="10" x2="4" y2="3"></line>
+        <line x1="12" y1="21" x2="12" y2="12"></line>
+        <line x1="12" y1="8" x2="12" y2="3"></line>
+        <line x1="20" y1="21" x2="20" y2="16"></line>
+        <line x1="20" y1="12" x2="20" y2="3"></line>
+        <line x1="1" y1="14" x2="7" y2="14"></line>
+        <line x1="9" y1="8" x2="15" y2="8"></line>
+        <line x1="17" y1="16" x2="23" y2="16"></line>
+      </svg>
+      Filtrar
+    `;
+  } else {
+    button.innerHTML = `
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="18" y1="6" x2="6" y2="18"></line>
+        <line x1="6" y1="6" x2="18" y2="18"></line>
+      </svg>
+      Fechar
+    `;
+  }
+}
+
+// Fechar filtro ao selecionar opção (mobile)
+document.querySelectorAll('#category-filter-form input, #price-filter-form input').forEach(item => {
+  item.addEventListener('change', () => {
+    if (window.innerWidth < 768) {
+      toggleFilterSidebar();
+    }
+  });
+});
+
+// Fechar ao clicar no overlay
+document.getElementById('filter-overlay').addEventListener('click', toggleFilterSidebar);
+
+// Função para fechar popup
+function closePopup() {
+  document.getElementById('popup').classList.add('translate-x-full');
+  document.getElementById('popup-overlay').classList.add('hidden');
+}
+
+// Adicionar evento ao botão de filtro
+document.getElementById('filter-toggle').addEventListener('click', toggleFilterSidebar);
