@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
   let allProducts = [];
 
   // Requisição para buscar produtos
-  fetch("http://localhost:3333/api/getProducts", {
+  fetch("https://back.soracoescariri.com.br/api/getProducts", {
     method: "GET",
     headers: {
       Authorization: `Bearer ${token}`,
