@@ -100,7 +100,7 @@
         </div>
       </nav>
 
-      <div class="flex items-center space-x-5">
+      <div class="flex items-center md:gap-5">
         <button class="p-5 w-[50px] h-[50px] absolute cursor-pointer focus-within:w-[220px] bg-[#48887A] shadow-[2px_2px_20px_rgba(0,0,0,0.08)] right-16 md:right-auto md:left-auto md:top-0 md:static rounded-full flex items-center transition-all duration-300">
           <div class="flex items-center justify-center fill-white">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="15" height="15">
@@ -110,9 +110,10 @@
           <input type="text" class="outline-none text-[10px] bg-transparent w-full text-white font-normal px-4" placeholder="Pesquisar..." id="search" />
         </button>
 
-        <button target="_blank" class="add-to-cart cursor-pointer" id="carrinhoButton">
+        <div id="cart-button" class="relative cursor-pointer">
           <img src="/assets/icons/icons8-carrinho-35.png" alt="Carrinho" class="md:h-6 md:w-6 hover:scale-110 transition">
-        </button>
+          <span id="cart-count" class="absolute -top-2 -right-2 bg-[#48887A] text-white text-xs rounded-full h-5 w-5 flex items-center justify-center hidden">0</span>
+        </div>
       </div>
     </div>
   </header>
@@ -141,7 +142,7 @@
   <section class="w-full h-[250px] sm:h-[450px] md:hidden mt-16 bg-cover bg-center" style="background-image: url('/assets/imagem/BANNER.jpeg');">
   </section>
   <!-- Botão de filtrar para mobile -->
-  <button id="filter-toggle" class=" z-30 flex mt-5 ml-40 mb-0 justify-center items-center  rounded-lg bg-[#2A7D5E] px-6 py-3 font-bold text-white shadow-md transition-all duration-300 hover:bg-[#25684D] hover:-translate-y-0.5 hover:shadow-lg md:hidden">
+  <button id="filter-toggle" onclick="toggleFilterSidebar()" class=" z-30 flex mt-5 ml-40 mb-0 justify-center items-center  rounded-lg bg-transparent border-2 border-[#48887A] px-6 py-3 font-bold text-[#48887A] shadow-md transition-all duration-300 hover:bg-[#25684D] hover:-translate-y-0.5 hover:shadow-lg md:hidden">
     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
       <line x1="4" y1="21" x2="4" y2="14"></line>
       <line x1="4" y1="10" x2="4" y2="3"></line>
@@ -155,10 +156,12 @@
     </svg>
     Filtrar
   </button>
-  <div class="flex min-h-screen bg-gray-200 pt-16 md:pt-0">
+
+  <div class="flex min-h-screen bg-gray-200 pt-4 md:pt-0">
     <aside class="hidden md:block w-64 bg-white shadow-md p-6 rounded-2xl mt-9 self-start">
+
       <p class="mt-4 border-b-1 border-gray-300 w-full text-black ">Filtrar Produtos</p>
-      <button type="button" id="clear-filters" class=" flex mt-4text-black text-[13px] gap-2 mt-2">Limpar filtros
+      <button type="button" id="clear-filters" class=" cursor-pointer flex mt-4text-black text-[13px] gap-2 mt-2">Limpar filtros
         <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="15" height="15" viewBox="0 0 50 50">
           <path d="M 21 0 C 19.355469 0 18 1.355469 18 3 L 18 5 L 10.1875 5 C 10.0625 4.976563 9.9375 4.976563 9.8125 5 L 8 5 C 7.96875 5 7.9375 5 7.90625 5 C 7.355469 5.027344 6.925781 5.496094 6.953125 6.046875 C 6.980469 6.597656 7.449219 7.027344 8 7 L 9.09375 7 L 12.6875 47.5 C 12.8125 48.898438 14.003906 50 15.40625 50 L 34.59375 50 C 35.996094 50 37.1875 48.898438 37.3125 47.5 L 40.90625 7 L 42 7 C 42.359375 7.003906 42.695313 6.816406 42.878906 6.503906 C 43.058594 6.191406 43.058594 5.808594 42.878906 5.496094 C 42.695313 5.183594 42.359375 4.996094 42 5 L 32 5 L 32 3 C 32 1.355469 30.644531 0 29 0 Z M 21 2 L 29 2 C 29.5625 2 30 2.4375 30 3 L 30 5 L 20 5 L 20 3 C 20 2.4375 20.4375 2 21 2 Z M 11.09375 7 L 38.90625 7 L 35.3125 47.34375 C 35.28125 47.691406 34.910156 48 34.59375 48 L 15.40625 48 C 15.089844 48 14.71875 47.691406 14.6875 47.34375 Z M 18.90625 9.96875 C 18.863281 9.976563 18.820313 9.988281 18.78125 10 C 18.316406 10.105469 17.988281 10.523438 18 11 L 18 44 C 17.996094 44.359375 18.183594 44.695313 18.496094 44.878906 C 18.808594 45.058594 19.191406 45.058594 19.503906 44.878906 C 19.816406 44.695313 20.003906 44.359375 20 44 L 20 11 C 20.011719 10.710938 19.894531 10.433594 19.6875 10.238281 C 19.476563 10.039063 19.191406 9.941406 18.90625 9.96875 Z M 24.90625 9.96875 C 24.863281 9.976563 24.820313 9.988281 24.78125 10 C 24.316406 10.105469 23.988281 10.523438 24 11 L 24 44 C 23.996094 44.359375 24.183594 44.695313 24.496094 44.878906 C 24.808594 45.058594 25.191406 45.058594 25.503906 44.878906 C 25.816406 44.695313 26.003906 44.359375 26 44 L 26 11 C 26.011719 10.710938 25.894531 10.433594 25.6875 10.238281 C 25.476563 10.039063 25.191406 9.941406 24.90625 9.96875 Z M 30.90625 9.96875 C 30.863281 9.976563 30.820313 9.988281 30.78125 10 C 30.316406 10.105469 29.988281 10.523438 30 11 L 30 44 C 29.996094 44.359375 30.183594 44.695313 30.496094 44.878906 C 30.808594 45.058594 31.191406 45.058594 31.503906 44.878906 C 31.816406 44.695313 32.003906 44.359375 32 44 L 32 11 C 32.011719 10.710938 31.894531 10.433594 31.6875 10.238281 C 31.476563 10.039063 31.191406 9.941406 30.90625 9.96875 Z"></path>
         </svg>
@@ -266,27 +269,147 @@
 
       </form>
     </aside>
+    <!-- filtro mobile -->
+    <aside id="filter-sidebar-mobile" class="fixed left-0 top-0 h-full w-64 bg-white shadow-md p-6 rounded-r-2xl z-50 transform -translate-x-full transition-transform  duration-300 md:hidden">
+      <p class="mt-4 border-b-1 border-gray-300 w-full text-black ">Filtrar Produtos</p>
+
+   
+
+      <div class="overflow-y-auto h-[calc(100vh-100px)]">
+        <button type="button" id="clear-filters" class="cursor-pointer flex mt-4text-black text-[13px] gap-2 mt-2">Limpar filtros
+          <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="15" height="15" viewBox="0 0 50 50">
+            <path d="M 21 0 C 19.355469 0 18 1.355469 18 3 L 18 5 L 10.1875 5 C 10.0625 4.976563 9.9375 4.976563 9.8125 5 L 8 5 C 7.96875 5 7.9375 5 7.90625 5 C 7.355469 5.027344 6.925781 5.496094 6.953125 6.046875 C 6.980469 6.597656 7.449219 7.027344 8 7 L 9.09375 7 L 12.6875 47.5 C 12.8125 48.898438 14.003906 50 15.40625 50 L 34.59375 50 C 35.996094 50 37.1875 48.898438 37.3125 47.5 L 40.90625 7 L 42 7 C 42.359375 7.003906 42.695313 6.816406 42.878906 6.503906 C 43.058594 6.191406 43.058594 5.808594 42.878906 5.496094 C 42.695313 5.183594 42.359375 4.996094 42 5 L 32 5 L 32 3 C 32 1.355469 30.644531 0 29 0 Z M 21 2 L 29 2 C 29.5625 2 30 2.4375 30 3 L 30 5 L 20 5 L 20 3 C 20 2.4375 20.4375 2 21 2 Z M 11.09375 7 L 38.90625 7 L 35.3125 47.34375 C 35.28125 47.691406 34.910156 48 34.59375 48 L 15.40625 48 C 15.089844 48 14.71875 47.691406 14.6875 47.34375 Z M 18.90625 9.96875 C 18.863281 9.976563 18.820313 9.988281 18.78125 10 C 18.316406 10.105469 17.988281 10.523438 18 11 L 18 44 C 17.996094 44.359375 18.183594 44.695313 18.496094 44.878906 C 18.808594 45.058594 19.191406 45.058594 19.503906 44.878906 C 19.816406 44.695313 20.003906 44.359375 20 44 L 20 11 C 20.011719 10.710938 19.894531 10.433594 19.6875 10.238281 C 19.476563 10.039063 19.191406 9.941406 18.90625 9.96875 Z M 24.90625 9.96875 C 24.863281 9.976563 24.820313 9.988281 24.78125 10 C 24.316406 10.105469 23.988281 10.523438 24 11 L 24 44 C 23.996094 44.359375 24.183594 44.695313 24.496094 44.878906 C 24.808594 45.058594 25.191406 45.058594 25.503906 44.878906 C 25.816406 44.695313 26.003906 44.359375 26 44 L 26 11 C 26.011719 10.710938 25.894531 10.433594 25.6875 10.238281 C 25.476563 10.039063 25.191406 9.941406 24.90625 9.96875 Z M 30.90625 9.96875 C 30.863281 9.976563 30.820313 9.988281 30.78125 10 C 30.316406 10.105469 29.988281 10.523438 30 11 L 30 44 C 29.996094 44.359375 30.183594 44.695313 30.496094 44.878906 C 30.808594 45.058594 31.191406 45.058594 31.503906 44.878906 C 31.816406 44.695313 32.003906 44.359375 32 44 L 32 11 C 32.011719 10.710938 31.894531 10.433594 31.6875 10.238281 C 31.476563 10.039063 31.191406 9.941406 30.90625 9.96875 Z"></path>
+          </svg>
+        </button>
+        <h2 class="mt-4 border-b-1 border-gray-300 w-full text-black">Filtrar Categoria</h2>
+        <form id="category-filter-form" class="space-y-3 mt-3">
+          <div>
+            <input type="checkbox" id="racao" name="categoria" value="racao" class="mr-2">
+            <label for="racao" class="text-gray-700">Ração</label>
+          </div>
+          <div>
+            <input type="checkbox" id="medicamentos" name="categoria" value="medicamentos" class="mr-2">
+            <label for="medicamentos" class="text-gray-700">Medicamentos</label>
+          </div>
+          <div>
+            <input type="checkbox" id="acessorios" name="categoria" value="acessorios" class="mr-2">
+            <label for="acessorios" class="text-gray-700">Acessórios</label>
+          </div>
+          <div>
+            <input type="checkbox" id="petshop" name="categoria" value="petshop" class="mr-2">
+            <label for="petshop" class="text-gray-700">Petshop</label>
+          </div>
+        </form>
+
+        <h2 class="mt-4 border-b-1 border-gray-300 w-full text-black">Filtrar Produtos</h2>
+        <form id="category-filter-form" class="space-y-3 mt-3">
+          <div>
+            <input type="checkbox" id="areia" name="produtos" value="areia" class="mr-2">
+            <label for="areia" class="text-gray-700">Areia</label>
+          </div>
+          <div>
+            <input type="checkbox" id="cama" name="produtos" value="cama" class="mr-2">
+            <label for="cama" class="text-gray-700">Cama</label>
+          </div>
+          <div>
+            <input type="checkbox" id="sanitario" name="produtos" value="sanitario" class="mr-2">
+            <label for="sanitario" class="text-gray-700">Sanitário</label>
+          </div>
+          <div>
+            <input type="checkbox" id="coleira" name="produtos" value="coleira" class="mr-2">
+            <label for="coleira" class="text-gray-700">Coleira</label>
+          </div>
+        </form>
+
+        <h2 class="mt-4 border-b-1 border-gray-300 w-full text-black">Filtrar Animais</h2>
+        <form id="category-filter-form" class="space-y-3 mt-3">
+          <div>
+            <input type="checkbox" id="cao" name="animal" value="Cao" class="mr-2">
+            <label for="cao" class="text-gray-700">Cão</label>
+          </div>
+          <div>
+            <input type="checkbox" id="gato" name="animal" value="Gato" class="mr-2">
+            <label for="gato" class="text-gray-700">Gato</label>
+          </div>
+          <div>
+            <input type="checkbox" id="equinos" name="animal" value="Equinos" class="mr-2">
+            <label for="equinos" class="text-gray-700">Equinos</label>
+          </div>
+          <div>
+            <input type="checkbox" id="aves" name="animal" value="Aves" class="mr-2">
+            <label for="aves" class="text-gray-700">Aves</label>
+          </div>
+          <div>
+            <input type="checkbox" id="peixes" name="animal" value="Peixes" class="mr-2">
+            <label for="peixes" class="text-gray-700">Peixes</label>
+          </div>
+          <div>
+            <input type="checkbox" id="porcos" name="animal" value="Porcos" class="mr-2">
+            <label for="porcos" class="text-gray-700">Porcos</label>
+          </div>
+        </form>
+
+        <h2 class="mt-4 border-b-1 border-gray-300 w-full text-black">Filtrar Idade</h2>
+        <form id="category-filter-form" class="space-y-3 mt-3">
+          <div>
+            <input type="checkbox" id="adulto" name="idade" value="adulto" class="mr-2">
+            <label for="adulto" class="text-gray-700">Adulto</label>
+          </div>
+          <div>
+            <input type="checkbox" id="filhote" name="idade" value="filhote" class="mr-2">
+            <label for="filhote" class="text-gray-700">Filhote</label>
+          </div>
+        </form>
+
+        <h2 class="mt-4 border-b-1 border-gray-300 w-full text-black">Filtrar por Preço</h2>
+
+        <form id="price-filter-form" class="space-y-3 mt-3">
+          <div>
+            <input type="checkbox" id="range1" name="price" value="50-100" class="mr-2">
+            <label for="range1" class="text-gray-700">R$ 50 - R$ 100</label>
+          </div>
+          <div>
+            <input type="checkbox" id="range2" name="price" value="100-200" class="mr-2">
+            <label for="range2" class="text-gray-700">R$ 100 - R$ 200</label>
+          </div>
+          <div>
+            <input type="checkbox" id="range3" name="price" value="200-300" class="mr-2">
+            <label for="range3" class="text-gray-700">R$ 200 - R$ 300</label>
+          </div>
+          <div>
+            <input type="checkbox" id="range4" name="price" value="300+" class="mr-2">
+            <label for="range4" class="text-gray-700">Acima de R$ 300</label>
+          </div>
+
+        </form>
+      </div>
+    </aside>
     <!-- Grid de Produtos -->
-    <main class="flex-1">
-      <div id="product-container" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-2 lg:grid-cols-4 gap-4 mt-4  p-5">
+    <main class="flex-1 w-full justify-center">
+      <div id="product-container" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 2xl:grid-cols-6 gap-3 sm:gap-4 md:gap-5 p-4 sm:p-5 md:p-6">
         <!-- Produtos serão inseridos aqui -->
       </div>
     </main>
   </div>
-
   <!-- Popup -->
   <div id="popup-overlay" class="fixed inset-0 z-[90] hidden bg-black/10 backdrop-blur-sm" onclick="closePopup()">
   </div>
-  <div id="popup" class="fixed top-0 right-0 z-[100] flex h-full w-full flex-col items-center bg-white shadow-lg transition-transform duration-300 md:w-[450px] translate-x-full">
-    <div class="flex w-full items-center justify-between border-b p-4">
+
+  <div id="popup" class="fixed top-0 right-0 z-[100] flex h-full w-full flex-col bg-white shadow-lg transition-transform duration-300 md:w-[450px] translate-x-full overflow-y-auto">
+    <div class="flex w-full items-center justify-between border-b p-4 sticky top-0 bg-white z-10">
       <h2 class="text-lg font-semibold text-gray-800">Detalhes do Produto</h2>
       <button onclick="closePopup()" class="text-xl font-bold text-gray-500 hover:text-red-500">&times;</button>
     </div>
-    <div id="popup-content" class="w-full p-4 text-gray-700"></div>
-    <a href="carrinho2.html" class="mt-6 flex w-96 items-center justify-center gap-2 rounded-3xl bg-[#2A7D5E] py-3 text-lg font-semibold text-white transition hover:bg-[#25684D]">
-      FINALIZAR COMPRA
-    </a>
 
+    <div id="popup-content" class="w-full p-4 text-gray-700 flex-1">
+      <!-- Conteúdo será inserido aqui -->
+    </div>
+
+    <div class="sticky bottom-0 bg-white border-t p-4">
+      <a href="carrinho2.html" class="flex w-full items-center justify-center gap-2 rounded-lg bg-[#2A7D5E] py-3 text-lg font-semibold text-white transition hover:bg-[#25684D]">
+        FINALIZAR COMPRA
+      </a>
+    </div>
   </div>
 
 

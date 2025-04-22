@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const alertContainer = document.getElementById('alert-container');
   const inputSearch = document.querySelector('#search');
   let allProducts = [];
-  
+
   // Elementos de filtro
   const filterCheckboxes = document.querySelectorAll(
     'input[type="checkbox"][name="categoria"], ' +
@@ -31,109 +31,128 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // Inicializa com filtros ativos
-  window.onload = function() {
-    if(localStorage.getItem('checkboxCao') === 'true') {
+  window.onload = function () {
+    if (localStorage.getItem('checkboxCao') === 'true') {
       document.getElementById('cao').checked = true;
       localStorage.removeItem('checkboxCao')
-    } else if(localStorage.getItem('checkboxRacaoCaoAdulto') === 'true'){
+    } else if (localStorage.getItem('checkboxRacaoCaoAdulto') === 'true') {
       document.getElementById('cao').checked = true;
       document.getElementById('racao').checked = true;
       document.getElementById('adulto').checked = true;
       localStorage.removeItem('checkboxRacaoCaoAdulto')
-    } else if(localStorage.getItem('checkboxRacaoCaoFilhote') === 'true'){
+    } else if (localStorage.getItem('checkboxRacaoCaoFilhote') === 'true') {
       document.getElementById('cao').checked = true;
       document.getElementById('racao').checked = true;
       document.getElementById('filhote').checked = true;
       localStorage.removeItem('checkboxRacaoCaoFilhote')
-    } else if(localStorage.getItem('checkboxMedicamentoCao') === 'true'){
+    } else if (localStorage.getItem('checkboxMedicamentoCao') === 'true') {
       document.getElementById('cao').checked = true;
       document.getElementById('medicamentos').checked = true;
       localStorage.removeItem('checkboxMedicamentoCao')
-    } else if(localStorage.getItem('checkboxGato') === 'true'){
+    } else if (localStorage.getItem('checkboxGato') === 'true') {
       document.getElementById('gato').checked = true;
       localStorage.removeItem('checkboxGato')
-    }  else if(localStorage.getItem('checkboxRacaoGato') === 'true'){
+    } else if (localStorage.getItem('checkboxRacaoGato') === 'true') {
       document.getElementById('gato').checked = true;
       document.getElementById('racao').checked = true;
       localStorage.removeItem('checkboxRacaoGato')
-    } else if(localStorage.getItem('checkboxAreiaGato') === 'true'){
+    } else if (localStorage.getItem('checkboxAreiaGato') === 'true') {
       document.getElementById('gato').checked = true;
       document.getElementById('areia').checked = true;
       localStorage.removeItem('checkboxAreiaGato')
-    } else if(localStorage.getItem('checkboxMedicamentoGato') === 'true'){
+    } else if (localStorage.getItem('checkboxMedicamentoGato') === 'true') {
       document.getElementById('gato').checked = true;
       document.getElementById('medicamentos').checked = true;
       localStorage.removeItem('checkboxMedicamentoGato')
-    } else if(localStorage.getItem('checkboxEAPP') === 'true') {
+    } else if (localStorage.getItem('checkboxEAPP') === 'true') {
       document.getElementById('equinos').checked = true;
       document.getElementById('aves').checked = true;
       document.getElementById('peixes').checked = true;
       document.getElementById('porcos').checked = true;
       localStorage.removeItem('checkboxEAPP')
-    } else if(localStorage.getItem('checkboxRacaoEquinioEporco') === 'true') {
+    } else if (localStorage.getItem('checkboxRacaoEquinioEporco') === 'true') {
       document.getElementById('equinos').checked = true;
       document.getElementById('porcos').checked = true;
       document.getElementById('racao').checked = true;
       localStorage.removeItem('checkboxRacaoEquinioEporco');
-    } else if(localStorage.getItem('checkboxRacaoAves') === 'true') {
+    } else if (localStorage.getItem('checkboxRacaoAves') === 'true') {
       document.getElementById('aves').checked = true;
       document.getElementById('racao').checked = true;
       localStorage.removeItem('checkboxRacaoAves');
-    } else if(localStorage.getItem('checkboxRacaoPeixes') === 'true') {
+    } else if (localStorage.getItem('checkboxRacaoPeixes') === 'true') {
       document.getElementById('peixes').checked = true;
       document.getElementById('racao').checked = true;
       localStorage.removeItem('checkboxRacaoPeixes')
-    } else if(localStorage.getItem('checkboxMedicamentos') === 'true'){
+    } else if (localStorage.getItem('checkboxMedicamentos') === 'true') {
       document.getElementById('medicamentos').checked = true;
       localStorage.removeItem('checkboxMedicamentos')
-    } else if(localStorage.getItem('checkboxMedicamentoAdulto') === 'true') {
+    } else if (localStorage.getItem('checkboxMedicamentoAdulto') === 'true') {
       document.getElementById('medicamentos').checked = true;
       document.getElementById('adulto').checked = true;
       localStorage.removeItem('checkboxMedicamentoAdulto');
-    } else if(localStorage.getItem('checkboxMedicamentoFilhote') === 'true') {
+    } else if (localStorage.getItem('checkboxMedicamentoFilhote') === 'true') {
       document.getElementById('medicamentos').checked = true;
       document.getElementById('filhote').checked = true;
       localStorage.removeItem('checkboxMedicamentoFilhote');
-    } else if(localStorage.getItem('checkboxMedicamentoCastrado') === 'true') {
+    } else if (localStorage.getItem('checkboxMedicamentoCastrado') === 'true') {
       document.getElementById('medicamentos').checked = true;
       // document.getElementById('gatocastrado').checked = true;
       localStorage.removeItem('checkboxMedicamentoCastrado');
-    } else if(localStorage.getItem('checkboxAcessorios') === 'true'){
+    } else if (localStorage.getItem('checkboxAcessorios') === 'true') {
       document.getElementById('petshop').checked = true;
       localStorage.removeItem('checkboxAcessorios')
-    } else if(localStorage.getItem('checkboxCama') === 'true'){
+    } else if (localStorage.getItem('checkboxCama') === 'true') {
       document.getElementById('acessorios').checked = true;
       document.getElementById('cama').checked = true;
       localStorage.removeItem('checkboxCama')
-    } else if(localStorage.getItem('checkboxSanitario') === 'true'){
+    } else if (localStorage.getItem('checkboxSanitario') === 'true') {
       document.getElementById('acessorios').checked = true;
       document.getElementById('sanitario').checked = true;
       localStorage.removeItem('checkboxSanitario')
-    } else if(localStorage.getItem('checkboxColeira') === 'true'){
+    } else if (localStorage.getItem('checkboxColeira') === 'true') {
       document.getElementById('acessorios').checked = true;
       document.getElementById('coleira').checked = true;
       localStorage.removeItem('checkboxColeira')
-    } 
-    
+    }
+
     filterCheckboxes.forEach(checkbox => {
       checkbox.addEventListener('change', filterProducts);
     });
+    // Inicializa contador do carrinho
+    updateCartCount();
   }
+
+  // Atualiza contador do carrinho
+  function updateCartCount() {
+    const cart = JSON.parse(localStorage.getItem('carrinho')) || [];
+    const countElement = document.getElementById('cart-count');
+    if (countElement) {
+      const totalItems = cart.reduce((sum, item) => sum + item.quantidade, 0);
+      countElement.textContent = totalItems;
+      countElement.classList.toggle('hidden', totalItems === 0);
+    }
+  }
+
+  // Adiciona evento ao botão do carrinho
+  document.getElementById('cart-button')?.addEventListener('click', function (e) {
+    e.preventDefault();
+    showCartPopup();
+  });
 
   // Renderiza produtos com atributos de filtro
   function renderProducts(products) {
     container.innerHTML = '';
 
     const fragment = document.createDocumentFragment();
-    
+
     products.forEach(product => {
       console.log(product)
       const category = getProductCategory(product.produto.product_category);
       console.log(category)
       const produto = getProducts(product.produto.name);
       const animal = product.category;
-      const price = product.variantes?.length > 0 
-        ? Math.min(...product.variantes.map(v => parseFloat(v.price))) 
+      const price = product.variantes?.length > 0
+        ? Math.min(...product.variantes.map(v => parseFloat(v.price)))
         : 0;
       const age = product.produto.name.toLowerCase().includes('filhote') ? 'filhote' : 'adulto';
       const imageUrl = product.produto.pathimage
@@ -148,31 +167,38 @@ document.addEventListener("DOMContentLoaded", function () {
       productElement.dataset.animal = animal;
       productElement.dataset.age = age;
       productElement.dataset.price = price;
-      
+
       productElement.innerHTML = `
-        <div class="relative">
-          <img class="flex w-48 h-48 md:w-32 md:h-32 rounded-lg" src="${imageUrl}" alt="${product.produto.name || 'Produto'}">
+       <div class="flex flex-col w-full h-full rounded-lg overflow-hidden hover:shadow-md transition-all duration-200">
+        <div class="relative pt-[100%]">
+             <img 
+              class="absolute top-0 left-0 w-full h-full object-contain p-4" 
+              src="${imageUrl}" 
+              alt="${product.produto.name || 'Produto'}"
+              onerror="this.src='placeholder-image-url.jpg'"
+            >
         </div>
-        <div class="mt-3">
-          <h2 class="text-gray-700 font-medium text-xs">${product.produto.name || 'Nome do Produto'}</h2>
+        <div class="p-1 flex flex-col flex-grow">
+          <h2 class="text-sm font-medium text-gray-800 mb-1 line-clamp-2 min-h-[2.5rem]">${product.produto.name || 'Nome do Produto'}</h2>
           <p class="text-red-500 text-xs line-through price-old-display">R$ 0,00</p>
           <div class="flex"> 
             <p class="text-xl font-bold text-gray-900 price-display">R$ ${price.toFixed(2)}</p>
           </div>
-          <div class="flex gap-2 mt-2">
+          <div class=""w-20 mt-2 px-2 py-2 bg-gray-100 text-gray-700 text-xs rounded border border-gray-300 focus:outline-none focus:ring-1 focus:ring-[#48887A]">
             <select class="variant-select px-2 py-1 bg-gray-200 text-gray-700 text-xs rounded">
               ${variantes.length > 0
-                ? variantes.map(v => `<option value='${JSON.stringify(v)}'>${v.weight}</option>`).join('')
-                : '<option value=\'{"weight": "Padrão", "price": "0"}\'>Padrão</option>'}
+          ? variantes.map(v => `<option value='${JSON.stringify(v)}'>${v.weight}</option>`).join('')
+          : '<option value=\'{"weight": "Padrão", "price": "0"}\'>Padrão</option>'}
             </select>
           </div>
-          <button class="add-to-cart w-full mt-3 py-1.5 bg-[#48887A] text-white text-sm font-bold rounded-md" data-product='${JSON.stringify(product)}'>COMPRAR</button>
+          <button class="add-to-cart cursor-pointer w-full mt-3 py-1.5 bg-[#48887A] text-white text-sm font-bold rounded-md" data-product='${JSON.stringify(product)}'>COMPRAR</button>
         </div>
+      </div>
       `;
-      
+
       fragment.appendChild(productElement);
     });
-    
+
     container.appendChild(fragment);
 
     updateVariantSelectors();
@@ -184,7 +210,7 @@ document.addEventListener("DOMContentLoaded", function () {
   function filterProducts() {
     const activeFilters = getActiveFilters();
     const hasActiveFilters = Object.values(activeFilters).some(arr => arr.length > 0);
-  
+
     document.querySelectorAll('.product-item').forEach(item => {
       const matches = [
         activeFilters.categoria.length === 0 || activeFilters.categoria.includes(item.dataset.category),
@@ -193,8 +219,8 @@ document.addEventListener("DOMContentLoaded", function () {
         activeFilters.idade.length === 0 || activeFilters.idade.includes(item.dataset.age),
         activeFilters.price.length === 0 || checkPriceRange(parseFloat(item.dataset.price), activeFilters.price)
       ].every(Boolean);
-      
-  
+
+
       item.style.display = (!hasActiveFilters || matches) ? 'block' : 'none';
     });
   }
@@ -212,22 +238,22 @@ document.addEventListener("DOMContentLoaded", function () {
   // Função corrigida para determinar categoria do produto
   function getProductCategory(productCategory) {
     if (!productCategory) return 'outros';
-  
+
     const lowerName = productCategory.toLowerCase();
-    
+
     if (/ração|racao|ração/i.test(lowerName)) return 'racao';
     if (/areia|granulado|absorbente|argila|sanitária|sanitaria/i.test(lowerName)) return 'areia';
     if (/medicamento|medicamentos|vermífugo|vermifugo|antipulgas/i.test(lowerName)) return 'medicamentos';
     if (/acessório|acessorios|acessorio|coleira|brinquedo|comedouro|bebedouro/i.test(lowerName)) return 'acessorios';
     if (/petshop|pet shop|banho|tosa|higiene/i.test(lowerName)) return 'petshop';
-    
+
     return 'outros';
-}
+  }
 
   // Identifica tipo de produto
   function getProducts(nameProduct) {
     if (!nameProduct) return 'outros';
-    
+
     const lowerName = nameProduct.toLowerCase();
     if (/areia|granulado|absorvente|argila|sanitária|sanitaria/i.test(lowerName)) return 'areia';
     if (/cama|forração|forracao|forro|colchão|colchao/i.test(lowerName)) return 'cama';
@@ -261,7 +287,7 @@ document.addEventListener("DOMContentLoaded", function () {
       }
 
       updatePrice(JSON.parse(select.value));
-      select.addEventListener('change', function() {
+      select.addEventListener('change', function () {
         updatePrice(JSON.parse(this.value));
       });
     });
@@ -270,7 +296,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // Configura botões de compra com carrinho completo
   function setupAddToCartButtons() {
     document.querySelectorAll(".add-to-cart").forEach(button => {
-      button.addEventListener("click", function() {
+      button.addEventListener("click", function () {
         const product = JSON.parse(button.getAttribute("data-product"));
         const select = button.closest('.product-item').querySelector('.variant-select');
         const variant = select ? JSON.parse(select.value) : { weight: "Padrão", price: "0" };
@@ -294,6 +320,7 @@ document.addEventListener("DOMContentLoaded", function () {
         localStorage.setItem("carrinho", JSON.stringify(cart));
         showSuccessAlert();
         showCartPopup(); // Mostra o popup completo do carrinho
+        updateCartCount();
       });
     });
   }
@@ -355,6 +382,7 @@ document.addEventListener("DOMContentLoaded", function () {
           const idx = +btn.closest('.cart-item').dataset.index;
           cart[idx].quantidade++;
           localStorage.setItem('carrinho', JSON.stringify(cart));
+          updateCartCount();
           showCartPopup();
         });
       });
@@ -368,6 +396,7 @@ document.addEventListener("DOMContentLoaded", function () {
             cart.splice(idx, 1);
           }
           localStorage.setItem('carrinho', JSON.stringify(cart));
+          updateCartCount();
           showCartPopup();
         });
       });
@@ -407,25 +436,25 @@ document.addEventListener("DOMContentLoaded", function () {
     const filteredProducts = query === ""
       ? allProducts
       : allProducts.filter(product =>
-          product.produto.name.toLowerCase().includes(query)
+        product.produto.name.toLowerCase().includes(query)
       );
 
     renderProducts(filteredProducts);
   }
 
   // Carrega produtos da API
-  const categories = ['Cao','Gato','Equinos', 'Aves', 'Peixes', 'Porcos'];
-  Promise.all(categories.map(category => 
+  const categories = ['Cao', 'Gato', 'Equinos', 'Aves', 'Peixes', 'Porcos'];
+  Promise.all(categories.map(category =>
     fetch(`https://back.soracoescariri.com.br/api/user/products/${category}`)
       .then(response => response.json())
       .then(products => products.map(p => ({ ...p, category })))
       .catch(error => console.error(`Erro ao buscar dados da categoria ${category}:`, error))
   ))
-  .then(results => {
-    allProducts = results.flat();
-    renderProducts(allProducts);
-  })
-  .catch(error => console.error('Erro ao buscar dados:', error));
+    .then(results => {
+      allProducts = results.flat();
+      renderProducts(allProducts);
+    })
+    .catch(error => console.error('Erro ao buscar dados:', error));
 
   // Event listeners
   if (inputSearch) {
@@ -451,41 +480,31 @@ function closePopup() {
   document.getElementById("popup-overlay").classList.add("hidden");
 }
 
-// Função para alternar a visibilidade do filtro
+// Função para alternar a visibilidade do filtro mobile
 function toggleFilterSidebar() {
-  const sidebar = document.getElementById('filter-sidebar');
+  const sidebar = document.getElementById('filter-sidebar-mobile');
   const overlay = document.getElementById('filter-overlay');
-  const button = document.getElementById('filter-toggle');
 
   sidebar.classList.toggle('-translate-x-full');
   overlay.classList.toggle('hidden');
-
-  if (sidebar.classList.contains('-translate-x-full')) {
-    button.innerHTML = `
-      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <line x1="4" y1="21" x2="4" y2="14"></line>
-        <line x1="4" y1="10" x2="4" y2="3"></line>
-        <line x1="12" y1="21" x2="12" y2="12"></line>
-        <line x1="12" y1="8" x2="12" y2="3"></line>
-        <line x1="20" y1="21" x2="20" y2="16"></line>
-        <line x1="20" y1="12" x2="20" y2="3"></line>
-        <line x1="1" y1="14" x2="7" y2="14"></line>
-        <line x1="9" y1="8" x2="15" y2="8"></line>
-        <line x1="17" y1="16" x2="23" y2="16"></line>
-      </svg>
-      Filtrar
-    `;
-  } else {
-    button.innerHTML = `
-      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <line x1="18" y1="6" x2="6" y2="18"></line>
-        <line x1="6" y1="6" x2="18" y2="18"></line>
-      </svg>
-      Fechar
-    `;
-  }
 }
+// Fechar ao clicar no overlay
+document.getElementById('filter-overlay').addEventListener('click', toggleFilterSidebar);
 
+// Fechar ao selecionar opção (mobile)
+document.querySelectorAll('#filter-sidebar-mobile input[type="checkbox"]').forEach(item => {
+  item.addEventListener('change', () => {
+    if (window.innerWidth < 768) {
+      toggleFilterSidebar();
+    }
+  });
+});
+
+// Limpar filtros mobile
+document.getElementById('clear-filters-mobile').addEventListener('click', () => {
+  document.querySelectorAll('#filter-sidebar-mobile input[type="checkbox"]').forEach(cb => cb.checked = false);
+  filterProducts();
+});
 // Fechar filtro ao selecionar opção (mobile)
 document.querySelectorAll('#category-filter-form input, #price-filter-form input').forEach(item => {
   item.addEventListener('change', () => {
@@ -494,7 +513,6 @@ document.querySelectorAll('#category-filter-form input, #price-filter-form input
     }
   });
 });
-
 // Fechar ao clicar no overlay
 document.getElementById('filter-overlay').addEventListener('click', toggleFilterSidebar);
 

@@ -15,12 +15,14 @@
   <div class=" flex flex-col md:flex-row items-start">
     <div class="flex flex-col">
       <div class="container mx-auto p-6 ">
+
         <h1 class="text-1xl font-bold text-gray-700">Meu Carrinho</h1>
+
 
         <div class="bg-white shadow-md rounded-lg w-full p-6 mt-6">
           <div class="flex justify-between items-center border-b pb-4 mb-4">
             <h2 class="text-lg font-semibold">Produtos</h2>
-          
+
           </div>
 
           <div id="cart-items" class="space-y-4">
@@ -69,9 +71,13 @@
           <span>Total</span>
           <span></span>
         </div>
-        <button onclick="enviarParaWhatsApp()" class="mt-6 w-full bg-[#2A7D5E] py-3 rounded-3xl text-lg font-semibold flex items-center justify-center gap-2 hover:bg-[#25684D] transition">
-           Enviar para WhatsApp
-        </button>
+        <div class="flex gap-5">
+          <a href="http://127.0.0.7:5500/pages/usuario/carrinho2.html" class="block cursor-pointer text-center mt-8 md:w-[200px] w-[150px] bg-[#2A7D5E] hover:bg-[#25684D] transition  font-bold py-3 rounded-full text-lg shadow-md">Voltar</a>
+          <button onclick="enviarParaWhatsApp()" class="block cursor-pointer text-center mt-8 md:w-[250px] w-[150px] bg-[#2A7D5E] hover:bg-[#25684D] transition  font-bold py-3 rounded-full text-lg shadow-md">
+            Enviar para WhatsApp
+          </button>
+        </div>
+      
       </div>
     </div>
   </div>
