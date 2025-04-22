@@ -96,6 +96,7 @@ document.addEventListener("DOMContentLoaded", function () {
       localStorage.removeItem('checkboxMedicamentoFilhote');
     } else if(localStorage.getItem('checkboxMedicamentoCastrado') === 'true') {
       document.getElementById('medicamentos').checked = true;
+      // document.getElementById('gatocastrado').checked = true;
       localStorage.removeItem('checkboxMedicamentoCastrado');
     } else if(localStorage.getItem('checkboxAcessorios') === 'true'){
       document.getElementById('petshop').checked = true;
@@ -228,7 +229,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (!nameProduct) return 'outros';
     
     const lowerName = nameProduct.toLowerCase();
-    if (/areia|granulado|absorbente|argila|sanitária|sanitaria/i.test(lowerName)) return 'areia';
+    if (/areia|granulado|absorvente|argila|sanitária|sanitaria/i.test(lowerName)) return 'areia';
     if (/cama|forração|forracao|forro|colchão|colchao/i.test(lowerName)) return 'cama';
     if (/Coleira/i.test(lowerName)) return 'coleira';
 

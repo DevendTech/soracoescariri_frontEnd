@@ -125,8 +125,6 @@ function irParaEntrega() {
 document.addEventListener("DOMContentLoaded", renderizarCarrinho);
 
 
-
-
 function carregarDados() {
   const carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
   const endereco = JSON.parse(localStorage.getItem("endereco")) || {};
@@ -137,18 +135,20 @@ function carregarDados() {
     mensagem += `${item.produto}* - ${item.quantidade}x - R$ ${item.preco}\n`;
   });
 
-  mensagem += `\n Endereço de Entrega:\n`;
+  mensagem += `\n*Endereço de Entrega:*\n`;
   mensagem += `CEP: ${endereco.cep}\n Rua: ${endereco.rua}, Nº ${endereco.numero}\n Bairro: ${endereco.bairro}\n Telefone: ${endereco.telefone}\n`;
 
+  mensagem += `\n*Subtotal: R$ ${carrinho.reduce((total, item) => total + (item.preco * item.quantidade), 0).toFixed(2)}*\n`;
+
   // Adiciona a forma de pagamento
-  mensagem += `\n Forma de Pagamento: ${endereco.pagamento === 'cartao' ? '  💳 Cartão de Crédito' : endereco.pagamento === 'pix' ? '⚡ Pix' : '💵 Dinheiro'}\n`;
+  mensagem += `\n*Forma de Pagamento:* ${endereco.pagamento === 'cartao' ? '  💳 Cartão de Crédito' : endereco.pagamento === 'pix' ? '⚡ Pix' : '💵 Dinheiro'}\n`;
 
   document.getElementById("resumo-pedido").textContent = mensagem;
   return encodeURIComponent(mensagem);
 }
 
 function enviarParaWhatsApp() {
-  const numero = "5588999999979";
+  const numero = "5581985206275";
   const mensagem = carregarDados();
   const whatsappURL = `https://wa.me/${numero}?text=${mensagem}`;
   window.open(whatsappURL, '_blank');
