@@ -3,7 +3,11 @@ document.addEventListener("DOMContentLoaded", function () {
   const alertContainer = document.getElementById('alert-container');
   const inputSearch = document.querySelector('#search');
   let allProducts = [];
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> a9e6f67a6c8d0b4db7e67cd736da4ab696bc9c0c
   // Elementos de filtro
   const filterCheckboxes = document.querySelectorAll(
     'input[type="checkbox"][name="categoria"], ' +
@@ -31,6 +35,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // Inicializa com filtros ativos
+<<<<<<< HEAD
   window.onload = function () {
     if (localStorage.getItem('checkboxCao') === 'true') {
       localStorage.removeItem('checkboxCao')
@@ -221,20 +226,119 @@ document.addEventListener("DOMContentLoaded", function () {
     showCartPopup();
   });
 
+=======
+  window.onload = function() {
+    if(localStorage.getItem('checkboxCao') === 'true') {
+      document.getElementById('cao').checked = true;
+      localStorage.removeItem('checkboxCao')
+    } else if(localStorage.getItem('checkboxRacaoCaoAdulto') === 'true'){
+      document.getElementById('cao').checked = true;
+      document.getElementById('racao').checked = true;
+      document.getElementById('adulto').checked = true;
+      localStorage.removeItem('checkboxRacaoCaoAdulto')
+    } else if(localStorage.getItem('checkboxRacaoCaoFilhote') === 'true'){
+      document.getElementById('cao').checked = true;
+      document.getElementById('racao').checked = true;
+      document.getElementById('filhote').checked = true;
+      localStorage.removeItem('checkboxRacaoCaoFilhote')
+    } else if(localStorage.getItem('checkboxMedicamentoCao') === 'true'){
+      document.getElementById('cao').checked = true;
+      document.getElementById('medicamentos').checked = true;
+      localStorage.removeItem('checkboxMedicamentoCao')
+    } else if(localStorage.getItem('checkboxGato') === 'true'){
+      document.getElementById('gato').checked = true;
+      localStorage.removeItem('checkboxGato')
+    }  else if(localStorage.getItem('checkboxRacaoGato') === 'true'){
+      document.getElementById('gato').checked = true;
+      document.getElementById('racao').checked = true;
+      localStorage.removeItem('checkboxRacaoGato')
+    } else if(localStorage.getItem('checkboxAreiaGato') === 'true'){
+      document.getElementById('gato').checked = true;
+      document.getElementById('areia').checked = true;
+      localStorage.removeItem('checkboxAreiaGato')
+    } else if(localStorage.getItem('checkboxMedicamentoGato') === 'true'){
+      document.getElementById('gato').checked = true;
+      document.getElementById('medicamentos').checked = true;
+      localStorage.removeItem('checkboxMedicamentoGato')
+    } else if(localStorage.getItem('checkboxEAPP') === 'true') {
+      document.getElementById('equinos').checked = true;
+      document.getElementById('aves').checked = true;
+      document.getElementById('peixes').checked = true;
+      document.getElementById('porcos').checked = true;
+      localStorage.removeItem('checkboxEAPP')
+    } else if(localStorage.getItem('checkboxRacaoEquinioEporco') === 'true') {
+      document.getElementById('equinos').checked = true;
+      document.getElementById('porcos').checked = true;
+      document.getElementById('racao').checked = true;
+      localStorage.removeItem('checkboxRacaoEquinioEporco');
+    } else if(localStorage.getItem('checkboxRacaoAves') === 'true') {
+      document.getElementById('aves').checked = true;
+      document.getElementById('racao').checked = true;
+      localStorage.removeItem('checkboxRacaoAves');
+    } else if(localStorage.getItem('checkboxRacaoPeixes') === 'true') {
+      document.getElementById('peixes').checked = true;
+      document.getElementById('racao').checked = true;
+      localStorage.removeItem('checkboxRacaoPeixes')
+    } else if(localStorage.getItem('checkboxMedicamentos') === 'true'){
+      document.getElementById('medicamentos').checked = true;
+      localStorage.removeItem('checkboxMedicamentos')
+    } else if(localStorage.getItem('checkboxMedicamentoAdulto') === 'true') {
+      document.getElementById('medicamentos').checked = true;
+      document.getElementById('adulto').checked = true;
+      localStorage.removeItem('checkboxMedicamentoAdulto');
+    } else if(localStorage.getItem('checkboxMedicamentoFilhote') === 'true') {
+      document.getElementById('medicamentos').checked = true;
+      document.getElementById('filhote').checked = true;
+      localStorage.removeItem('checkboxMedicamentoFilhote');
+    } else if(localStorage.getItem('checkboxMedicamentoCastrado') === 'true') {
+      document.getElementById('medicamentos').checked = true;
+      localStorage.removeItem('checkboxMedicamentoCastrado');
+    } else if(localStorage.getItem('checkboxAcessorios') === 'true'){
+      document.getElementById('petshop').checked = true;
+      localStorage.removeItem('checkboxAcessorios')
+    } else if(localStorage.getItem('checkboxCama') === 'true'){
+      document.getElementById('acessorios').checked = true;
+      document.getElementById('cama').checked = true;
+      localStorage.removeItem('checkboxCama')
+    } else if(localStorage.getItem('checkboxSanitario') === 'true'){
+      document.getElementById('acessorios').checked = true;
+      document.getElementById('sanitario').checked = true;
+      localStorage.removeItem('checkboxSanitario')
+    } else if(localStorage.getItem('checkboxColeira') === 'true'){
+      document.getElementById('acessorios').checked = true;
+      document.getElementById('coleira').checked = true;
+      localStorage.removeItem('checkboxColeira')
+    } 
+    
+    filterCheckboxes.forEach(checkbox => {
+      checkbox.addEventListener('change', filterProducts);
+    });
+  }
+
+>>>>>>> a9e6f67a6c8d0b4db7e67cd736da4ab696bc9c0c
   // Renderiza produtos com atributos de filtro
   function renderProducts(products) {
     container.innerHTML = '';
 
     const fragment = document.createDocumentFragment();
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> a9e6f67a6c8d0b4db7e67cd736da4ab696bc9c0c
     products.forEach(product => {
       console.log(product)
       const category = getProductCategory(product.produto.product_category);
       console.log(category)
       const produto = getProducts(product.produto.name);
       const animal = product.category;
+<<<<<<< HEAD
       const price = product.variantes?.length > 0
         ? Math.min(...product.variantes.map(v => parseFloat(v.price)))
+=======
+      const price = product.variantes?.length > 0 
+        ? Math.min(...product.variantes.map(v => parseFloat(v.price))) 
+>>>>>>> a9e6f67a6c8d0b4db7e67cd736da4ab696bc9c0c
         : 0;
       const age = product.produto.name.toLowerCase().includes('filhote') ? 'filhote' : 'adulto';
       const imageUrl = product.produto.pathimage
@@ -249,6 +353,7 @@ document.addEventListener("DOMContentLoaded", function () {
       productElement.dataset.animal = animal;
       productElement.dataset.age = age;
       productElement.dataset.price = price;
+<<<<<<< HEAD
 
       productElement.innerHTML = `
        <div class="flex flex-col w-full h-full rounded-lg overflow-hidden hover:shadow-md transition-all duration-200">
@@ -262,10 +367,20 @@ document.addEventListener("DOMContentLoaded", function () {
         </div>
         <div class="p-1 flex flex-col flex-grow">
           <h2 class="text-sm font-medium text-gray-800 mb-1 line-clamp-2 min-h-[2.5rem]">${product.produto.name || 'Nome do Produto'}</h2>
+=======
+      
+      productElement.innerHTML = `
+        <div class="relative">
+          <img class="flex w-48 h-48 md:w-32 md:h-32 rounded-lg" src="${imageUrl}" alt="${product.produto.name || 'Produto'}">
+        </div>
+        <div class="mt-3">
+          <h2 class="text-gray-700 font-medium text-xs">${product.produto.name || 'Nome do Produto'}</h2>
+>>>>>>> a9e6f67a6c8d0b4db7e67cd736da4ab696bc9c0c
           <p class="text-red-500 text-xs line-through price-old-display">R$ 0,00</p>
           <div class="flex"> 
             <p class="text-xl font-bold text-gray-900 price-display">R$ ${price.toFixed(2)}</p>
           </div>
+<<<<<<< HEAD
           <div class=""w-20 mt-2 px-2 py-2 bg-gray-100 text-gray-700 text-xs rounded border border-gray-300 focus:outline-none focus:ring-1 focus:ring-[#48887A]">
             <select class="variant-select px-2 py-1 bg-gray-200 text-gray-700 text-xs rounded">
               ${variantes.length > 0
@@ -281,6 +396,22 @@ document.addEventListener("DOMContentLoaded", function () {
       fragment.appendChild(productElement);
     });
 
+=======
+          <div class="flex gap-2 mt-2">
+            <select class="variant-select px-2 py-1 bg-gray-200 text-gray-700 text-xs rounded">
+              ${variantes.length > 0
+                ? variantes.map(v => `<option value='${JSON.stringify(v)}'>${v.weight}</option>`).join('')
+                : '<option value=\'{"weight": "Padrão", "price": "0"}\'>Padrão</option>'}
+            </select>
+          </div>
+          <button class="add-to-cart w-full mt-3 py-1.5 bg-[#48887A] text-white text-sm font-bold rounded-md" data-product='${JSON.stringify(product)}'>COMPRAR</button>
+        </div>
+      `;
+      
+      fragment.appendChild(productElement);
+    });
+    
+>>>>>>> a9e6f67a6c8d0b4db7e67cd736da4ab696bc9c0c
     container.appendChild(fragment);
 
     updateVariantSelectors();
@@ -292,7 +423,11 @@ document.addEventListener("DOMContentLoaded", function () {
   function filterProducts() {
     const activeFilters = getActiveFilters();
     const hasActiveFilters = Object.values(activeFilters).some(arr => arr.length > 0);
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> a9e6f67a6c8d0b4db7e67cd736da4ab696bc9c0c
     document.querySelectorAll('.product-item').forEach(item => {
       const matches = [
         activeFilters.categoria.length === 0 || activeFilters.categoria.includes(item.dataset.category),
@@ -301,8 +436,13 @@ document.addEventListener("DOMContentLoaded", function () {
         activeFilters.idade.length === 0 || activeFilters.idade.includes(item.dataset.age),
         activeFilters.price.length === 0 || checkPriceRange(parseFloat(item.dataset.price), activeFilters.price)
       ].every(Boolean);
+<<<<<<< HEAD
 
 
+=======
+      
+  
+>>>>>>> a9e6f67a6c8d0b4db7e67cd736da4ab696bc9c0c
       item.style.display = (!hasActiveFilters || matches) ? 'block' : 'none';
     });
   }
@@ -320,24 +460,42 @@ document.addEventListener("DOMContentLoaded", function () {
   // Função corrigida para determinar categoria do produto
   function getProductCategory(productCategory) {
     if (!productCategory) return 'outros';
+<<<<<<< HEAD
 
     const lowerName = productCategory.toLowerCase();
 
+=======
+  
+    const lowerName = productCategory.toLowerCase();
+    
+>>>>>>> a9e6f67a6c8d0b4db7e67cd736da4ab696bc9c0c
     if (/ração|racao|ração/i.test(lowerName)) return 'racao';
     if (/areia|granulado|absorbente|argila|sanitária|sanitaria/i.test(lowerName)) return 'areia';
     if (/medicamento|medicamentos|vermífugo|vermifugo|antipulgas/i.test(lowerName)) return 'medicamentos';
     if (/acessório|acessorios|acessorio|coleira|brinquedo|comedouro|bebedouro/i.test(lowerName)) return 'acessorios';
     if (/petshop|pet shop|banho|tosa|higiene/i.test(lowerName)) return 'petshop';
+<<<<<<< HEAD
 
     return 'outros';
   }
+=======
+    
+    return 'outros';
+}
+>>>>>>> a9e6f67a6c8d0b4db7e67cd736da4ab696bc9c0c
 
   // Identifica tipo de produto
   function getProducts(nameProduct) {
     if (!nameProduct) return 'outros';
+<<<<<<< HEAD
 
     const lowerName = nameProduct.toLowerCase();
     if (/areia|granulado|absorvente|argila|sanitária|sanitaria/i.test(lowerName)) return 'areia';
+=======
+    
+    const lowerName = nameProduct.toLowerCase();
+    if (/areia|granulado|absorbente|argila|sanitária|sanitaria/i.test(lowerName)) return 'areia';
+>>>>>>> a9e6f67a6c8d0b4db7e67cd736da4ab696bc9c0c
     if (/cama|forração|forracao|forro|colchão|colchao/i.test(lowerName)) return 'cama';
     if (/Coleira/i.test(lowerName)) return 'coleira';
 
@@ -369,12 +527,17 @@ document.addEventListener("DOMContentLoaded", function () {
       }
 
       updatePrice(JSON.parse(select.value));
+<<<<<<< HEAD
       select.addEventListener('change', function () {
+=======
+      select.addEventListener('change', function() {
+>>>>>>> a9e6f67a6c8d0b4db7e67cd736da4ab696bc9c0c
         updatePrice(JSON.parse(this.value));
       });
     });
   }
 
+<<<<<<< HEAD
   // Configura botões de compra com carrinho completo
   function setupAddToCartButtons() {
     document.querySelectorAll(".add-to-cart").forEach(button => {
@@ -402,12 +565,34 @@ document.addEventListener("DOMContentLoaded", function () {
             : 'default.jpg',
         };
   
+=======
+  // Configura botões de compra
+  function setupAddToCartButtons() {
+    document.querySelectorAll(".add-to-cart").forEach(button => {
+      button.addEventListener("click", function() {
+        const product = JSON.parse(button.getAttribute("data-product"));
+        const select = button.closest('.product-item').querySelector('.variant-select');
+        const variant = select ? JSON.parse(select.value) : { weight: "Padrão", price: "0" };
+
+        showPopup(product, variant);
+        
+        let cart = JSON.parse(localStorage.getItem("carrinho")) || [];
+        const newItem = {
+          produto: product.produto.name,
+          preco: variant.price,
+          quantidade: 1,
+          peso: variant.weight,
+          imagem: product.produto.pathimage ? `https://back.soracoescariri.com.br${product.produto.pathimage}` : 'default.jpg',
+        };
+
+>>>>>>> a9e6f67a6c8d0b4db7e67cd736da4ab696bc9c0c
         const existingItem = cart.find(p => p.produto === newItem.produto && p.peso === newItem.peso);
         if (existingItem) {
           existingItem.quantidade += 1;
         } else {
           cart.push(newItem);
         }
+<<<<<<< HEAD
   
         localStorage.setItem("carrinho", JSON.stringify(cart));
         showSuccessAlert();
@@ -496,6 +681,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
     popup.classList.remove('translate-x-full');
     overlay.classList.remove('hidden');
+=======
+
+        localStorage.setItem("carrinho", JSON.stringify(cart));
+        showSuccessAlert();
+      });
+    });
+>>>>>>> a9e6f67a6c8d0b4db7e67cd736da4ab696bc9c0c
   }
 
   // Mostra alerta de sucesso
@@ -522,31 +714,76 @@ document.addEventListener("DOMContentLoaded", function () {
     setTimeout(() => alertContainer.innerHTML = '', 3000);
   }
 
+<<<<<<< HEAD
+=======
+  // Mostra popup de detalhes
+  function showPopup(product, variant) {
+    const popup = document.getElementById('popup');
+    const popupContent = document.getElementById('popup-content');
+    const overlay = document.getElementById('popup-overlay');
+
+    const imageUrl = product.produto.pathimage
+      ? `https://back.soracoescariri.com.br${product.produto.pathimage}`
+      : 'default.jpg';
+
+    popupContent.innerHTML = `
+      <img src="${imageUrl}" alt="${product.produto.name}" class="w-full h-60 object-contain mb-4 rounded-lg">
+      <h3 class="text-xl font-bold mb-2">${product.produto.name}</h3>
+      <p class="text-gray-700 text-sm mb-1">Peso: ${variant.weight}</p>
+      <p class="text-gray-800 text-lg font-semibold">Preço: R$ ${variant.price}</p>
+      ${variant.discount && Number(variant.discount) > 0 ? `
+        <p class="text-red-500 line-through text-sm">De: R$ ${parseFloat(variant.price).toFixed(2)}</p>
+        <p class="text-green-600 text-md font-bold">Com desconto: R$ ${(variant.price * (1 - Number(variant.discount) / 100)).toFixed(2)}</p>
+      ` : ''}
+    `;
+
+    popup.classList.remove("translate-x-full");
+    overlay.classList.remove("hidden");
+  }
+
+>>>>>>> a9e6f67a6c8d0b4db7e67cd736da4ab696bc9c0c
   // Busca produtos
   function searchProducts() {
     const query = inputSearch.value.trim().toLowerCase();
     const filteredProducts = query === ""
       ? allProducts
       : allProducts.filter(product =>
+<<<<<<< HEAD
         product.produto.name.toLowerCase().includes(query)
+=======
+          product.produto.name.toLowerCase().includes(query)
+>>>>>>> a9e6f67a6c8d0b4db7e67cd736da4ab696bc9c0c
       );
 
     renderProducts(filteredProducts);
   }
 
   // Carrega produtos da API
+<<<<<<< HEAD
   const categories = ['Cao', 'Gato', 'Equinos', 'Aves', 'Peixes', 'Porcos'];
   Promise.all(categories.map(category =>
+=======
+  const categories = ['Cao','Gato','Equinos', 'Aves', 'Peixes', 'Porcos'];
+  Promise.all(categories.map(category => 
+>>>>>>> a9e6f67a6c8d0b4db7e67cd736da4ab696bc9c0c
     fetch(`https://back.soracoescariri.com.br/api/user/products/${category}`)
       .then(response => response.json())
       .then(products => products.map(p => ({ ...p, category })))
       .catch(error => console.error(`Erro ao buscar dados da categoria ${category}:`, error))
   ))
+<<<<<<< HEAD
     .then(results => {
       allProducts = results.flat();
       renderProducts(allProducts);
     })
     .catch(error => console.error('Erro ao buscar dados:', error));
+=======
+  .then(results => {
+    allProducts = results.flat();
+    renderProducts(allProducts);
+  })
+  .catch(error => console.error('Erro ao buscar dados:', error));
+>>>>>>> a9e6f67a6c8d0b4db7e67cd736da4ab696bc9c0c
 
   // Event listeners
   if (inputSearch) {
@@ -570,6 +807,7 @@ function openPopup(contentHtml) {
 function closePopup() {
   document.getElementById("popup").classList.add("translate-x-full");
   document.getElementById("popup-overlay").classList.add("hidden");
+<<<<<<< HEAD
 }
 
 // Função para alternar a visibilidade do filtro mobile
@@ -610,3 +848,6 @@ document.getElementById('filter-overlay').addEventListener('click', toggleFilter
 
 // Adicionar evento ao botão de filtro
 document.getElementById('filter-toggle').addEventListener('click', toggleFilterSidebar);
+=======
+}
+>>>>>>> a9e6f67a6c8d0b4db7e67cd736da4ab696bc9c0c
