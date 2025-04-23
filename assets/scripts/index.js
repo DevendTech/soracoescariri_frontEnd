@@ -19,6 +19,10 @@ const mobileMenu = document.getElementById('mobileMenu');
 toggleBtn.addEventListener('click', () => {
   mobileMenu.classList.toggle('hidden');
 });
+document.getElementById('buttonCaoMobile').addEventListener('click', function() {
+  localStorage.setItem('checkboxCao', 'true')
+  window.location.href = '/pages/usuario/produtos.html'
+})
 document.getElementById('buttonCao').addEventListener('click', function() {
   localStorage.setItem('checkboxCao', 'true')
   window.location.href = '/pages/usuario/produtos.html'
@@ -45,6 +49,10 @@ document.getElementById('buttonMedicamentoCao').addEventListener('click', functi
 })
 document.getElementById('buttonMedicamentoCaoHeader').addEventListener('click', function() {
   localStorage.setItem('checkboxMedicamentoCao', 'true')
+  window.location.href = '/pages/usuario/produtos.html'
+})
+document.getElementById('buttonGatoMobile').addEventListener('click', function() {
+  localStorage.setItem('checkboxGato', 'true')
   window.location.href = '/pages/usuario/produtos.html'
 })
 document.getElementById('buttonGato').addEventListener('click', function() {
@@ -75,6 +83,10 @@ document.getElementById('buttonMedicamentoGatoHeader').addEventListener('click',
   localStorage.setItem('checkboxMedicamentoGato', 'true')
   window.location.href = '/pages/usuario/produtos.html'
 })
+document.getElementById('buttonVariaveisMobile').addEventListener('click', function() {
+  localStorage.setItem('checkboxEAPP', 'true')
+  window.location.href = '/pages/usuario/produtos.html'
+})
 document.getElementById('buttonEAPP').addEventListener('click', function() {
   localStorage.setItem('checkboxEAPP', 'true')
   window.location.href = '/pages/usuario/produtos.html'
@@ -103,6 +115,10 @@ document.getElementById('buttonRacaoPeixes').addEventListener('click', function(
   localStorage.setItem('checkboxRacaoPeixes', 'true')
   window.location.href = '/pages/usuario/produtos.html'
 })
+document.getElementById('buttonMedicamentoMobile').addEventListener('click', function() {
+  localStorage.setItem('checkboxMedicamentos', 'true')
+  window.location.href = '/pages/usuario/produtos.html'
+})
 document.getElementById('buttonMedicamentos').addEventListener('click', function() {
   localStorage.setItem('checkboxMedicamentos', 'true')
   window.location.href = '/pages/usuario/produtos.html'
@@ -129,6 +145,10 @@ document.getElementById('buttonMedicamentoCastrado').addEventListener('click', f
 })
 document.getElementById('buttonMedicamentoCastradoHeader').addEventListener('click', function() {
   localStorage.setItem('checkboxMedicamentoCastrado', 'true')
+  window.location.href = '/pages/usuario/produtos.html'
+})
+document.getElementById('buttonAcessoriosMobile').addEventListener('click', function() {
+  localStorage.setItem('checkboxAcessorios', 'true')
   window.location.href = '/pages/usuario/produtos.html'
 })
 document.getElementById('buttonAcessorios').addEventListener('click', function() {

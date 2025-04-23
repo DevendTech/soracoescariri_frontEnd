@@ -33,86 +33,168 @@ document.addEventListener("DOMContentLoaded", function () {
   // Inicializa com filtros ativos
   window.onload = function () {
     if (localStorage.getItem('checkboxCao') === 'true') {
-      document.getElementById('cao').checked = true;
       localStorage.removeItem('checkboxCao')
+
+      document.getElementById('cao').checked = true;
+      // Mobile
+      document.getElementById('caoMobile').checked = true;
     } else if (localStorage.getItem('checkboxRacaoCaoAdulto') === 'true') {
+      localStorage.removeItem('checkboxRacaoCaoAdulto')
+
       document.getElementById('cao').checked = true;
       document.getElementById('racao').checked = true;
       document.getElementById('adulto').checked = true;
-      localStorage.removeItem('checkboxRacaoCaoAdulto')
+      //Mobile
+      document.getElementById('caoMobile').checked = true;
+      document.getElementById('racaoMobile').checked = true;
+      document.getElementById('adultoMobile').checked = true;
     } else if (localStorage.getItem('checkboxRacaoCaoFilhote') === 'true') {
+      localStorage.removeItem('checkboxRacaoCaoFilhote')
+
       document.getElementById('cao').checked = true;
       document.getElementById('racao').checked = true;
       document.getElementById('filhote').checked = true;
-      localStorage.removeItem('checkboxRacaoCaoFilhote')
+      //Mobile
+      document.getElementById('caoMobile').checked = true;
+      document.getElementById('racaoMobile').checked = true;
+      document.getElementById('filhoteMobile').checked = true;
     } else if (localStorage.getItem('checkboxMedicamentoCao') === 'true') {
+      localStorage.removeItem('checkboxMedicamentoCao')
+
       document.getElementById('cao').checked = true;
       document.getElementById('medicamentos').checked = true;
-      localStorage.removeItem('checkboxMedicamentoCao')
+      //Mobile
+      document.getElementById('caoMobile').checked = true;
+      document.getElementById('medicamentosMobile').checked = true;
     } else if (localStorage.getItem('checkboxGato') === 'true') {
-      document.getElementById('gato').checked = true;
       localStorage.removeItem('checkboxGato')
+
+      document.getElementById('gato').checked = true;
+      //Mobile
+      document.getElementById('gatoMobile').checked = true;
     } else if (localStorage.getItem('checkboxRacaoGato') === 'true') {
+      localStorage.removeItem('checkboxRacaoGato')
+
       document.getElementById('gato').checked = true;
       document.getElementById('racao').checked = true;
-      localStorage.removeItem('checkboxRacaoGato')
+      //Mobile
+      document.getElementById('gatoMedicamento').checked = true;
+      document.getElementById('racaoMedicamento').checked = true;
     } else if (localStorage.getItem('checkboxAreiaGato') === 'true') {
+      localStorage.removeItem('checkboxAreiaGato')
+
       document.getElementById('gato').checked = true;
       document.getElementById('areia').checked = true;
-      localStorage.removeItem('checkboxAreiaGato')
+      //Mobile
+      document.getElementById('gatoMobile').checked = true;
+      document.getElementById('areiaMobile').checked = true;
+
     } else if (localStorage.getItem('checkboxMedicamentoGato') === 'true') {
+      localStorage.removeItem('checkboxMedicamentoGato')
+
       document.getElementById('gato').checked = true;
       document.getElementById('medicamentos').checked = true;
-      localStorage.removeItem('checkboxMedicamentoGato')
+      //Mobile
+      document.getElementById('gatoMobile').checked = true;
+      document.getElementById('medicamentosMobile').checked = true;
     } else if (localStorage.getItem('checkboxEAPP') === 'true') {
-      document.getElementById('equinos').checked = true;
-      document.getElementById('aves').checked = true;
-      document.getElementById('peixes').checked = true;
-      document.getElementById('porcos').checked = true;
       localStorage.removeItem('checkboxEAPP')
+
+      document.getElementById('equinos').checked = true;
+      document.getElementById('aves').checked = true;
+      document.getElementById('peixes').checked = true;
+      document.getElementById('porcos').checked = true;
+      //Mobile
+      document.getElementById('equinosMobile').checked = true;
+      document.getElementById('avesMobile').checked = true;
+      document.getElementById('peixesMobile').checked = true;
+      document.getElementById('porcosMobile').checked = true;
     } else if (localStorage.getItem('checkboxRacaoEquinioEporco') === 'true') {
+      localStorage.removeItem('checkboxRacaoEquinioEporco');
+
       document.getElementById('equinos').checked = true;
       document.getElementById('porcos').checked = true;
       document.getElementById('racao').checked = true;
-      localStorage.removeItem('checkboxRacaoEquinioEporco');
+      //Mobile
+      document.getElementById('equinosMobile').checked = true;
+      document.getElementById('porcosMobile').checked = true;
+      document.getElementById('racaoMobile').checked = true;
     } else if (localStorage.getItem('checkboxRacaoAves') === 'true') {
+      localStorage.removeItem('checkboxRacaoAves');
+
       document.getElementById('aves').checked = true;
       document.getElementById('racao').checked = true;
-      localStorage.removeItem('checkboxRacaoAves');
+      //Mobile
+      document.getElementById('avesMobile').checked = true;
+      document.getElementById('racaoMobile').checked = true;
     } else if (localStorage.getItem('checkboxRacaoPeixes') === 'true') {
+      localStorage.removeItem('checkboxRacaoPeixes')
+
       document.getElementById('peixes').checked = true;
       document.getElementById('racao').checked = true;
-      localStorage.removeItem('checkboxRacaoPeixes')
+      //Mobile
+      document.getElementById('peixesMobile').checked = true;
+      document.getElementById('racaoMobile').checked = true;
     } else if (localStorage.getItem('checkboxMedicamentos') === 'true') {
-      document.getElementById('medicamentos').checked = true;
       localStorage.removeItem('checkboxMedicamentos')
+      
+      document.getElementById('medicamentos').checked = true;
+      //Mobile
+      document.getElementById('medicamentosMobile').checked = true;
     } else if (localStorage.getItem('checkboxMedicamentoAdulto') === 'true') {
+      localStorage.removeItem('checkboxMedicamentoAdulto');
+
       document.getElementById('medicamentos').checked = true;
       document.getElementById('adulto').checked = true;
-      localStorage.removeItem('checkboxMedicamentoAdulto');
+      //Mobile
+      document.getElementById('medicamentosMobile').checked = true;
+      document.getElementById('adultoMobile').checked = true;
     } else if (localStorage.getItem('checkboxMedicamentoFilhote') === 'true') {
+      localStorage.removeItem('checkboxMedicamentoFilhote');
+
       document.getElementById('medicamentos').checked = true;
       document.getElementById('filhote').checked = true;
-      localStorage.removeItem('checkboxMedicamentoFilhote');
+      //Mobile
+      document.getElementById('medicamentosMobile').checked = true;
+      document.getElementById('filhoteMobile').checked = true;
     } else if (localStorage.getItem('checkboxMedicamentoCastrado') === 'true') {
-      document.getElementById('medicamentos').checked = true;
-      // document.getElementById('gatocastrado').checked = true;
       localStorage.removeItem('checkboxMedicamentoCastrado');
+
+      document.getElementById('medicamentos').checked = true;
+      // document.getElementById('castrado').checked = true;
+      //Mobile
+      document.getElementById('medicamentosMobile').checked = true;
+      // document.getElementById('castradoMobile').checked = true;
     } else if (localStorage.getItem('checkboxAcessorios') === 'true') {
-      document.getElementById('petshop').checked = true;
       localStorage.removeItem('checkboxAcessorios')
+
+      document.getElementById('petshop').checked = true;
+      //Mobile
+      document.getElementById('petshopMobile').checked = true;
     } else if (localStorage.getItem('checkboxCama') === 'true') {
+      localStorage.removeItem('checkboxCama')
+
       document.getElementById('acessorios').checked = true;
       document.getElementById('cama').checked = true;
-      localStorage.removeItem('checkboxCama')
+      //MObile
+      document.getElementById('acessoriosMobile').checked = true;
+      document.getElementById('camaMobile').checked = true;
     } else if (localStorage.getItem('checkboxSanitario') === 'true') {
+      localStorage.removeItem('checkboxSanitario')
+
       document.getElementById('acessorios').checked = true;
       document.getElementById('sanitario').checked = true;
-      localStorage.removeItem('checkboxSanitario')
+      //Mobile
+      document.getElementById('acessoriosMobile').checked = true;
+      document.getElementById('sanitarioMobile').checked = true;
     } else if (localStorage.getItem('checkboxColeira') === 'true') {
+      localStorage.removeItem('checkboxColeira')
+
       document.getElementById('acessorios').checked = true;
       document.getElementById('coleira').checked = true;
-      localStorage.removeItem('checkboxColeira')
+      //Mobile
+      document.getElementById('acessoriosMobile').checked = true;
+      document.getElementById('coleiraMobile').checked = true;
     }
 
     filterCheckboxes.forEach(checkbox => {
