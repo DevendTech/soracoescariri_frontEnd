@@ -2279,23 +2279,11 @@
   .py-16 {
     padding-block: calc(var(--spacing) * 16);
   }
-  .pt-1 {
-    padding-top: calc(var(--spacing) * 1);
-  }
   .pt-4 {
     padding-top: calc(var(--spacing) * 4);
   }
-  .pt-5 {
-    padding-top: calc(var(--spacing) * 5);
-  }
   .pt-6 {
     padding-top: calc(var(--spacing) * 6);
-  }
-  .pt-10 {
-    padding-top: calc(var(--spacing) * 10);
-  }
-  .pt-16 {
-    padding-top: calc(var(--spacing) * 16);
   }
   .pt-\[100\%\] {
     padding-top: 100%;
@@ -3181,10 +3169,10 @@
       }
     }
   }
-  .hover\:bg-\[\#3a6d62\] {
+  .hover\:bg-\[\#0d3d2f\] {
     &:hover {
       @media (hover: hover) {
-        background-color: #3a6d62;
+        background-color: #0d3d2f;
       }
     }
   }
@@ -3192,6 +3180,13 @@
     &:hover {
       @media (hover: hover) {
         background-color: #25684D;
+      }
+    }
+  }
+  .hover\:bg-\[\#317565\] {
+    &:hover {
+      @media (hover: hover) {
+        background-color: #317565;
       }
     }
   }
@@ -3272,17 +3267,31 @@
       }
     }
   }
+  .hover\:text-\[\#\] {
+    &:hover {
+      @media (hover: hover) {
+        color: #;
+      }
+    }
+  }
+  .hover\:text-\[\#fefffe\] {
+    &:hover {
+      @media (hover: hover) {
+        color: #fefffe;
+      }
+    }
+  }
+  .hover\:text-\[fe\] {
+    &:hover {
+      @media (hover: hover) {
+        color: fe;
+      }
+    }
+  }
   .hover\:text-gray-400 {
     &:hover {
       @media (hover: hover) {
         color: var(--color-gray-400);
-      }
-    }
-  }
-  .hover\:text-gray-700 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-gray-700);
       }
     }
   }
@@ -3297,6 +3306,13 @@
     &:hover {
       @media (hover: hover) {
         color: var(--color-red-700);
+      }
+    }
+  }
+  .hover\:text-white {
+    &:hover {
+      @media (hover: hover) {
+        color: var(--color-white);
       }
     }
   }

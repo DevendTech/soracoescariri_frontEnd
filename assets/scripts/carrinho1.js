@@ -129,19 +129,34 @@ function carregarDados() {
   const carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
   const endereco = JSON.parse(localStorage.getItem("endereco")) || {};
 
-  let mensagem = `Confirmar pedido\n\n`;
+  let mensagem = `PEDIDO FINAL\n\n`;
 
+  // Itens do carrinho
+  mensagem += `🛒 *Itens do Carrinho:*\n`;
   carrinho.forEach(item => {
-    mensagem += `${item.produto}* - ${item.quantidade}x - R$ ${item.preco}\n`;
+    mensagem += `➖ *${item.produto}* - ${item.quantidade}x - R$ ${item.preco}\n`;
   });
 
-  mensagem += `\n*Endereço de Entrega:*\n`;
-  mensagem += `CEP: ${endereco.cep}\n Rua: ${endereco.rua}, Nº ${endereco.numero}\n Bairro: ${endereco.bairro}\n Telefone: ${endereco.telefone}\n`;
+  // Valores
+  mensagem += `\n💰 *Valores*\n`;
+  const subtotal = carrinho.reduce((total, item) => total + (item.preco * item.quantidade), 0).toFixed(2);
+  mensagem += `🤑 Subtotal: R$ ${subtotal}\n`;
+  mensagem += `\n💳 *Forma de Pagamento:* `;
+  mensagem += `${endereco.pagamento === 'cartao' ? 'Cartão de Crédito 💳' : endereco.pagamento === 'pix' ? 'Pix ⚡' : 'Dinheiro 💵'}\n\n`;
+  // Endereço
+  mensagem += `\n🏠 *Endereço de Entrega:*\n`;
+  mensagem += `📍 CEP: ${endereco.cep}\n`;
+  mensagem += `🛣️ Rua: ${endereco.rua}, Nº ${endereco.numero}\n`;
+  mensagem += `🏘️ Bairro: ${endereco.bairro}\n`;
+  mensagem += `📱 Telefone: ${endereco.telefone}\n`;
 
-  mensagem += `\n*Subtotal: R$ ${carrinho.reduce((total, item) => total + (item.preco * item.quantidade), 0).toFixed(2)}*\n`;
 
-  // Adiciona a forma de pagamento
-  mensagem += `\n*Forma de Pagamento:* ${endereco.pagamento === 'cartao' ? '  💳 Cartão de Crédito' : endereco.pagamento === 'pix' ? '⚡ Pix' : '💵 Dinheiro'}\n`;
+
+  // Pagamento
+ 
+
+  mensagem += `\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\n`;
+  mensagem += `📲 Acompanhe pelo WhatsApp`;
 
   document.getElementById("resumo-pedido").textContent = mensagem;
   return encodeURIComponent(mensagem);
