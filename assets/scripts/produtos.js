@@ -381,31 +381,41 @@ document.addEventListener("DOMContentLoaded", function () {
       button.addEventListener("click", function () {
         const product = JSON.parse(button.getAttribute("data-product"));
         const select = button.closest('.product-item').querySelector('.variant-select');
-        const variant = select ? JSON.parse(select.value) : { weight: "Padrão", price: "0" };
-
+        const variant = select ? JSON.parse(select.value) : { weight: "Padrão", price: "0", discount: 0 };
+  
+        // Cálculo do preço com desconto, se houver
+        const basePrice = Number(variant.price);
+        const discount = Number(variant.discount) || 0;
+        const finalPrice = discount > 0
+          ? (basePrice * (1 - discount / 100)).toFixed(2)
+          : basePrice.toFixed(2);
+  
         let cart = JSON.parse(localStorage.getItem("carrinho")) || [];
+  
         const newItem = {
           produto: product.produto.name,
-          preco: variant.price,
+          preco: finalPrice,
           quantidade: 1,
           peso: variant.weight,
-          imagem: product.produto.pathimage ? `https://back.soracoescariri.com.br${product.produto.pathimage}` : 'default.jpg',
+          imagem: product.produto.pathimage
+            ? `https://back.soracoescariri.com.br${product.produto.pathimage}`
+            : 'default.jpg',
         };
-
+  
         const existingItem = cart.find(p => p.produto === newItem.produto && p.peso === newItem.peso);
         if (existingItem) {
           existingItem.quantidade += 1;
         } else {
           cart.push(newItem);
         }
-
+  
         localStorage.setItem("carrinho", JSON.stringify(cart));
         showSuccessAlert();
-        showCartPopup(); // Mostra o popup completo do carrinho
+        showCartPopup();
         updateCartCount();
       });
     });
-  }
+  }  
 
   // Mostra popup completo do carrinho
   function showCartPopup() {
