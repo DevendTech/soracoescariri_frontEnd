@@ -32,52 +32,51 @@
       </button></a>
   </header>
  <!-- Conteúdo Principal -->
- <main class="p-6 flex flex-col justify-center items-center ">
-  <h2 class="text-2xl font-bold mb-6">Criar Produto</h2>
+ <main >
+  <div id="alertaSucesso" class=" hidden fixed right-5 mt-5"></div>
+  <div class="p-6 flex flex-col justify-center items-center ">
+    <h2 class="text-2xl font-bold mb-6">Criar Produto</h2>
 
-  <form class="flex flex-col justify-center bg-white border-2 border-[#48887A] p-6 rounded-lg shadow-md" id="produtoForm">
-      <div class="mb-4">
-          <label class="block text-gray-700">Imagem do Produto</label>
-          <input type="file" class="mt-1 block w-full p-2 border rounded" data-produto="imagem">
-      </div>
-      <div class="mb-4">
-          <label class="block text-gray-700">Nome do Produto</label>
-          <input type="text" class="mt-1 block w-full p-2 border rounded" data-produto="nome">
-      </div>
-      <div class="mb-4">
-          <label class="block text-gray-700">Descrição</label>
-          <input type="text" class="mt-1 block w-full p-2 border rounded" data-produto="descricao">
-      </div>
-      <div class="mb-4">
-          <label class="block text-gray-700">Categoria do Produto</label>
-          <select class="mt-1 block w-full p-2 border rounded" data-produto="categoriaProduto">
-              <option>Ração</option>
-              <option>Acessório</option>
-              <option>Medicamento</option>
-              <option>Petshop</option>
-          </select>
-      </div>
-      <div class="mb-4">
-          <label class="block text-gray-700">Categoria do Animal</label>
-          <select class="mt-1 block w-full p-2 border rounded" data-produto="categoriaAnimal">
-              <option>Cão</option>
-              <option>Gato</option>
-              <option>Cão e Gato</option>
-              <option>Equinos</option>
-              <option>Aves</option>
-              <option>Peixes</option>
-              <option>Porcos</option>
-              <option>Nenhum</option>
-          </select>
-      </div>
-      <button type="submit" class="bg-[#48887A] text-white p-2 rounded hover:bg-emerald-900 cursor-pointer">Criar Produto</button>
-  </form>
-  
-  <div id="alertaSucesso" class="hidden fixed top-5 right-5 bg-gray-800 text-white p-4 rounded-lg shadow-lg flex items-center justify-between w-64">
-      <span>Produto cadastrado com sucesso!</span>
-      <button class="text-white text-lg" onclick="fecharAlerta()">&times;</button>
+    <form class="flex flex-col justify-center bg-white border-2 border-[#48887A] p-6 rounded-lg shadow-md" id="produtoForm">
+        <div class="mb-4">
+            <label class="block text-gray-700">Imagem do Produto</label>
+            <input type="file" class="mt-1 block w-full p-2 border rounded" data-produto="imagem">
+        </div>
+        <div class="mb-4">
+            <label class="block text-gray-700">Nome do Produto</label>
+            <input type="text" class="mt-1 block w-full p-2 border rounded" data-produto="nome">
+        </div>
+        <div class="mb-4">
+            <label class="block text-gray-700">Descrição</label>
+            <input type="text" class="mt-1 block w-full p-2 border rounded" data-produto="descricao">
+        </div>
+        <div class="mb-4">
+            <label class="block text-gray-700">Categoria do Produto</label>
+            <select class="mt-1 block w-full p-2 border rounded" data-produto="categoriaProduto">
+                <option>Ração</option>
+                <option>Acessório</option>
+                <option>Medicamento</option>
+                <option>Petshop</option>
+            </select>
+        </div>
+        <div class="mb-4">
+            <label class="block text-gray-700">Categoria do Animal</label>
+            <select class="mt-1 block w-full p-2 border rounded" data-produto="categoriaAnimal">
+                <option>Cão</option>
+                <option>Gato</option>
+                <option>Cão e Gato</option>
+                <option>Equinos</option>
+                <option>Aves</option>
+                <option>Peixes</option>
+                <option>Porcos</option>
+                <option>Nenhum</option>
+            </select>
+        </div>
+        <button type="submit" class="bg-[#48887A] text-white p-2 rounded hover:bg-emerald-900 cursor-pointer">Criar Produto</button>
+    </form>
   </div>
-
+  
+  
 </main>
 </body>
 

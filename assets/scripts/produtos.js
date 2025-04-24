@@ -3,7 +3,6 @@ document.addEventListener("DOMContentLoaded", function () {
   const alertContainer = document.getElementById('alert-container');
   const inputSearch = document.querySelector('#search');
   let allProducts = [];
-
   // Elementos de filtro
   const filterCheckboxes = document.querySelectorAll(
     'input[type="checkbox"][name="categoria"], ' +
@@ -226,7 +225,6 @@ document.addEventListener("DOMContentLoaded", function () {
     container.innerHTML = '';
 
     const fragment = document.createDocumentFragment();
-
     products.forEach(product => {
       console.log(product)
       const category = getProductCategory(product.produto.product_category);
@@ -292,7 +290,6 @@ document.addEventListener("DOMContentLoaded", function () {
   function filterProducts() {
     const activeFilters = getActiveFilters();
     const hasActiveFilters = Object.values(activeFilters).some(arr => arr.length > 0);
-
     document.querySelectorAll('.product-item').forEach(item => {
       const matches = [
         activeFilters.categoria.length === 0 || activeFilters.categoria.includes(item.dataset.category),

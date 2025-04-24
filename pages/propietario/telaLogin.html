@@ -5,14 +5,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="/assets/output.css" rel="stylesheet">
-  <link rel="icon" href="/assets/imagem/fivecon.png" type="image/png" />
   <script src="/assets/scripts/cache.js" defer></script>
   <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
   <script src="/assets/scripts/telaLogin.js?=1231256" defer></script>
 </head>
 <body class="">
-  <header class=" bg-[#48887A] text-white p-2 flex ">
-
+  <header class="bg-[#48887A] text-white p-2 flex justify-between ">
     <a href="/index.html">
       <button type="button" class="bg-white text-center w-28 rounded-2xl h-12 cursor-pointer relative text-black text-xl font-semibold border-4 border-white group focus:outline-none">
         <div class="bg-[#48887A] rounded-xl h-10 w-9 grid place-items-center absolute left-0 top-0 
@@ -24,8 +22,10 @@
         </div>
         <p class="translate-x-4">Voltar</p>
       </button></a>
+      <div id="mensage" class="hidden"></div>
   </header>
   <div class="flex bg-[#48887A] justify-center items-center h-screen -mt-10">
+    
     <form id="form" class="flex items-center justify-center">
       <div class="bg-gray-900 border-[4px] border-white rounded-2xl hover:border-emerald-800 transition-all duration-200">
         <div class="mx-auto flex items-center space-y-4 py-16 px-12 font-semibold text-gray-500 flex-col">
