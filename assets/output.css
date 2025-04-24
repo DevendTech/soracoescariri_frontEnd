@@ -3191,10 +3191,27 @@
       }
     }
   }
+<<<<<<< HEAD
+=======
+  .hover\:bg-\[\#0d3d2f\] {
+    &:hover {
+      @media (hover: hover) {
+        background-color: #0d3d2f;
+      }
+    }
+  }
+>>>>>>> Gabriel
   .hover\:bg-\[\#25684D\] {
     &:hover {
       @media (hover: hover) {
         background-color: #25684D;
+      }
+    }
+  }
+  .hover\:bg-\[\#317565\] {
+    &:hover {
+      @media (hover: hover) {
+        background-color: #317565;
       }
     }
   }
@@ -3296,6 +3313,27 @@
       }
     }
   }
+  .hover\:text-\[\#\] {
+    &:hover {
+      @media (hover: hover) {
+        color: #;
+      }
+    }
+  }
+  .hover\:text-\[\#fefffe\] {
+    &:hover {
+      @media (hover: hover) {
+        color: #fefffe;
+      }
+    }
+  }
+  .hover\:text-\[fe\] {
+    &:hover {
+      @media (hover: hover) {
+        color: fe;
+      }
+    }
+  }
   .hover\:text-gray-400 {
     &:hover {
       @media (hover: hover) {
@@ -3314,6 +3352,13 @@
     &:hover {
       @media (hover: hover) {
         color: var(--color-red-700);
+      }
+    }
+  }
+  .hover\:text-white {
+    &:hover {
+      @media (hover: hover) {
+        color: var(--color-white);
       }
     }
   }

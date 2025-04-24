@@ -7,9 +7,11 @@
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
+  <link rel="icon" href="/assets/imagem/fivecon.png" type="image/png" />
   <link href="assets/output.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
   <script src="/assets/scripts/index.js?=283423842384" defer></script>
+  <script src="assets/scripts/produtos.js?=283423842384"></script>
 </head>
 
 <body class="font-sans ">
@@ -91,7 +93,8 @@
             <ul class="space-y-2 text-sm text-gray-700">
               <li><button id="buttonMedicamentoAdultoHeader" class="cursor-pointer">Adulto</button></li>
               <li><button id="buttonMedicamentoFilhoteHeader" class="cursor-pointer">Filhote</button></li>
-              <li><button id="buttonMedicamentoCastradoHeader" class="cursor-pointer">Castrados</buttona></li>
+              <li><button id="buttonMedicamentoCastradoHeader" class="cursor-pointer">Castrados</buttona>
+              </li>
             </ul>
           </div>
         </div>
@@ -118,19 +121,23 @@
           </a>
           <div class="absolute left-0 top-full mt-0 w-44 bg-white shadow-lg rounded-b-2xl p-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 ease-in-out z-20 ">
             <ul class="space-y-2 text-sm text-gray-700">
-              <li><button id="buttonCamaHeader" class="cursor-pointer">Cama</abutton></li>
-              <li><buttona id="buttonSanitarioHeader" class="cursor-pointer">Sanitário</button></li>
-              <li><buttona id="buttonColeiraHeader" class="cursor-pointer">Coleiras</button></li>
+              <li><button id="buttonCamaHeader" class="cursor-pointer">Cama</abutton>
+              </li>
+              <li>
+                <buttona id="buttonSanitarioHeader" class="cursor-pointer">Sanitário</button>
+              </li>
+              <li>
+                <buttona id="buttonColeiraHeader" class="cursor-pointer">Coleiras</button>
+              </li>
             </ul>
           </div>
         </div>
       </nav>
 
-
-      <a target="_blank" href="/pages/usuario/carrinho1.html" id="carrinhoButton">
-        <img src="/assets/icons/icons8-carrinho-35.png" alt="Carrinho" class=" md:h-6 md:w-6 hover:scale-110 transition cursor-pointer">
-      </a>
-
+      <div id="cart-button" class="relative cursor-pointer">
+        <img src="/assets/icons/icons8-carrinho-35.png" alt="Carrinho" class="md:h-6 md:w-6 hover:scale-110 transition">
+        <span id="cart-count" class="absolute -top-2 -right-2 bg-[#48887A] text-white text-xs rounded-full h-5 w-5 flex items-center justify-center hidden">0</span>
+      </div>
 
     </div>
 
@@ -180,17 +187,17 @@
         </div>
         <div class=" flex md:grid grid-cols-1 sm:grid-cols-3 gap-4 mt-4 w-full max-w-5xl">
 
-          <button id="buttonRacaoCaoAdulto" class="cursor-pointer bg-[#F7F7F7]  p-4 rounded-lg shadow text-center">
+          <button id="buttonRacaoCaoAdulto" class="cursor-pointer bg-[#F7F7F7]  p-4 rounded-lg shadow text-center text-green-900 hover:text-white hover:bg-[#317565] ">
             <img src="assets/imagem/cachorroadulto.png" class="mx-auto">
-            <p class="mt-2 text-green-900 font-medium">Rações Adulto</p>
+            <p class="mt-2  font-medium">Rações Adulto</p>
           </button>
-          <button id="buttonRacaoCaoFilhote" class="cursor-pointer bg-[#F7F7F7]  p-4 rounded-lg shadow text-center">
+          <button id="buttonRacaoCaoFilhote" class="cursor-pointer bg-[#F7F7F7]  p-4 rounded-lg shadow text-center text-green-900 hover:text-white hover:bg-[#317565] ">
             <img src="assets/imagem/cachorrofilhote.png" class="mx-auto">
-            <p class="mt-2 text-green-900 font-medium">Rações Filhotes</p>
+            <p class="mt-2 font-medium">Rações Filhotes</p>
           </button>
-          <button id="buttonMedicamentoCao" class="cursor-pointer bg-[#f7f7f7]  p-4 rounded-lg shadow text-center">
+          <button id="buttonMedicamentoCao" class="cursor-pointer bg-[#f7f7f7]  p-4 rounded-lg shadow text-center text-green-900 hover:text-white hover:bg-[#317565] ">
             <img src="assets/imagem/medicamentocachorro.png" class="mx-auto">
-            <p class="mt-2 text-green-900 font-medium">Medicamentos</p>
+            <p class="mt-2 font-medium">Medicamentos</p>
           </button>
         </div>
       </section>
@@ -205,17 +212,17 @@
         </div>
         <div class="flex md:grid grid-cols-1 sm:grid-cols-3 gap-4 mt-4 w-full max-w-5xl">
 
-          <button id="buttonRacaoGato" class="cursor-pointer bg-[#f7f7f7] p-4 rounded-lg shadow text-center">
+          <button id="buttonRacaoGato" class="cursor-pointer bg-[#f7f7f7] p-4 rounded-lg shadow text-center text-green-900 hover:text-white hover:bg-[#317565]">
             <img src="assets/imagem/areia - Copia.png" class="mx-auto">
-            <p class="mt-2 text-green-900 font-medium">Rações</p>
+            <p class="mt-2  font-medium">Rações</p>
           </button>
-          <button id="buttonAreiaGato" class="cursor-pointer bg-[#f7f7f7]  p-4 rounded-lg shadow text-center">
+          <button id="buttonAreiaGato" class="cursor-pointer bg-[#f7f7f7]  p-4 rounded-lg shadow text-center text-green-900 hover:text-white hover:bg-[#317565]">
             <img src="assets/imagem/rações.png" class="mx-auto">
-            <p class="mt-2 text-green-900 font-medium">Areia</p>
+            <p class="mt-2  font-medium">Areia</p>
           </button>
-          <button id="buttonMedicamentoGato" class="cursor-pointer bg-[#f7f7f7]  p-4 rounded-lg shadow text-center">
+          <button id="buttonMedicamentoGato" class="cursor-pointer bg-[#f7f7f7]  p-4 rounded-lg shadow text-center text-green-900 hover:text-white hover:bg-[#317565]">
             <img src="assets/imagem/medicamentogato.png" class="mx-auto">
-            <p class="mt-2 text-green-900 font-medium">Medicamentos</p>
+            <p class="mt-2 font-medium">Medicamentos</p>
           </button>
         </div>
       </section>
@@ -229,17 +236,17 @@
           <button id="buttonEAPP" class="cursor-pointer">Ver todos</button>
         </div>
         <div class="flex md:grid grid-cols-1 sm:grid-cols-3 gap-4 mt-4 w-full max-w-5xl">
-          <button id="buttonRacaoEquinioEporco" class="cursor-pointer bg-[#f7f7f7] p-4 rounded-lg shadow text-center">
+          <button id="buttonRacaoEquinioEporco" class="cursor-pointer bg-[#f7f7f7] p-4 rounded-lg shadow text-center text-green-900 hover:text-white hover:bg-[#317565]">
             <img src="assets/imagem/performance.png" class="mx-auto h-32">
-            <p class="mt-2 text-green-900 font-medium">Rações</p>
+            <p class="mt-2  font-medium">Rações</p>
           </button>
-          <button id="buttonRacaoAves" class="cursor-pointer bg-[#f7f7f7] p-4 rounded-lg shadow text-center">
+          <button id="buttonRacaoAves" class="cursor-pointer bg-[#f7f7f7] p-4 rounded-lg shadow text-center text-green-900 hover:text-white hover:bg-[#317565]">
             <img src="assets/imagem/reino-das-aves.png" class="mx-auto h-32">
-            <p class="mt-2 text-green-900 font-medium">Aves</p>
+            <p class="mt-2  font-medium">Aves</p>
           </button>
-          <button id="buttonRacaoPeixes" class="cursor-pointer bg-[#f7f7f7] p-4 rounded-lg shadow text-center">
+          <button id="buttonRacaoPeixes" class="cursor-pointer bg-[#f7f7f7] p-4 rounded-lg shadow text-center text-green-900 hover:text-white hover:bg-[#317565]">
             <img src="assets/imagem/Peixecol25-1.png" class="mx-auto h-32">
-            <p class="mt-2 text-green-900 font-medium">Peixes</p>
+            <p class="mt-2  font-medium">Peixes</p>
           </button>
         </div>
       </section>
@@ -268,17 +275,17 @@
           <button id="buttonAcessorios" class="cursor-pointer">Ver todos</button>
         </div>
         <div class="flex md:grid grid-cols-1 sm:grid-cols-3 gap-4 mt-4 w-full max-w-5xl">
-          <button id="buttonCama" class="cursor-pointer bg-[#f7f7f7] p-4 rounded-lg shadow text-center">
+          <button id="buttonCama" class="cursor-pointer bg-[#f7f7f7] p-4 rounded-lg shadow text-center text-green-900 hover:text-white hover:bg-[#317565]">
             <img src="assets/imagem/cama.png" class="mx-auto h-32">
-            <p class="mt-2 text-green-900 font-medium">Cama</p>
+            <p class="mt-2  font-medium">Cama</p>
           </button>
-          <button id="buttonSanitario" class="cursor-pointer bg-[#f7f7f7] p-4 rounded-lg shadow text-center">
+          <button id="buttonSanitario" class="cursor-pointer bg-[#f7f7f7] p-4 rounded-lg shadow text-center text-green-900 hover:text-white hover:bg-[#317565]">
             <img src="assets/imagem/mijador.avif" class="mx-auto h-32">
-            <p class="mt-2 text-green-900 font-medium">Sanitário</p>
+            <p class="mt-2  font-medium">Sanitário</p>
           </button>
-          <button id="buttonColeira" class="cursor-pointer bg-[#f7f7f7] p-4 rounded-lg shadow text-center">
+          <button id="buttonColeira" class="cursor-pointer bg-[#f7f7f7] p-4 rounded-lg shadow text-center text-green-900 hover:text-white hover:bg-[#317565]">
             <img src="assets/imagem/Coleira.webp" class="mx-auto h-28">
-            <p class="mt-2 text-green-900 font-medium">Coleiras</p>
+            <p class="mt-2  font-medium">Coleiras</p>
           </button>
         </div>
       </section>
@@ -373,7 +380,27 @@
     </div>
   </footer>
 
-  <script src="/assets/scripts/cache.js" defer></script>
+  <!-- Popup -->
+  <div id="popup-overlay" class="fixed inset-0 z-[90] hidden bg-black/10 backdrop-blur-sm" onclick="closePopup()">
+  </div>
+
+  <div id="popup" class="fixed top-0 right-0 z-[100] flex h-full w-full flex-col bg-white shadow-lg transition-transform duration-300 md:w-[450px] translate-x-full overflow-y-auto">
+    <div class="flex w-full items-center justify-between border-b p-4 sticky top-0 bg-white z-10">
+      <h2 class="text-lg font-semibold text-gray-800">Detalhes do Produto</h2>
+      <button onclick="closePopup()" class="text-xl font-bold text-gray-500 hover:text-red-500">&times;</button>
+    </div>
+
+    <div id="popup-content" class="w-full p-4 text-gray-700 flex-1">
+      <!-- Conteúdo será inserido aqui -->
+    </div>
+
+    <div class="sticky bottom-0 bg-white border-t p-4">
+      <a href="carrinho2.html" class="flex w-full items-center justify-center gap-2 rounded-lg bg-[#2A7D5E] py-3 text-lg font-semibold text-white transition hover:bg-[#25684D]">
+        FINALIZAR COMPRA
+      </a>
+    </div>
+
+    <script src="/assets/scripts/cache.js" defer></script>
 </body>
 
 </html>
