@@ -104,12 +104,12 @@ document.addEventListener("DOMContentLoaded", function () {
                   class="peer hidden"
                   ${index === 0 ? "checked" : ""}
                 />
-                <span class="tracking-widest peer-checked:bg-gradient-to-r peer-checked:from-[#064E3B] peer-checked:to-[#064E3B] peer-checked:text-white border-2 border-emerald-700 p-2 md:w-40 rounded-lg transition duration-150 ease-in-out">
+                <span class=" w-50 tracking-widest peer-checked:bg-gradient-to-r peer-checked:from-[#064E3B] peer-checked:to-[#064E3B] peer-checked:text-white border-2 border-emerald-700 p-2 md:w-50 flex justify-center items-center rounded-lg transition duration-150 ease-in-out">
                   ${variant.weight} - R$ ${parseFloat(variant.price).toFixed(2)}
                 </span>
                 ${
                   hasDiscount
-                    ? `<div class='divDiscount text-red-600 font-bold ml-2'> <img src="/assets/icons/desconto-25 .png" alt="desconto" class=""></div>`
+                    ? `<div class='divDiscount text-red-600 font-bold m-auto ml-2'> <img src="/assets/icons/desconto-25 .png" alt="desconto" class=""></div>`
                     : ``
                 }
               </label>
@@ -123,7 +123,7 @@ document.addEventListener("DOMContentLoaded", function () {
           <div class="flex justify-between flex-col gap-3 items-center md:flex-row">
             <div class="flex flex-col justify-center items-center md:items-baseline">
               <h4 class="font-semibold">${name}</h4>
-              <div>${variantesHTML}</div>
+              <div class="flex flex-col items-start">${variantesHTML}</div>
             </div>
 
             <div class="flex gap-2">
