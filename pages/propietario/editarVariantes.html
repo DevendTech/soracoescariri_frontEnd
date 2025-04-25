@@ -32,48 +32,51 @@
       </button></a>
   </header>
   <!-- Conteúdo Principal -->
-  <main class="p-6 flex flex-col justify-center items-center ">
-    <h2 class="text-2xl font-bold mb-6"> Editar Variantes</h2>
+  <main>
+    <div id="alertaSucesso" class=" hidden fixed right-5 mt-5"></div>
+    <div class="p-6 flex flex-col justify-center items-center ">
+      <h2 class="text-2xl font-bold mb-6"> Editar Variantes</h2>
 
-    <!-- Formulário -->
-    <form id="form-adicionar-variantes" class=" flex flex-col justify-center bg-white border-2 border-[#48887A] p-6 rounded-lg shadow-md w-80">
-      <!-- Nome e Marca -->
-      <div id="container" class="mb-4">
+      <!-- Formulário -->
+      <form id="form-adicionar-variantes" class=" flex flex-col justify-center bg-white border-2 border-[#48887A] p-6 rounded-lg shadow-md w-80">
+        <!-- Nome e Marca -->
+        <div id="container" class="mb-4">
 
-      </div>
-      <!-- Categoria e Animal -->
-      <div class="mb-4">
-        <label class="block text-gray-700">Peso</label>
-        <input id="variant-weight" type="text" class="mt-1 block w-full p-2 border rounded" data-produto="peso">
-      </div>
-      <div class="mb-4">
-        <label class="block text-gray-700">Preço</label>
-        <input id="variant-price" type="number" step="0.01" class="mt-1 block w-full p-2 border rounded" data-produto="preço">
-      </div>
-
-      <div class="flex flex-col gap-3 ">
-        <p>Contem Disconto?</p>
-        <div class="flex gap-3 mb-3">
-          <label class="relative flex items-center  cursor-pointer">
-            <input class="sr-only peer" name="desconto-radio" type="radio" value="NAO" checked />
-            <div class="w-6 h-6 bg-transparent border-2 border-red-500 rounded-full peer-checked:bg-red-500 peer-checked:border-red-500 peer-hover:shadow-lg peer-hover:shadow-red-500/50 peer-checked:shadow-lg peer-checked:shadow-red-500/50 transition duration-300 ease-in-out"></div>
-            <span class="ml-2 text-emerald-800">Nao</span>
-          </label>
-          <label class="relative flex items-center cursor-pointer">
-            <input class="sr-only peer" name="desconto-radio" type="radio" value="SIM" />
-            <div class="w-6 h-6 bg-transparent border-2 border-green-500 rounded-full peer-checked:bg-green-500 peer-checked:border-green-500 peer-hover:shadow-lg peer-hover:shadow-green-500/50 peer-checked:shadow-lg peer-checked:shadow-green-500/50 transition duration-300 ease-in-out"></div>
-            <span class="ml-2 text-emerald-800 ">Sim</span>
-          </label>
         </div>
-      </div>
-      <div class="mb-4">
-        <label class="block text-gray-700">Desconto</label>
-        <input id="input-desconto" type="number" class="mt-1  block w-full p-2 border rounded" data-produto="desconto">
-      </div>
+        <!-- Categoria e Animal -->
+        <div class="mb-4">
+          <label class="block text-gray-700">Peso</label>
+          <input id="variant-weight" type="text" class="mt-1 block w-full p-2 border rounded" data-produto="peso">
+        </div>
+        <div class="mb-4">
+          <label class="block text-gray-700">Preço</label>
+          <input id="variant-price" type="number" step="0.01" class="mt-1 block w-full p-2 border rounded" data-produto="preço">
+        </div>
 
-      <!-- Preço e Promoção -->
-      <button type="submit" class="bg-[#48887A] text-white p-2 rounded hover:bg-emerald-900 cursor-pointer">Editar Variantes</button>
-    </form>
+        <div class="flex flex-col gap-3 ">
+          <p>Contem Disconto?</p>
+          <div class="flex gap-3 mb-3">
+            <label class="relative flex items-center  cursor-pointer">
+              <input class="sr-only peer" name="desconto-radio" type="radio" value="NAO" checked />
+              <div class="w-6 h-6 bg-transparent border-2 border-red-500 rounded-full peer-checked:bg-red-500 peer-checked:border-red-500 peer-hover:shadow-lg peer-hover:shadow-red-500/50 peer-checked:shadow-lg peer-checked:shadow-red-500/50 transition duration-300 ease-in-out"></div>
+              <span class="ml-2 text-emerald-800">Nao</span>
+            </label>
+            <label class="relative flex items-center cursor-pointer">
+              <input class="sr-only peer" name="desconto-radio" type="radio" value="SIM" />
+              <div class="w-6 h-6 bg-transparent border-2 border-green-500 rounded-full peer-checked:bg-green-500 peer-checked:border-green-500 peer-hover:shadow-lg peer-hover:shadow-green-500/50 peer-checked:shadow-lg peer-checked:shadow-green-500/50 transition duration-300 ease-in-out"></div>
+              <span class="ml-2 text-emerald-800 ">Sim</span>
+            </label>
+          </div>
+        </div>
+        <div class="mb-4">
+          <label class="block text-gray-700">Desconto</label>
+          <input id="input-desconto" type="number" class="mt-1  block w-full p-2 border rounded" data-produto="desconto">
+        </div>
+
+        <!-- Preço e Promoção -->
+        <button type="submit" class="bg-[#48887A] text-white p-2 rounded hover:bg-emerald-900 cursor-pointer">Editar Variantes</button>
+      </form>
+    </div>
   </main>
 </body>
 

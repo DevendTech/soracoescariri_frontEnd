@@ -70,8 +70,8 @@ document.addEventListener("DOMContentLoaded", function () {
         </div>
       `
       setTimeout(() => {
-        divMensage.innerHTML = '';
-        divMensage.classList.add('hidden');
+        alertaSucesso.innerHTML = '';
+        alertaSucesso.classList.add('hidden');
       }, 4000);
       return;
     }
@@ -117,7 +117,7 @@ document.addEventListener("DOMContentLoaded", function () {
           </div>
         `
         setTimeout(() => {
-          document.getElementById("alertaSucesso").classList.add("hidden");
+          alertaSucesso.classList.add("hidden");
           checkedNao.checked = true;
         }, 4000);
         inputDesconto.disabled = true;
@@ -150,7 +150,7 @@ document.addEventListener("DOMContentLoaded", function () {
           </div>
         `
         setTimeout(() => {
-          document.getElementById("alertaSucesso").classList.add("hidden");
+          alertaSucesso.classList.add("hidden");
         }, 4000);
       });
   });

@@ -8,11 +8,11 @@ form.addEventListener('submit', async (event) => {
   const email = inputLogin.value.trim();
   const password = inputPassword.value.trim();
 
-  const divMensage = document.getElementById('mensage');
+  const alertaSucesso = document.getElementById('alertaSucesso');
 
   if (!email || !password) {
-    divMensage.classList.remove('hidden');
-    divMensage.innerHTML = `
+    alertaSucesso.classList.remove('hidden');
+    alertaSucesso.innerHTML = `
       <div
         role="alert"
         class="bg-yellow-100 dark:bg-yellow-900 border-l-4 border-yellow-500 dark:border-yellow-700 text-yellow-900 dark:text-yellow-100 p-2 rounded-lg flex items-center transition duration-300 ease-in-out hover:bg-yellow-200 dark:hover:bg-yellow-800 transform hover:scale-105"
@@ -37,8 +37,8 @@ form.addEventListener('submit', async (event) => {
       </div>
     `
     setTimeout(() => {
-      divMensage.innerHTML = '';
-      divMensage.classList.add('hidden');
+      alertaSucesso.innerHTML = '';
+      alertaSucesso.classList.add('hidden');
     }, 4000);
     return;
   }
@@ -57,8 +57,8 @@ form.addEventListener('submit', async (event) => {
     if (!response.ok) {
       const errorData = await response.json();
       console.log('Erro:', errorData);
-      divMensage.classList.remove('hidden');
-      duvMensage.innerHTML = `
+      alertaSucesso.classList.remove('hidden');
+      alertaSucesso.innerHTML = `
         <div
           role="alert"
           class="bg-red-100 dark:bg-red-900 border-l-4 border-red-500 dark:border-red-700 text-red-900 dark:text-red-100 p-2 rounded-lg flex items-center transition duration-300 ease-in-out hover:bg-red-200 dark:hover:bg-red-800 transform hover:scale-105"
@@ -94,8 +94,8 @@ form.addEventListener('submit', async (event) => {
       // Redireciona apenas se o token foi salvo com sucesso
       window.location.href = 'http://127.0.0.1:5500/pages/propietario/telaPropietario.html';
     } else {
-      divMensage.classList.remove('hidden');
-      divMensage.innerHTML = `
+      alertaSucesso.classList.remove('hidden');
+      alertaSucesso.innerHTML = `
         <div
           role="alert"
           class="bg-red-100 dark:bg-red-900 border-l-4 border-red-500 dark:border-red-700 text-red-900 dark:text-red-100 p-2 rounded-lg flex items-center transition duration-300 ease-in-out hover:bg-red-200 dark:hover:bg-red-800 transform hover:scale-105"
@@ -118,14 +118,14 @@ form.addEventListener('submit', async (event) => {
         </div>
       `
       setTimeout(() => {
-        divMensage.innerHTML = '';
-        divMensage.classList.add('hidden');
+        alertaSucesso.innerHTML = '';
+        alertaSucesso.classList.add('hidden');
       }, 6000);
     }
   } catch (error) {
     console.error('Erro ao conectar ao servidor:', error);
-    divMensage.classList.remove('hidden');
-      divMensage.innerHTML = `
+    alertaSucesso.classList.remove('hidden');
+    alertaSucesso.innerHTML = `
         <div
           role="alert"
           class="bg-red-100 dark:bg-red-900 border-l-4 border-red-500 dark:border-red-700 text-red-900 dark:text-red-100 p-2 rounded-lg flex items-center transition duration-300 ease-in-out hover:bg-red-200 dark:hover:bg-red-800 transform hover:scale-105"
@@ -148,8 +148,8 @@ form.addEventListener('submit', async (event) => {
         </div>
       `
       setTimeout(() => {
-        divMensage.innerHTML = '';
-        divMensage.classList.add('hidden');
+        alertaSucesso.innerHTML = '';
+        alertaSucesso.classList.add('hidden');
       }, 6000);
   }
 });

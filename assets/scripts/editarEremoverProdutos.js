@@ -131,7 +131,7 @@ document.addEventListener("DOMContentLoaded", function () {
           </div>
         `
         setTimeout(() => {
-          document.getElementById("alertaSucesso").classList.add("hidden");
+          alertaSucesso.classList.add("hidden");
         }, 7000);
         // Atualiza lista após exclusão
         allProducts = allProducts.filter((p) => p.produto.id != id);
@@ -165,7 +165,7 @@ document.addEventListener("DOMContentLoaded", function () {
             </div>
       `
       setTimeout(() => {
-        document.getElementById("alertaSucesso").classList.add("hidden");
+        alertaSucesso.classList.add("hidden");
       }, 4000);
       console.error("Erro na requisição de exclusão:", error);
     }

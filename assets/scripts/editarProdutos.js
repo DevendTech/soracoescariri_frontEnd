@@ -89,7 +89,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 </div>
             `
             setTimeout(() => {
-                document.getElementById("alertaSucesso").classList.add("hidden");
+                alertaSucesso.classList.add("hidden");
                 window.history.back();
             }, 4000);
 
@@ -120,7 +120,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     </div>
                 `
                 setTimeout(() => {
-                    document.getElementById("alertaSucesso").classList.add("hidden");
+                    alertaSucesso.classList.add("hidden");
                 }, 4000);
             console.error("Erro ao atualizar variante:", error);
         });

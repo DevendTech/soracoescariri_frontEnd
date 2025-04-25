@@ -22,8 +22,8 @@ document.addEventListener("DOMContentLoaded", function() {
               body: formData
           }).then((response) => {
               if (response.status === 201) {
-                  alertaSucesso.classList.remove("hidden");
-                  alertaSucesso.classList.add("flex");
+                alertaSucesso.classList.remove("hidden");
+                alertaSucesso.classList.add("flex");
                 alertaSucesso.innerHTML = `
                     <div
                         role="alert"
@@ -48,7 +48,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 `
 
                   setTimeout(() => {
-                      document.getElementById("alertaSucesso").classList.add("hidden");
+                    alertaSucesso.classList.add("hidden");
                   }, 4000);
                   form.reset();
               } else {
@@ -77,7 +77,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     </div>
                 `
                 setTimeout(() => {
-                    document.getElementById("alertaSucesso").classList.add("hidden");
+                    alertaSucesso.classList.add("hidden");
                 }, 4000);
               }
           }).catch((err) => {
@@ -106,7 +106,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     </div>
                 `
                 setTimeout(() => {
-                    document.getElementById("alertaSucesso").classList.add("hidden");
+                    alertaSucesso.classList.add("hidden");
                 }, 4000);
             console.error(err)
           }) 
