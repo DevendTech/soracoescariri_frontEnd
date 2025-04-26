@@ -138,7 +138,7 @@
   <section class="w-full h-[250px] sm:h-[450px] md:hidden mt-16 bg-cover bg-center" style="background-image: url('/assets/imagem/BANNER.jpeg');">
   </section>
   <!-- Botão de filtrar para mobile -->
-  <button id="filter-toggle" onclick="toggleFilterSidebar()" class=" z-30 flex mt-5 ml-40 mb-0 justify-center items-center  rounded-lg bg-transparent border-2 border-[#48887A] px-6 py-3 font-bold text-[#48887A] shadow-md transition-all duration-300 hover:bg-[#25684D] hover:-translate-y-0.5 hover:shadow-lg md:hidden">
+  <button id="filter-toggle" onclick="toggleFilterSidebar()" class=" z-30 flex mt-5 ml-40 mb-0 justify-center items-center  rounded-lg bg-transparent border-2 border-[#48887A] px-6 py-3 font-bold text-[#48887A] shadow-md transition-all duration-300 hover:bg-[#25684D] hover:-translate-y-0.5 hover:shadow-lg md:hidden gap-2">
     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
       <line x1="4" y1="21" x2="4" y2="14"></line>
       <line x1="4" y1="10" x2="4" y2="3"></line>
@@ -267,10 +267,12 @@
     </aside>
     <!-- filtro mobile -->
     <aside id="filter-sidebar-mobile" class="fixed left-0 top-0 h-full w-64 bg-white shadow-md p-6 rounded-r-2xl z-50 transform -translate-x-full transition-transform  duration-300 md:hidden">
+
+      <button id="filter-toggle" onclick="toggleFilterSidebar()" class=" z-30 flex mt-5 mb-0 justify-center items-center  rounded-lg bg-[#48887A] border-2 border-[#48887A] px-6 py-1 font-bold text-white shadow-md transition-all duration-300 hover:bg-[#25684D] hover:-translate-y-0.5 hover:shadow-lg md:hidden gap-2">
+        <img src="/assets/icons/icons8-filtro-30.png" class=" flex w-[20px]" alt="">
+        Filtrar
+      </button>
       <p class="mt-4 border-b-1 border-gray-300 w-full text-black ">Filtrar Produtos</p>
-
-   
-
       <div class="overflow-y-auto h-[calc(100vh-100px)]">
         <button type="button" id="clear-filters" class="cursor-pointer flex mt-4text-black text-[13px] gap-2 mt-2">Limpar filtros
           <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="15" height="15" viewBox="0 0 50 50">
