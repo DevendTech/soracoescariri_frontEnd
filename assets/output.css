@@ -3634,21 +3634,7 @@
       width: var(--container-3xl);
     }
   }
-<<<<<<< HEAD
-  .md\:w-6 {
-    @media (width >= 48rem) {
-      width: calc(var(--spacing) * 6);
-    }
-  }
-  .md\:w-9 {
-    @media (width >= 48rem) {
-      width: calc(var(--spacing) * 9);
-    }
-  }
   .md\:w-50 {
-=======
-  .md\:w-40 {
->>>>>>> gabriel
     @media (width >= 48rem) {
       width: calc(var(--spacing) * 50);
     }
