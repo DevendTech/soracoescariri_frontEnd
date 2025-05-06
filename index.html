@@ -32,7 +32,7 @@
     </div>
   </div>
 
-  <header class="flex flex-col fixed w-full h-24 md:h-24 -mt-0 md:-mt-36 bg-white shadow z-10">
+  <header class="flex flex-col fixed w-full h-24 md:h-24 bg-white shadow z-10">
     <div class="flex mt-4 justify-between md:justify-around container mx-auto items-center px-4">
 
       <button id="menuToggle" class="md:hidden block text-[#48887A] cursor-pointer">
@@ -152,24 +152,8 @@
     </div>
   </header>
 
-  <div id="produtos" class=" w-full flex justify-center max-w-md overflow-hidden md:h-10  md:ml-[450px] md:mt-36 z-1">
-    <div class="flex transition-transform duration-700 ease-in-out  z-1" id="carousel">
-      <!-- Slide 1 -->
-      <div class="w-full  flex-shrink-0 flex items-center gap-4 justify-center text-center ">
-        <img src="assets/icons/icons8-raio-24.png" alt="Ícone 1">
-        <p class="mt-2 text-lg font-medium">Peça em segundos</p>
-      </div>
-      <!-- Slide 2 -->
-      <div class="w-full   flex-shrink-0 flex items-center gap-4 justify-center text-center">
-        <img src="assets/icons/icons8-entrega-30.png" alt="Ícone 2">
-        <p class="mt-2 text-lg font-medium">Entrega rápida</p>
-      </div>
-      <!-- Slide 3 -->
-      <div class="w-full  flex-shrink-0 flex items-center gap-4 justify-center text-center">
-        <img src="assets/icons/icons8-garantia-30.png" alt="Ícone 3">
-        <p class="mt-2 text-lg font-medium">Qualidade garantida</p>
-      </div>
-    </div>
+  <div id="produtos" class=" w-full flex justify-center max-w-md overflow-hidden md:h-10 md:ml-[450px] md:mt-0 z-1">
+  
   </div>
   <!-- section do banner -->
   <section class="w-full h-[250px] sm:h-[450px] md:hidden mt-16 bg-cover bg-center " style="background-image: url('/assets/imagem/BANNER.jpeg');">
@@ -188,17 +172,21 @@
         <div class=" flex md:grid grid-cols-1 sm:grid-cols-3 gap-4 mt-4 w-full max-w-5xl">
 
           <button id="buttonRacaoCaoAdulto" class="cursor-pointer bg-[#F7F7F7]  p-4 rounded-lg shadow text-center text-green-900 hover:text-white hover:bg-[#317565] ">
-            <img src="assets/imagem/cachorroadulto.png" class="mx-auto">
+            <img src="assets/imagem/cachorroadulto.png" class=" flex w-20 h-20 mx-auto md:h-24 md:w-24">
             <p class="mt-2  font-medium">Rações Adulto</p>
           </button>
           <button id="buttonRacaoCaoFilhote" class="cursor-pointer bg-[#F7F7F7]  p-4 rounded-lg shadow text-center text-green-900 hover:text-white hover:bg-[#317565] ">
-            <img src="assets/imagem/cachorrofilhote.png" class="mx-auto">
+            <img src="assets/imagem/cachorrofilhote.png" class=" flex w-20 h-20 mx-auto md:h-24 md:w-24">
             <p class="mt-2 font-medium">Rações Filhotes</p>
           </button>
-          <button id="buttonMedicamentoCao" class="cursor-pointer bg-[#f7f7f7]  p-4 rounded-lg shadow text-center text-green-900 hover:text-white hover:bg-[#317565] ">
-            <img src="assets/imagem/medicamentocachorro.png" class="mx-auto">
-            <p class="mt-2 font-medium">Medicamentos</p>
+
+          <button id="buttonMedicamentoCao" class="cursor-pointer bg-[#f7f7f7] p-4 rounded-lg shadow text-center text-green-900 hover:text-white hover:bg-[#317565] w-full max-w-[110px] md:max-w-[300px]">
+            <img src="assets/imagem/medicamentocachorro.png" class="flex w-20 h-20 mx-auto md:h-24 md:w-24" />
+            <p class="mt-2 font-medium break-words whitespace-normal">
+              Medicamentos
+            </p>
           </button>
+
         </div>
       </section>
 
@@ -213,16 +201,18 @@
         <div class="flex md:grid grid-cols-1 sm:grid-cols-3 gap-4 mt-4 w-full max-w-5xl">
 
           <button id="buttonRacaoGato" class="cursor-pointer bg-[#f7f7f7] p-4 rounded-lg shadow text-center text-green-900 hover:text-white hover:bg-[#317565]">
-            <img src="assets/imagem/areia - Copia.png" class="mx-auto">
+            <img src="assets/imagem/areia - Copia.png" class="flex w-20 h-20 mx-auto md:h-24 md:w-24">
             <p class="mt-2  font-medium">Rações</p>
           </button>
           <button id="buttonAreiaGato" class="cursor-pointer bg-[#f7f7f7]  p-4 rounded-lg shadow text-center text-green-900 hover:text-white hover:bg-[#317565]">
-            <img src="assets/imagem/rações.png" class="mx-auto">
+            <img src="assets/imagem/rações.png" class="flex w-20 h-20 mx-auto md:h-24 md:w-24">
             <p class="mt-2  font-medium">Areia</p>
           </button>
-          <button id="buttonMedicamentoGato" class="cursor-pointer bg-[#f7f7f7]  p-4 rounded-lg shadow text-center text-green-900 hover:text-white hover:bg-[#317565]">
-            <img src="assets/imagem/medicamentogato.png" class="mx-auto">
-            <p class="mt-2 font-medium">Medicamentos</p>
+          <button id="buttonMedicamentoCao" class="cursor-pointer bg-[#f7f7f7] p-4 rounded-lg shadow text-center text-green-900 hover:text-white hover:bg-[#317565] w-full max-w-[110px] md:max-w-[300px]">
+            <img src="assets/imagem/medicamentogato.png" class=" flex w-20 h-20 mx-auto md:h-24 md:w-24" />
+            <p class="mt-2 font-medium break-words whitespace-normal">
+              Medicamentos
+            </p>
           </button>
         </div>
       </section>
@@ -237,15 +227,15 @@
         </div>
         <div class="flex md:grid grid-cols-1 sm:grid-cols-3 gap-4 mt-4 w-full max-w-5xl">
           <button id="buttonRacaoEquinioEporco" class="cursor-pointer bg-[#f7f7f7] p-4 rounded-lg shadow text-center text-green-900 hover:text-white hover:bg-[#317565]">
-            <img src="assets/imagem/performance.png" class="mx-auto h-32">
+            <img src="assets/imagem/performance.png" class="flex w-20 h-20 mx-auto md:h-24 md:w-24">
             <p class="mt-2  font-medium">Rações</p>
           </button>
           <button id="buttonRacaoAves" class="cursor-pointer bg-[#f7f7f7] p-4 rounded-lg shadow text-center text-green-900 hover:text-white hover:bg-[#317565]">
-            <img src="assets/imagem/reino-das-aves.png" class="mx-auto h-32">
+            <img src="assets/imagem/reino-das-aves.png" class="flex w-20 h-20 mx-auto md:h-24 md:w-24">
             <p class="mt-2  font-medium">Aves</p>
           </button>
           <button id="buttonRacaoPeixes" class="cursor-pointer bg-[#f7f7f7] p-4 rounded-lg shadow text-center text-green-900 hover:text-white hover:bg-[#317565]">
-            <img src="assets/imagem/Peixecol25-1.png" class="mx-auto h-32">
+            <img src="assets/imagem/Peixecol25-1.png" class="flex w-20 h-20 mx-auto md:h-24 md:w-24">
             <p class="mt-2  font-medium">Peixes</p>
           </button>
         </div>
@@ -276,15 +266,15 @@
         </div>
         <div class="flex md:grid grid-cols-1 sm:grid-cols-3 gap-4 mt-4 w-full max-w-5xl">
           <button id="buttonCama" class="cursor-pointer bg-[#f7f7f7] p-4 rounded-lg shadow text-center text-green-900 hover:text-white hover:bg-[#317565]">
-            <img src="assets/imagem/cama.png" class="mx-auto h-32">
+            <img src="assets/imagem/cama.png" class="flex w-20 h-20 mx-auto md:h-24 md:w-24">
             <p class="mt-2  font-medium">Cama</p>
           </button>
           <button id="buttonSanitario" class="cursor-pointer bg-[#f7f7f7] p-4 rounded-lg shadow text-center text-green-900 hover:text-white hover:bg-[#317565]">
-            <img src="assets/imagem/mijador.avif" class="mx-auto h-32">
+            <img src="assets/imagem/mijador.avif" class="flex w-20 h-20 mx-auto md:h-24 md:w-24">
             <p class="mt-2  font-medium">Sanitário</p>
           </button>
           <button id="buttonColeira" class="cursor-pointer bg-[#f7f7f7] p-4 rounded-lg shadow text-center text-green-900 hover:text-white hover:bg-[#317565]">
-            <img src="assets/imagem/Coleira.webp" class="mx-auto h-28">
+            <img src="assets/imagem/Coleira.webp" class="flex w-20 h-20 mx-auto md:h-24 md:w-24">
             <p class="mt-2  font-medium">Coleiras</p>
           </button>
         </div>
